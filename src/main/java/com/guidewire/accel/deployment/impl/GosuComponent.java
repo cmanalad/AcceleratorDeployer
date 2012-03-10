@@ -1,6 +1,7 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
+import com.guidewire.accel.util.AcceleratorHelper;
 
 import java.io.File;
 
@@ -10,6 +11,9 @@ import java.io.File;
  * Time: 1:55 PM
  */
 public class GosuComponent implements DeployableComponent {
+
+  private static String GosuPath  = AcceleratorHelper.getInstance().getProductRoot().getAbsolutePath() + File.separator + "modules" + File.separator + "configuration" + File.separator + "gsrc";
+  private static String GunitPath = AcceleratorHelper.getInstance().getProductRoot().getAbsolutePath() + File.separator + "modules" + File.separator + "configuration" + File.separator + "gtest";
 
   private File gosuFile;
   private boolean isGunit = false;

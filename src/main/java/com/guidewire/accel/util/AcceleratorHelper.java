@@ -9,17 +9,17 @@ import java.io.File;
  * Time: 1:40 PM
  * To change this template use File | Settings | File Templates.
  */
-public class AccleratorHelper {
+public class AcceleratorHelper {
 
-  private static AccleratorHelper instance = new AccleratorHelper();
+  private static AcceleratorHelper instance = new AcceleratorHelper();
 
   private File productRoot;
   private File accelerator;
 
-  private AccleratorHelper() {
+  private AcceleratorHelper() {
   }
 
-  public static AccleratorHelper getInstance() {
+  public static AcceleratorHelper getInstance() {
     return instance;
   }
 

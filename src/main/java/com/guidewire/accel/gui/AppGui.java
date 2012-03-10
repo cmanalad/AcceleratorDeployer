@@ -1,6 +1,6 @@
 package com.guidewire.accel.gui;
 
-import com.guidewire.accel.util.AccleratorHelper;
+import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.SpringUtilities;
 
 import javax.swing.*;
@@ -24,7 +24,7 @@ import java.util.zip.ZipInputStream;
 public class AppGui extends JFrame {
 
   // Variables declaration
-  private AccleratorHelper helper = AccleratorHelper.getInstance();
+  private AcceleratorHelper helper = AcceleratorHelper.getInstance();
 
   private JPanel inputPanel;
   private JLabel rootLabel;

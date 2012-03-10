@@ -1,7 +1,7 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
-import com.guidewire.accel.util.AccleratorHelper;
+import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.FileUtil;
 
 import java.io.File;
@@ -25,13 +25,12 @@ public class PCFComponent implements DeployableComponent {
   public boolean deploy() {
     boolean deployed = false;
     try {
-      AccleratorHelper helper = AccleratorHelper.getInstance();
+      AcceleratorHelper helper = AcceleratorHelper.getInstance();
       String pcfRoot = helper.getPCFRoot().getAbsolutePath();
       String accelConfigPathBase = accelConfigRoot.getAbsolutePath();
       String pathToPCFFromRoot = pcfPage.getAbsolutePath().substring(accelConfigPathBase.length());
       File pcfFile = new File(helper.getPCFRoot().getAbsolutePath() + File.separator + pathToPCFFromRoot);
       if (pcfFile.exists()) {
-        System.out.println("File Exists. move it to our backup");
         /*
            So Addmittedly this is not done well enough yet. I have some thoughts on this...
            namely...
@@ -43,13 +42,17 @@ public class PCFComponent implements DeployableComponent {
              3) naming conventions. if it is the "original" that is there is no pcfname.X.BAK then we create pcfname.orig.bak
                 otherwise it becomes pcfname.accelname.bak now you can offer choices at undeploy time.
         */
-        File backup = new File(pcfFile.getAbsolutePath() + File.separator + "orig.bak");
+        File backup = new File(pcfFile.getAbsolutePath() + ".orig.bak");
         FileUtil.copyFileToFile(pcfFile, backup);
-        System.out.println("and delete it");
         //You have to create the file again if you are going to delete it
         String path = pcfFile.getAbsolutePath();
         pcfFile.delete();
         pcfFile = new File(path);
+      }
+      String path = pcfFile.getAbsolutePath().substring(0, pcfFile.getAbsolutePath().lastIndexOf(File.separator));
+      File f = new File(path);
+      if(!f.exists()) {
+        f.mkdirs();
       }
       //Now that we have any possible backup made, lets go ahead and move this one over.
       FileUtil.copyFileToFile(pcfPage, pcfFile);
