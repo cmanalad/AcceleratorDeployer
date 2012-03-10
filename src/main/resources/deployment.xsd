@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xsd:schema
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://guidewire.com/accelerator/deployment"
+        elementFormDefault="qualified">
+
+    <xsd:element name="accelerator" type="accelerator" nillable="false"/>
+
+    <xsd:complexType name="accelerator">
+        <xsd:sequence>
+            <xsd:element name="pcfRoot" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gosuRoot" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="gunitRoot" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="antBuild" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="buildFile" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="library" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="pluginDirectory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
