@@ -1,6 +1,7 @@
 package com.guidewire.accel.util;
 
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * User: afogleson
@@ -8,6 +9,28 @@ import java.io.*;
  * Time: 5:57 PM
  */
 public class FileUtil {
+
+  public static File[] listFiles(File dir) {
+    ArrayList<File> fileList = new ArrayList<File>();
+    if(!dir.isDirectory()) {
+      fileList.add(dir);
+    }
+    else {
+      File[] files = dir.listFiles();
+      for(File f : files) {
+        if(f.isDirectory()) {
+          File[] innerFiles = FileUtil.listFiles(f);
+          for(File f1 : innerFiles) {
+            fileList.add(f1);
+          }
+        }
+        else {
+          fileList.add(f);
+        }
+      }
+    }
+    return fileList.toArray(new File[0]);
+  }
 
   /**
    * CHMOD a file

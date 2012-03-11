@@ -3,6 +3,8 @@ package com.guidewire.accel.parser;
 import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.deployment.impl.AntBuildComponent;
 import com.guidewire.accel.deployment.impl.MavenBuildComponent;
+import com.guidewire.accel.deployment.impl.PCFComponent;
+import com.guidewire.accel.util.FileUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -109,7 +111,23 @@ public class AcceleratorParser {
       AntBuildComponent component = new AntBuildComponent(buildFile, target);
       addToComponents(component);
     }
-
+    else if(node.getNodeName().equals("pcfRoot")) {
+      String directory = accelRoot.getAbsolutePath() + File.separator;
+      NodeList childDirs = node.getChildNodes();
+      for(int i=0; i<childDirs.getLength(); i++) {
+        Node pcfDir = childDirs.item(i);
+        if(node.getNodeName().equals("directory")) {
+          String pcfDirPath = node.getFirstChild().getNodeValue().trim();
+          File pcfDirectory = new File(directory + pcfDirPath);
+          //Get every file in the config directory....
+          File[] pcfFiles = FileUtil.listFiles(pcfDirectory);
+          for(File f : pcfFiles) {
+            PCFComponent component = new PCFComponent(f, accelRoot);
+            addToComponents(component);
+          }
+        }
+      }
+    }
   }
 
   private void addToComponents(DeployableComponent component) {
