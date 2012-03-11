@@ -35,7 +35,7 @@ public class PCFDeployerTest extends TestCase {
     out.close();
     helper.getProductRoot().mkdirs();
     PCFComponent component = new PCFComponent(pcfPage, new File(accelRootPath) );
-    component.deploy();
+    assertTrue(component.deploy());
     File copied = new File(helper.getProductRoot().getAbsolutePath() + pcfPath + "Claim/sample.pcf");
     File backup = new File(helper.getProductRoot().getAbsolutePath() + pcfPath + "Claim/sample.pcf.orig.bak");
     assertTrue("File was not found or did not deploy", copied.exists());
@@ -66,7 +66,7 @@ public class PCFDeployerTest extends TestCase {
     out.close();
     helper.getProductRoot().mkdirs();
     PCFComponent component = new PCFComponent(pcfPage, new File(accelRootPath) );
-    component.deploy();
+    assertTrue(component.deploy());
     File backup = new File(helper.getProductRoot().getAbsolutePath() + pcfPath + "Claim/sample.pcf.orig.bak");
     assertTrue("File was not found or did not deploy", copied.exists());
     assertTrue("File was not found or did not deploy", backup.exists());
