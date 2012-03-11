@@ -1,0 +1,10 @@
+<accelerator>
+    <mavenBuild>
+        <directory>.</directory>
+        <goals>clean</goals>
+    </mavenBuild>
+    <antBuild>
+        <buildFile>../build.xml</buildFile>
+        <target>test</target>
+    </antBuild>
+</accelerator>
