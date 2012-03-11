@@ -1,0 +1,5 @@
+This is the start of my work on a deployer/undeployer for Guidewire Accelerators. Note that this work does not take existing Accelerators
+and deploy themn, but requires a deployment descriptor to work. It is expected though that most accelerators can easily be set up with a 
+deployment descriptor and deployed. Although this project includes an undeployment of accelerators the process of undeploying an accelerator
+can leave your product configuration in a state where there product will not start, or may not work as expected, so manual checking of the
+configuration should be undertaken before committing changes after an undeployment. 
