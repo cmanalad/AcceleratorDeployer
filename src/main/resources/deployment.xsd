@@ -8,28 +8,28 @@
 
     <xsd:complexType name="accelerator">
         <xsd:sequence>
-            <xsd:element name="pcfRoot" minOccurs="0">
+            <xsd:element name="pcfRoot" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="gosuRoot" minOccurs="0">
+            <xsd:element name="gosuRoot" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="gunitRoot" minOccurs="0">
+            <xsd:element name="gunitRoot" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="antBuild" minOccurs="0">
+            <xsd:element name="antBuild" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
@@ -38,7 +38,7 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="library" minOccurs="0">
+            <xsd:element name="library" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
@@ -46,7 +46,7 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="mavenBuild" minOccurs="0">
+            <xsd:element name="mavenBuild" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
@@ -54,14 +54,14 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="dataExtension" minOccurs="0">
+            <xsd:element name="dataExtension" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
-            <xsd:element name="messageQueue" minOccurs="0">
+            <xsd:element name="messageQueue" minOccurs="0" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element name="requestName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
@@ -80,7 +80,9 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
+            <xsd:element name="plugin" minOccurs="0" maxOccurs="unbounded">
 
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
 </xsd:schema>
