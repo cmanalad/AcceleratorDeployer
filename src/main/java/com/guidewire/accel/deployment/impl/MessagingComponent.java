@@ -23,7 +23,7 @@ public class MessagingComponent implements DeployableComponent {
   private int pollInterval = 10000;
   private int initialRetryInterval = 1000;
   private int maxRetries = 3;
-  private int retyBackoffMultiplier = 2;
+  private int retryBackoffMultiplier = 2;
   private int numberThreads = 3;
   private int chunkSize = 100000;
   private int shutdownTimeout = 30000;
@@ -79,12 +79,12 @@ public class MessagingComponent implements DeployableComponent {
     this.maxRetries = maxRetries;
   }
 
-  public int getRetyBackoffMultiplier() {
-    return retyBackoffMultiplier;
+  public int getRetryBackoffMultiplier() {
+    return retryBackoffMultiplier;
   }
 
-  public void setRetyBackoffMultiplier(int retyBackoffMultiplier) {
-    this.retyBackoffMultiplier = retyBackoffMultiplier;
+  public void setRetryBackoffMultiplier(int retryBackoffMultiplier) {
+    this.retryBackoffMultiplier = retryBackoffMultiplier;
   }
 
   public int getNumberThreads() {

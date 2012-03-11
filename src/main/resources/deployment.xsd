@@ -34,6 +34,7 @@
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                         <xsd:element name="buildFile" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="target" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
@@ -42,6 +43,32 @@
                     <xsd:sequence>
                         <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
                         <xsd:element name="pluginDirectory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="dataExtension" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="messageQueue" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="requestName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="requestType" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="transportName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="transportType" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="replyName" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="replyType" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="pollInterval" minOccurs="1" maxOccurs="1" type="xsd:long"/>
+                        <xsd:element name="initialRetryInterval" minOccurs="1" maxOccurs="1" type="xsd:long"/>
+                        <xsd:element name="maxRetries" minOccurs="1" maxOccurs="1" type="xsd:long"/>
+                        <xsd:element name="retryBackoffMultiplier" minOccurs="1" maxOccurs="1" type="xsd:long"/>
+                        <xsd:element name="numberThreads" minOccurs="1" maxOccurs="1" type="xsd:long"/>
+                        <xsd:element name="chunkSize" minOccurs="1" maxOccurs="1" type="xsd:long"/>
+                        <xsd:element name="shutdownTimeout" minOccurs="1" maxOccurs="1" type="xsd:long"/>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
