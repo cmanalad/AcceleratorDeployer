@@ -46,6 +46,14 @@
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>
+            <xsd:element name="mavenBuild" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="directory" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                        <xsd:element name="goals" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
             <xsd:element name="dataExtension" minOccurs="0">
                 <xsd:complexType>
                     <xsd:sequence>
