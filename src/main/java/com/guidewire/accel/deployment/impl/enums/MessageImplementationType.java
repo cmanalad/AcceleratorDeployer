@@ -1,4 +1,4 @@
-package com.guidewire.accel.deployment.impl;
+package com.guidewire.accel.deployment.impl.enums;
 
 /**
  * User: afogleson

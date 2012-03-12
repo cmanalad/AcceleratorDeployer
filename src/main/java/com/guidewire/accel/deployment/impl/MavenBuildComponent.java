@@ -46,4 +46,9 @@ public class MavenBuildComponent implements DeployableComponent {
     }
     return deployed;
   }
+
+  @Override
+  public String getComponentName() {
+    return "mavenBuildComponent";
+  }
 }

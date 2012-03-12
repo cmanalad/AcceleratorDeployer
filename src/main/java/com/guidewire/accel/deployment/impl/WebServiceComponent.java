@@ -13,6 +13,11 @@ public class WebServiceComponent implements DeployableComponent {
 
   @Override
   public boolean deploy() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
+  }
+
+  @Override
+  public String getComponentName() {
+    return "webServiceComponent";
   }
 }

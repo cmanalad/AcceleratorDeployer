@@ -9,8 +9,20 @@ import com.guidewire.accel.deployment.DeployableComponent;
  */
 public class DataExtensionComponent implements DeployableComponent {
 
+  /**
+   *
+   * Deploying a data extension is a bit more arduous than just copying an eti or etx file.
+   *
+   *
+   * @return
+   */
   @Override
   public boolean deploy() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
+  }
+
+  @Override
+  public String getComponentName() {
+    return "dataExtensionComponent";
   }
 }

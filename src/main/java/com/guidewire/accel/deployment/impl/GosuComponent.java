@@ -31,4 +31,9 @@ public class GosuComponent implements DeployableComponent {
   public boolean deploy() {
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
+
+  @Override
+  public String getComponentName() {
+    return "gosuComponent";
+  }
 }

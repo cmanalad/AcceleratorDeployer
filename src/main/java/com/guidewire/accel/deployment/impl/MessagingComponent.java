@@ -1,6 +1,7 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
+import com.guidewire.accel.deployment.impl.enums.MessageImplementationType;
 import com.guidewire.accel.parser.Messaging.MessagingConfigParser;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
@@ -370,6 +371,8 @@ public class MessagingComponent implements DeployableComponent {
     if (dest != null) {
       //What are we going to do on this failure? there are likely efr that rely on this destinationID
     }
+    //if we assume we fail when the destinationID is in use.....
+    //go ahead and get ready to deploy everything.
     String requestPluginXml = null;
     String transportPluginXml = null;
     String replyPluginXml = null;
@@ -385,11 +388,17 @@ public class MessagingComponent implements DeployableComponent {
       replyPluginXml = generatePluginXml(replyName, replyClass, replyParams, replyType, replyPluginDir, "Reply");
     }
 
-    //SO first lets
+    //So, now we have all the plugin.xml we need to create a new destination and add it to our messaging config.
 
-    //plugins go in productRoot + registrydir + pluginName + .xml
+
+    //plugins go in productRoot + /modules/configuration/config/olugins/registry + pluginName + .xml
 
 
     return false;
+  }
+
+  @Override
+  public String getComponentName() {
+    return "messagingComponent";
   }
 }

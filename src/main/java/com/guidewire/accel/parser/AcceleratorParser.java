@@ -5,6 +5,7 @@ import com.guidewire.accel.deployment.impl.AntBuildComponent;
 import com.guidewire.accel.deployment.impl.GosuComponent;
 import com.guidewire.accel.deployment.impl.MavenBuildComponent;
 import com.guidewire.accel.deployment.impl.PCFComponent;
+import com.guidewire.accel.deployment.util.ComponentList;
 import com.guidewire.accel.util.FileUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -25,13 +26,13 @@ import java.util.ArrayList;
 public class AcceleratorParser {
 
   private File accelRoot;
-  private ArrayList<DeployableComponent> components;
+  private ComponentList components = new ComponentList();
 
   public AcceleratorParser(File accelRoot) {
     this.accelRoot = accelRoot;
   }
 
-  public ArrayList<DeployableComponent> getAcceleratorComponents() {
+  public ComponentList getAcceleratorComponents() {
     return components;
   }
 
@@ -92,7 +93,8 @@ public class AcceleratorParser {
       }
       MavenBuildComponent component = new MavenBuildComponent(new File(directory), goals);
       addToComponents(component);
-    } else if (node.getNodeName().equals("antBuild")) {
+    }
+    else if (node.getNodeName().equals("antBuild")) {
       String directory = accelRoot.getAbsolutePath() + File.separator;
       File buildFile = new File(directory + "build.xml");
       String target = "";
@@ -160,9 +162,6 @@ public class AcceleratorParser {
   }
 
   private void addToComponents(DeployableComponent component) {
-    if (components == null) {
-      components = new ArrayList<DeployableComponent>();
-    }
-    components.add(component);
+    components.addComponent(component);
   }
 }

@@ -43,4 +43,9 @@ public class PCFComponent implements DeployableComponent {
     }
     return deployed;
   }
+
+  @Override
+  public String getComponentName() {
+    return "pcfComponent";
+  }
 }

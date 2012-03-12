@@ -12,11 +12,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 
 /**
- * Created by IntelliJ IDEA.
+ *
  * User: tp23161
  * Date: 12/03/12
  * Time: 13:53
- * To change this template use File | Settings | File Templates.
+ *
  */
 public class MessagingConfigParser {
 

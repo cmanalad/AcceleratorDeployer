@@ -30,5 +30,8 @@ public class LibraryComponent implements DeployableComponent {
     return false;
   }
 
-
+  @Override
+  public String getComponentName() {
+    return "libraryComponent";
+  }
 }

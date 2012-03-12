@@ -48,4 +48,9 @@ public class AntBuildComponent implements DeployableComponent {
     }
     return success;
   }
+
+  @Override
+  public String getComponentName() {
+    return "antBuildComponent";
+  }
 }
