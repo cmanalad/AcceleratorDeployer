@@ -4,7 +4,9 @@ import com.guidewire.accel.deployment.DeployableComponent;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,21 +27,42 @@ public class DisplayKeyComponent implements DeployableComponent {
    */
   @Override
   public boolean deploy() {
-    //figure out our displaykeys. Need to check for locales.
+    //figure out our displaykeys. Need to check for locales. find the right display.properties and then modify it.
+
+    FileInputStream in = null;
+    FileOutputStream out = null;
 
     try {
       Properties props = new Properties();
-      FileInputStream in = new FileInputStream(displaykeys);
+      in = new FileInputStream(displaykeys);
       props.load(in);
       in.close();
       Properties prodKeys = new Properties();
 
-
       //we now have our displaykeys.
-
+      Set<Object> keys = props.keySet();
+      for(Object key : keys) {
+        Object val = props.get(key);
+        prodKeys.put(key, val);
+      }
+      out = null;
+      prodKeys.store(out, null);
+      out.flush();
     }
     catch(Throwable t) {
 
+    }
+    finally {
+      try {
+        in.close();
+      }
+      catch(Throwable t) {
+      }
+      try {
+        out.close();
+      }
+      catch(Throwable t) {
+      }
     }
     return false;  //To change body of implemented methods use File | Settings | File Templates.
   }
