@@ -16,6 +16,6 @@ public class AcceleratorParserTest extends TestCase {
     AcceleratorParser parser = new AcceleratorParser(new File("src/test/resources/sample"));
     parser.parseAccelerator();
     assertNotNull(parser.getAcceleratorComponents());
-    assertEquals(2, parser.getAcceleratorComponents().size());
+    assertEquals(2, parser.getAcceleratorComponents().getAllComponents().length);
   }
 }
