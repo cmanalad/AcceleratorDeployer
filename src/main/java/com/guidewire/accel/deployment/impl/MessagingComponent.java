@@ -1,6 +1,10 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
+import com.guidewire.accel.parser.Messaging.MessagingConfigParser;
+import com.guidewire.accel.parser.Messaging.pojo.Destination;
+import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
+import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.NameValuePair;
 import com.sun.corba.se.impl.orbutil.fsm.NameBase;
 
@@ -30,14 +34,129 @@ public class MessagingComponent implements DeployableComponent {
   private String replyClass;
   private String replyPluginDir;
   private ArrayList<NameValuePair> replyParams;
-  private int pollInterval = 10000;
-  private int initialRetryInterval = 1000;
-  private int maxRetries = 3;
-  private int retryBackoffMultiplier = 2;
-  private int numberThreads = 3;
-  private int chunkSize = 100000;
-  private int shutdownTimeout = 30000;
+  private int pollInterval = 0;
+  private int initialRetryInterval = 0;
+  private int maxRetries = 0;
+  private int retryBackoffMultiplier = 0;
+  private int numberThreads = 0;
+  private int chunkSize = 0;
+  private int shutdownTimeout = 0;
+
+    public String getRegistryDir() {
+        return registryDir;
+    }
+
+    public void setRegistryDir(String registryDir) {
+        this.registryDir = registryDir;
+    }
+
+    public String getRequestName() {
+        return requestName;
+    }
+
+    public void setRequestName(String requestName) {
+        this.requestName = requestName;
+    }
+
+    public String getRequestClass() {
+        return requestClass;
+    }
+
+    public void setRequestClass(String requestClass) {
+        this.requestClass = requestClass;
+    }
+
+    public String getRequestPluginDir() {
+        return requestPluginDir;
+    }
+
+    public void setRequestPluginDir(String requestPluginDir) {
+        this.requestPluginDir = requestPluginDir;
+    }
+
+    public ArrayList<NameValuePair> getRequestParams() {
+        return requestParams;
+    }
+
+    public void setRequestParams(ArrayList<NameValuePair> requestParams) {
+        this.requestParams = requestParams;
+    }
+
+    public String getTransportName() {
+        return transportName;
+    }
+
+    public void setTransportName(String transportName) {
+        this.transportName = transportName;
+    }
+
+    public String getTransportClass() {
+        return transportClass;
+    }
+
+    public void setTransportClass(String transportClass) {
+        this.transportClass = transportClass;
+    }
+
+    public String getTransportPluginDir() {
+        return transportPluginDir;
+    }
+
+    public void setTransportPluginDir(String transportPluginDir) {
+        this.transportPluginDir = transportPluginDir;
+    }
+
+    public ArrayList<NameValuePair> getTransportParams() {
+        return transportParams;
+    }
+
+    public void setTransportParams(ArrayList<NameValuePair> transportParams) {
+        this.transportParams = transportParams;
+    }
+
+    public String getReplyName() {
+        return replyName;
+    }
+
+    public void setReplyName(String replyName) {
+        this.replyName = replyName;
+    }
+
+    public String getReplyClass() {
+        return replyClass;
+    }
+
+    public void setReplyClass(String replyClass) {
+        this.replyClass = replyClass;
+    }
+
+    public String getReplyPluginDir() {
+        return replyPluginDir;
+    }
+
+    public void setReplyPluginDir(String replyPluginDir) {
+        this.replyPluginDir = replyPluginDir;
+    }
+
+    public ArrayList<NameValuePair> getReplyParams() {
+        return replyParams;
+    }
+
+    public void setReplyParams(ArrayList<NameValuePair> replyParams) {
+        this.replyParams = replyParams;
+    }
+
+    public int getDestination() {
+        return destination;
+    }
+
+    public void setDestination(int destination) {
+        this.destination = destination;
+    }
+
+    private int destination = 0;
   private boolean enabled = true;
+  
   private ArrayList<String> events = new ArrayList<String>();
 
   //Basic setters and getters for the types
@@ -244,12 +363,20 @@ public class MessagingComponent implements DeployableComponent {
     return xml.toString();
   }
 
-
   @Override
   public boolean deploy() {
+
+    //First lets make sure there is an open queue. that is that the selected destination is not already used.
+    MessagingConfigParser parser = new MessagingConfigParser(AcceleratorHelper.getInstance().getProductRoot());
+    MessagingConfig msgConfig = parser.getMessageConfig();
+    Destination dest = msgConfig.getDestinationById(getDestination());
+    if(dest != null) {
+        //What are we going to do on this failure? there are likely efr that rely on this destinationID
+    }
     String requestPluginXml   = null;
     String transportPluginXml = null;
     String replyPluginXml     = null;
+
 
     if(requestClass != null) {
       requestPluginXml = generatePluginXml(requestName, requestClass, requestParams, requestType, requestPluginDir, "Request");
@@ -260,6 +387,8 @@ public class MessagingComponent implements DeployableComponent {
     if(replyClass != null) {
       replyPluginXml = generatePluginXml(replyName, replyClass, replyParams, replyType, replyPluginDir, "Reply");
     }
+
+    //SO first lets
 
     //plugins go in productRoot + registrydir + pluginName + .xml
 
