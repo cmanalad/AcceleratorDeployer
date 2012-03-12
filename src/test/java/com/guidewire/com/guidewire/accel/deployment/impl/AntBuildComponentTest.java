@@ -6,11 +6,9 @@ import junit.framework.TestCase;
 import java.io.File;
 
 /**
- *
  * User: afogleson
  * Date: 3/11/12
  * Time: 12:04 AM
- *
  */
 public class AntBuildComponentTest extends TestCase {
 

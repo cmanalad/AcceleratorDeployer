@@ -1,11 +1,9 @@
 package com.guidewire.accel.util;
 
 /**
- *
  * User: afogleson
  * Date: 3/11/12
  * Time: 9:53 PM
- *
  */
 public class NameValuePair {
 

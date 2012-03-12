@@ -6,7 +6,6 @@ import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
 import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.NameValuePair;
-import com.sun.corba.se.impl.orbutil.fsm.NameBase;
 
 import java.util.ArrayList;
 
@@ -42,121 +41,121 @@ public class MessagingComponent implements DeployableComponent {
   private int chunkSize = 0;
   private int shutdownTimeout = 0;
 
-    public String getRegistryDir() {
-        return registryDir;
-    }
+  public String getRegistryDir() {
+    return registryDir;
+  }
 
-    public void setRegistryDir(String registryDir) {
-        this.registryDir = registryDir;
-    }
+  public void setRegistryDir(String registryDir) {
+    this.registryDir = registryDir;
+  }
 
-    public String getRequestName() {
-        return requestName;
-    }
+  public String getRequestName() {
+    return requestName;
+  }
 
-    public void setRequestName(String requestName) {
-        this.requestName = requestName;
-    }
+  public void setRequestName(String requestName) {
+    this.requestName = requestName;
+  }
 
-    public String getRequestClass() {
-        return requestClass;
-    }
+  public String getRequestClass() {
+    return requestClass;
+  }
 
-    public void setRequestClass(String requestClass) {
-        this.requestClass = requestClass;
-    }
+  public void setRequestClass(String requestClass) {
+    this.requestClass = requestClass;
+  }
 
-    public String getRequestPluginDir() {
-        return requestPluginDir;
-    }
+  public String getRequestPluginDir() {
+    return requestPluginDir;
+  }
 
-    public void setRequestPluginDir(String requestPluginDir) {
-        this.requestPluginDir = requestPluginDir;
-    }
+  public void setRequestPluginDir(String requestPluginDir) {
+    this.requestPluginDir = requestPluginDir;
+  }
 
-    public ArrayList<NameValuePair> getRequestParams() {
-        return requestParams;
-    }
+  public ArrayList<NameValuePair> getRequestParams() {
+    return requestParams;
+  }
 
-    public void setRequestParams(ArrayList<NameValuePair> requestParams) {
-        this.requestParams = requestParams;
-    }
+  public void setRequestParams(ArrayList<NameValuePair> requestParams) {
+    this.requestParams = requestParams;
+  }
 
-    public String getTransportName() {
-        return transportName;
-    }
+  public String getTransportName() {
+    return transportName;
+  }
 
-    public void setTransportName(String transportName) {
-        this.transportName = transportName;
-    }
+  public void setTransportName(String transportName) {
+    this.transportName = transportName;
+  }
 
-    public String getTransportClass() {
-        return transportClass;
-    }
+  public String getTransportClass() {
+    return transportClass;
+  }
 
-    public void setTransportClass(String transportClass) {
-        this.transportClass = transportClass;
-    }
+  public void setTransportClass(String transportClass) {
+    this.transportClass = transportClass;
+  }
 
-    public String getTransportPluginDir() {
-        return transportPluginDir;
-    }
+  public String getTransportPluginDir() {
+    return transportPluginDir;
+  }
 
-    public void setTransportPluginDir(String transportPluginDir) {
-        this.transportPluginDir = transportPluginDir;
-    }
+  public void setTransportPluginDir(String transportPluginDir) {
+    this.transportPluginDir = transportPluginDir;
+  }
 
-    public ArrayList<NameValuePair> getTransportParams() {
-        return transportParams;
-    }
+  public ArrayList<NameValuePair> getTransportParams() {
+    return transportParams;
+  }
 
-    public void setTransportParams(ArrayList<NameValuePair> transportParams) {
-        this.transportParams = transportParams;
-    }
+  public void setTransportParams(ArrayList<NameValuePair> transportParams) {
+    this.transportParams = transportParams;
+  }
 
-    public String getReplyName() {
-        return replyName;
-    }
+  public String getReplyName() {
+    return replyName;
+  }
 
-    public void setReplyName(String replyName) {
-        this.replyName = replyName;
-    }
+  public void setReplyName(String replyName) {
+    this.replyName = replyName;
+  }
 
-    public String getReplyClass() {
-        return replyClass;
-    }
+  public String getReplyClass() {
+    return replyClass;
+  }
 
-    public void setReplyClass(String replyClass) {
-        this.replyClass = replyClass;
-    }
+  public void setReplyClass(String replyClass) {
+    this.replyClass = replyClass;
+  }
 
-    public String getReplyPluginDir() {
-        return replyPluginDir;
-    }
+  public String getReplyPluginDir() {
+    return replyPluginDir;
+  }
 
-    public void setReplyPluginDir(String replyPluginDir) {
-        this.replyPluginDir = replyPluginDir;
-    }
+  public void setReplyPluginDir(String replyPluginDir) {
+    this.replyPluginDir = replyPluginDir;
+  }
 
-    public ArrayList<NameValuePair> getReplyParams() {
-        return replyParams;
-    }
+  public ArrayList<NameValuePair> getReplyParams() {
+    return replyParams;
+  }
 
-    public void setReplyParams(ArrayList<NameValuePair> replyParams) {
-        this.replyParams = replyParams;
-    }
+  public void setReplyParams(ArrayList<NameValuePair> replyParams) {
+    this.replyParams = replyParams;
+  }
 
-    public int getDestination() {
-        return destination;
-    }
+  public int getDestination() {
+    return destination;
+  }
 
-    public void setDestination(int destination) {
-        this.destination = destination;
-    }
+  public void setDestination(int destination) {
+    this.destination = destination;
+  }
 
-    private int destination = 0;
+  private int destination = 0;
   private boolean enabled = true;
-  
+
   private ArrayList<String> events = new ArrayList<String>();
 
   //Basic setters and getters for the types
@@ -267,60 +266,60 @@ public class MessagingComponent implements DeployableComponent {
   }
 
   public void addRequestParameter(NameValuePair nvp) {
-    if(requestParams == null) {
+    if (requestParams == null) {
       requestParams = new ArrayList<NameValuePair>();
     }
     requestParams.add(nvp);
   }
 
   public void addTransportParameter(NameValuePair nvp) {
-    if(transportParams == null) {
+    if (transportParams == null) {
       transportParams = new ArrayList<NameValuePair>();
     }
     transportParams.add(nvp);
   }
+
   public void addReplyParameter(NameValuePair nvp) {
-    if(replyParams == null) {
+    if (replyParams == null) {
       replyParams = new ArrayList<NameValuePair>();
     }
     replyParams.add(nvp);
   }
 
   /**
-   *
    * We need to do something like this....
    * <?xml version="1.0"?>
    * <plugin
-   *   interface="MessageTransport"
-   *   name="TestTransport">
-   *   <plugin-java
-   *     javaclass="com.lv.nucleus.java.transport.TestTransport"
-   *     plugindir="pidir"/>
+   * interface="MessageTransport"
+   * name="TestTransport">
+   * <plugin-java
+   * javaclass="com.lv.nucleus.java.transport.TestTransport"
+   * plugindir="pidir"/>
    * </plugin>
    * or
-   *
+   * <p/>
    * <plugin
-   *   interface="MessageTransport"
-   *   name="CueTransportPlugin">
-   *   <plugin-gosu
-   *     gosuclass="com.lv.nucleus.cue.messaging.plugins.CUETransportPlugin">
-   *     <param
-   *       name="UserName"
-   *       value="su"/>
-   *     <param
-   *       name="Password"
-   *       value="gw"/>
-   *   </plugin-gosu>
+   * interface="MessageTransport"
+   * name="CueTransportPlugin">
+   * <plugin-gosu
+   * gosuclass="com.lv.nucleus.cue.messaging.plugins.CUETransportPlugin">
+   * <param
+   * name="UserName"
+   * value="su"/>
+   * <param
+   * name="Password"
+   * value="gw"/>
+   * </plugin-gosu>
    * </plugin>
-   *
+   * <p/>
    * For each of the plugins. we also need to set up the message queue.
    *
    * @return true if we succeed doing all this.
    */
 
-  private String generatePluginXml(String name,                     String className,
+  private String generatePluginXml(String name, String className,
                                    ArrayList<NameValuePair> params, MessageImplementationType type,
-                                   String pluginDir,                String pluginType) {
+                                   String pluginDir, String pluginType) {
     StringBuilder xml = new StringBuilder();
     xml.append("<?xml version=\"1.0\"?>\n");
     xml.append("<plugin\n  interface=\"Message");
@@ -328,16 +327,15 @@ public class MessagingComponent implements DeployableComponent {
     xml.append("\"\n  name=\"");
     xml.append(name);
     xml.append("\">\n");
-    if(type == MessageImplementationType.gosu) {
+    if (type == MessageImplementationType.gosu) {
       xml.append("  <plugin-gosu\n    gosuclass=\"");
       xml.append(className);
       xml.append("\">\n");
-    }
-    else {
+    } else {
       xml.append("  <plugin-java\n    javaclass=\"");
       xml.append(className);
       xml.append("\"");
-      if(pluginDir != null) {
+      if (pluginDir != null) {
         xml.append("\n    plugindir=\"");
         xml.append(pluginDir);
         xml.append("\"");
@@ -345,8 +343,8 @@ public class MessagingComponent implements DeployableComponent {
       xml.append(">\n");
     }
     //Handle parameters
-    if(params != null && !params.isEmpty()) {
-      for(NameValuePair nvp : params) {
+    if (params != null && !params.isEmpty()) {
+      for (NameValuePair nvp : params) {
         xml.append("    <param\n      name=\"");
         xml.append(nvp.getName());
         xml.append("\"\n      value=\"");
@@ -354,10 +352,9 @@ public class MessagingComponent implements DeployableComponent {
         xml.append("\"/>\n");
       }
     }
-    if(type == MessageImplementationType.gosu) {
+    if (type == MessageImplementationType.gosu) {
       xml.append("</plugin-gosu>\n</plugin>");
-    }
-    else {
+    } else {
       xml.append("</plugin-java>\n</plugin>");
     }
     return xml.toString();
@@ -370,21 +367,21 @@ public class MessagingComponent implements DeployableComponent {
     MessagingConfigParser parser = new MessagingConfigParser(AcceleratorHelper.getInstance().getProductRoot());
     MessagingConfig msgConfig = parser.getMessageConfig();
     Destination dest = msgConfig.getDestinationById(getDestination());
-    if(dest != null) {
-        //What are we going to do on this failure? there are likely efr that rely on this destinationID
+    if (dest != null) {
+      //What are we going to do on this failure? there are likely efr that rely on this destinationID
     }
-    String requestPluginXml   = null;
+    String requestPluginXml = null;
     String transportPluginXml = null;
-    String replyPluginXml     = null;
+    String replyPluginXml = null;
 
 
-    if(requestClass != null) {
+    if (requestClass != null) {
       requestPluginXml = generatePluginXml(requestName, requestClass, requestParams, requestType, requestPluginDir, "Request");
     }
-    if(transportClass != null) {
+    if (transportClass != null) {
       transportPluginXml = generatePluginXml(transportName, transportClass, transportParams, transportType, transportPluginDir, "Transport");
     }
-    if(replyClass != null) {
+    if (replyClass != null) {
       replyPluginXml = generatePluginXml(replyName, replyClass, replyParams, replyType, replyPluginDir, "Reply");
     }
 

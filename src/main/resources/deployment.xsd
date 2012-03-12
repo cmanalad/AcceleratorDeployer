@@ -1,125 +1,130 @@
 <?xml version="1.0"?>
-<xsd:schema elementFormDefault="qualified" targetNamespace="http://guidewire.com/accelerator/deployment" xmlns:editix="http://guidewire.com/accelerator/deployment" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<xsd:element name="accelerator" nillable="false" type="accelerator"/>
-	<xsd:complexType name="accelerator">
-		<xsd:sequence>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="pcfRoot">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="gosuRoot">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="gunitRoot">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="antBuild">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="buildFile" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="target" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="library">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="pluginDirectory" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="mavenBuild">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="goals" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="dataExtension">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="messageQueue">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="1" name="requestName" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="requestType" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="0" name="requestParameters">
-							<xsd:complexType>
-								<xsd:sequence>
-									<xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter" type="nameValuePair"/>
-								</xsd:sequence>
-							</xsd:complexType>
-						</xsd:element>
-						<xsd:element maxOccurs="1" minOccurs="1" name="transportName" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="transportType" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="0" name="transportParameters">
-							<xsd:complexType>
-								<xsd:sequence>
-									<xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter" type="nameValuePair"/>
-								</xsd:sequence>
-							</xsd:complexType>
-						</xsd:element>
-						<xsd:element maxOccurs="1" minOccurs="0" name="events">
-							<xsd:complexType>
-								<xsd:sequence>
-									<xsd:element maxOccurs="unbounded" minOccurs="1" name="eventName" type="xsd:string"/>
-								</xsd:sequence>
-							</xsd:complexType>
-						</xsd:element>
-						<xsd:element maxOccurs="1" minOccurs="1" name="replyName" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="replyType" type="xsd:string"/>
-						<xsd:element maxOccurs="1" minOccurs="0" name="replyParameters">
-							<xsd:complexType>
-								<xsd:sequence>
-									<xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter" type="nameValuePair"/>
-								</xsd:sequence>
-							</xsd:complexType>
-						</xsd:element>
-						<xsd:element maxOccurs="1" minOccurs="0" name="disabled" type="xsd:boolean"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="pollInterval" type="xsd:long"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="initialRetryInterval" type="xsd:long"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="maxRetries" type="xsd:long"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="retryBackoffMultiplier" type="xsd:long"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="numberThreads" type="xsd:long"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="chunkSize" type="xsd:long"/>
-						<xsd:element maxOccurs="1" minOccurs="1" name="shutdownTimeout" type="xsd:long"/>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="destination" type="xsd:integer" />
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-			<xsd:element maxOccurs="unbounded" minOccurs="0" name="plugin">
-				<xsd:complexType>
-					<xsd:sequence>
-						<xsd:element maxOccurs="1" minOccurs="0" name="interface" type="xsd:string"/>
-                        <xsd:element maxOccurs="1"  minOccurs="1" name="name" type="xsd:string" />
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://guidewire.com/accelerator/deployment"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="accelerator" nillable="false" type="accelerator"/>
+    <xsd:complexType name="accelerator">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="pcfRoot">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="gosuRoot">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="gunitRoot">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="antBuild">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="buildFile" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="target" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="library">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="pluginDirectory" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="mavenBuild">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="goals" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="dataExtension">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="directory" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="messageQueue">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="requestName" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="requestType" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="0" name="requestParameters">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
+                                                 type="nameValuePair"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="transportName" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="transportType" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="0" name="transportParameters">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
+                                                 type="nameValuePair"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element maxOccurs="1" minOccurs="0" name="events">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="eventName"
+                                                 type="xsd:string"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="replyName" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="replyType" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="0" name="replyParameters">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
+                                                 type="nameValuePair"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element maxOccurs="1" minOccurs="0" name="disabled" type="xsd:boolean"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="pollInterval" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="initialRetryInterval" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="maxRetries" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="retryBackoffMultiplier" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="numberThreads" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="chunkSize" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="shutdownTimeout" type="xsd:long"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="destination" type="xsd:integer"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="plugin">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="1" minOccurs="0" name="interface" type="xsd:string"/>
+                        <xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string"/>
 
-					</xsd:sequence>
-				</xsd:complexType>
-			</xsd:element>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="nameValuePair">
-		<xsd:sequence>
-			<xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string"/>
-			<xsd:element maxOccurs="1" minOccurs="1" name="value" type="xsd:string"/>
-		</xsd:sequence>
-	</xsd:complexType>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="nameValuePair">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string"/>
+            <xsd:element maxOccurs="1" minOccurs="1" name="value" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
 </xsd:schema>

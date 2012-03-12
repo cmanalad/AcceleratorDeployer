@@ -11,187 +11,186 @@ import java.util.ArrayList;
  */
 public class Destination {
 
-    private int id;
-    private boolean enabled = true;
-    private String name;
-    private String requestPlugin;
-    private String replyPlugin;
-    private String transportPlugin;
-    private int numSenderThreads = 0;
-    private long initialRetryInterval = 0;
-    private int maxRetries = 0;
-    private long pollInterval = 0;
-    private int retryBackoffMultiplier = 0;
-    private long chunkSize = 0;
-    private long shutdownTimeout = 0;
+  private int id;
+  private boolean enabled = true;
+  private String name;
+  private String requestPlugin;
+  private String replyPlugin;
+  private String transportPlugin;
+  private int numSenderThreads = 0;
+  private long initialRetryInterval = 0;
+  private int maxRetries = 0;
+  private long pollInterval = 0;
+  private int retryBackoffMultiplier = 0;
+  private long chunkSize = 0;
+  private long shutdownTimeout = 0;
 
-    private ArrayList<Event> events = new ArrayList<Event>();
+  private ArrayList<Event> events = new ArrayList<Event>();
 
-    public long getChunkSize() {
-        return chunkSize;
-    }
+  public long getChunkSize() {
+    return chunkSize;
+  }
 
-    public void setChunkSize(long chunkSize) {
-        this.chunkSize = chunkSize;
-    }
+  public void setChunkSize(long chunkSize) {
+    this.chunkSize = chunkSize;
+  }
 
-    public long getShutdownTimeout() {
-        return shutdownTimeout;
-    }
+  public long getShutdownTimeout() {
+    return shutdownTimeout;
+  }
 
-    public void setShutdownTimeout(long shutdownTimeout) {
-        this.shutdownTimeout = shutdownTimeout;
-    }
+  public void setShutdownTimeout(long shutdownTimeout) {
+    this.shutdownTimeout = shutdownTimeout;
+  }
 
-    public ArrayList<Event> getEvents() {
-        return events;
-    }
+  public ArrayList<Event> getEvents() {
+    return events;
+  }
 
-    public boolean getEnabled() {
-        return enabled;
-    }
-    
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+  public boolean getEnabled() {
+    return enabled;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setEnabled(boolean enabled) {
+    this.enabled = enabled;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public String getRequestPlugin() {
-        return requestPlugin;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setRequestPlugin(String requestPlugin) {
-        this.requestPlugin = requestPlugin;
-    }
+  public String getRequestPlugin() {
+    return requestPlugin;
+  }
 
-    public String getReplyPlugin() {
-        return replyPlugin;
-    }
+  public void setRequestPlugin(String requestPlugin) {
+    this.requestPlugin = requestPlugin;
+  }
 
-    public void setReplyPlugin(String replyPlugin) {
-        this.replyPlugin = replyPlugin;
-    }
+  public String getReplyPlugin() {
+    return replyPlugin;
+  }
 
-    public String getTransportPlugin() {
-        return transportPlugin;
-    }
+  public void setReplyPlugin(String replyPlugin) {
+    this.replyPlugin = replyPlugin;
+  }
 
-    public void setTransportPlugin(String transportPlugin) {
-        this.transportPlugin = transportPlugin;
-    }
+  public String getTransportPlugin() {
+    return transportPlugin;
+  }
 
-    public int getNumSenderThreads() {
-        return numSenderThreads;
-    }
+  public void setTransportPlugin(String transportPlugin) {
+    this.transportPlugin = transportPlugin;
+  }
 
-    public void setNumSenderThreads(int numSenderThreads) {
-        this.numSenderThreads = numSenderThreads;
-    }
+  public int getNumSenderThreads() {
+    return numSenderThreads;
+  }
 
-    public long getInitialRetryInterval() {
-        return initialRetryInterval;
-    }
+  public void setNumSenderThreads(int numSenderThreads) {
+    this.numSenderThreads = numSenderThreads;
+  }
 
-    public void setInitialRetryInterval(long initialRetryInterval) {
-        this.initialRetryInterval = initialRetryInterval;
-    }
+  public long getInitialRetryInterval() {
+    return initialRetryInterval;
+  }
 
-    public int getMaxRetries() {
-        return maxRetries;
-    }
+  public void setInitialRetryInterval(long initialRetryInterval) {
+    this.initialRetryInterval = initialRetryInterval;
+  }
 
-    public void setMaxRetries(int maxRetries) {
-        this.maxRetries = maxRetries;
-    }
+  public int getMaxRetries() {
+    return maxRetries;
+  }
 
-    public long getPollInterval() {
-        return pollInterval;
-    }
+  public void setMaxRetries(int maxRetries) {
+    this.maxRetries = maxRetries;
+  }
 
-    public void setPollInterval(long pollInterval) {
-        this.pollInterval = pollInterval;
-    }
+  public long getPollInterval() {
+    return pollInterval;
+  }
 
-    public int getRetryBackoffMultiplier() {
-        return retryBackoffMultiplier;
-    }
+  public void setPollInterval(long pollInterval) {
+    this.pollInterval = pollInterval;
+  }
 
-    public void setRetryBackoffMultiplier(int retryBackoffMultiplier) {
-        this.retryBackoffMultiplier = retryBackoffMultiplier;
-    }
+  public int getRetryBackoffMultiplier() {
+    return retryBackoffMultiplier;
+  }
 
-    public int getId() {
-        return id;
-    }
+  public void setRetryBackoffMultiplier(int retryBackoffMultiplier) {
+    this.retryBackoffMultiplier = retryBackoffMultiplier;
+  }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  public int getId() {
+    return id;
+  }
 
-    public void addToEvents(Event event) {
-        events.add(event);
-    }
+  public void setId(int id) {
+    this.id = id;
+  }
 
-    public String asXML() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("    <destination\n");
-        sb.append("      id=\"");
-        sb.append(id);
-        sb.append("\"\n      ");
-        sb.append("name=\"");
-        sb.append(name);
-        sb.append("\"");
-        if(!enabled) {
-            sb.append("\n      disabled=\"true\"");
-        }
-        if(numSenderThreads > 0) {
-            sb.append("\n      numsenderthreads=\"");
-            sb.append(numSenderThreads);
-            sb.append("\"");
-        }
-        if(pollInterval > 0) {
-            sb.append("\n      pollinterval=\"");
-            sb.append(pollInterval);
-            sb.append("\"");
-        }
-        if(retryBackoffMultiplier > 0) {
-            sb.append("\n      retrybackoffmultiplier=\"");
-            sb.append(retryBackoffMultiplier);
-            sb.append("\"");
-        }
-        if(maxRetries > 0) {
-            sb.append("\n      maxretries=\"");
-            sb.append(maxRetries);
-            sb.append("\"");
-        }
-        if(chunkSize > 0) {
-            sb.append("\n      chunksize=\"");
-            sb.append(chunkSize);
-            sb.append("\"");
-        }
-        if(shutdownTimeout > 0) {
-            sb.append("\n      shutdowntimeout=\"");
-            sb.append(shutdownTimeout);
-            sb.append("\"");
-        }
-        sb.append(">");
-        if(events != null && events.size() > 0) {
-          for(Event e : events) {
-            sb.append(e.asXML());
-          }
-          sb.append("\n");
-        }
-        else {
-            sb.append("\n");
-        }
-        sb.append("    </destination>\n");
-        return sb.toString();
+  public void addToEvents(Event event) {
+    events.add(event);
+  }
+
+  public String asXML() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("    <destination\n");
+    sb.append("      id=\"");
+    sb.append(id);
+    sb.append("\"\n      ");
+    sb.append("name=\"");
+    sb.append(name);
+    sb.append("\"");
+    if (!enabled) {
+      sb.append("\n      disabled=\"true\"");
     }
+    if (numSenderThreads > 0) {
+      sb.append("\n      numsenderthreads=\"");
+      sb.append(numSenderThreads);
+      sb.append("\"");
+    }
+    if (pollInterval > 0) {
+      sb.append("\n      pollinterval=\"");
+      sb.append(pollInterval);
+      sb.append("\"");
+    }
+    if (retryBackoffMultiplier > 0) {
+      sb.append("\n      retrybackoffmultiplier=\"");
+      sb.append(retryBackoffMultiplier);
+      sb.append("\"");
+    }
+    if (maxRetries > 0) {
+      sb.append("\n      maxretries=\"");
+      sb.append(maxRetries);
+      sb.append("\"");
+    }
+    if (chunkSize > 0) {
+      sb.append("\n      chunksize=\"");
+      sb.append(chunkSize);
+      sb.append("\"");
+    }
+    if (shutdownTimeout > 0) {
+      sb.append("\n      shutdowntimeout=\"");
+      sb.append(shutdownTimeout);
+      sb.append("\"");
+    }
+    sb.append(">");
+    if (events != null && events.size() > 0) {
+      for (Event e : events) {
+        sb.append(e.asXML());
+      }
+      sb.append("\n");
+    } else {
+      sb.append("\n");
+    }
+    sb.append("    </destination>\n");
+    return sb.toString();
+  }
 }

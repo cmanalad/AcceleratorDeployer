@@ -3,7 +3,6 @@ package com.guidewire.accel.deployment.impl;
 import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.deployment.util.FileDeployer;
 import com.guidewire.accel.util.AcceleratorHelper;
-import com.guidewire.accel.util.FileUtil;
 
 import java.io.File;
 

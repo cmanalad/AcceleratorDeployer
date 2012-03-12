@@ -16,26 +16,26 @@ import java.io.File;
  */
 public class MessagingConfigParserTest extends TestCase {
 
-    private File configDir = new File("C:\\repos/git/ClaimCenter/ClaimCenter"); 
-    
-    public void testMessageParsing() {
-        MessagingConfigParser parser = new MessagingConfigParser(configDir);
-        MessagingConfig config = parser.getMessageConfig();
-        assertNotNull(config);
-        assertEquals(27, config.getDestinations().size());
-    }
-    
-    public void testGetDestinationByID() {
-        MessagingConfigParser parser = new MessagingConfigParser(configDir);
-        MessagingConfig config = parser.getMessageConfig();
-        assertNotNull(config);
-        Destination d = config.getDestinationById(1);
-        assertNotNull(d);
-        assertEquals("CUE", d.getName());
-        assertEquals(3, d.getNumSenderThreads());
-        assertEquals("CueMessageRequest", d.getRequestPlugin());
-        assertNull(d.getReplyPlugin());
-        assertEquals("CueTransportPlugin", d.getTransportPlugin());
-        assertEquals(8, d.getEvents().size());
-    }    
+  private File configDir = new File("src/test/resources/sample/");
+
+  public void testMessageParsing() {
+    MessagingConfigParser parser = new MessagingConfigParser(configDir);
+    MessagingConfig config = parser.getMessageConfig();
+    assertNotNull(config);
+    assertEquals(27, config.getDestinations().size());
+  }
+
+  public void testGetDestinationByID() {
+    MessagingConfigParser parser = new MessagingConfigParser(configDir);
+    MessagingConfig config = parser.getMessageConfig();
+    assertNotNull(config);
+    Destination d = config.getDestinationById(1);
+    assertNotNull(d);
+    assertEquals("CUE", d.getName());
+    assertEquals(3, d.getNumSenderThreads());
+    assertEquals("CueMessageRequest", d.getRequestPlugin());
+    assertNull(d.getReplyPlugin());
+    assertEquals("CueTransportPlugin", d.getTransportPlugin());
+    assertEquals(8, d.getEvents().size());
+  }
 }

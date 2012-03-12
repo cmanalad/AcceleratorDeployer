@@ -6,11 +6,9 @@ import junit.framework.TestCase;
 import java.io.File;
 
 /**
- *
  * User: afogleson
  * Date: 3/11/12
  * Time: 10:42 AM
- *
  */
 public class AcceleratorParserTest extends TestCase {
 

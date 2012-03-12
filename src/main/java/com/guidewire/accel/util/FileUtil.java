@@ -12,19 +12,17 @@ public class FileUtil {
 
   public static File[] listFiles(File dir) {
     ArrayList<File> fileList = new ArrayList<File>();
-    if(!dir.isDirectory()) {
+    if (!dir.isDirectory()) {
       fileList.add(dir);
-    }
-    else {
+    } else {
       File[] files = dir.listFiles();
-      for(File f : files) {
-        if(f.isDirectory()) {
+      for (File f : files) {
+        if (f.isDirectory()) {
           File[] innerFiles = FileUtil.listFiles(f);
-          for(File f1 : innerFiles) {
+          for (File f1 : innerFiles) {
             fileList.add(f1);
           }
-        }
-        else {
+        } else {
           fileList.add(f);
         }
       }

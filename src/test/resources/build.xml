@@ -1,9 +1,9 @@
 <project name="testproject" default="test1" basedir=".">
     <target name="test">
-        <echo message="Hello World" />
+        <echo message="Hello World"/>
     </target>
 
     <target name="test1">
-        <echo message="Hello World1." />
+        <echo message="Hello World1."/>
     </target>
 </project>

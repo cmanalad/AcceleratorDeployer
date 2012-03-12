@@ -11,25 +11,25 @@ import java.io.Serializable;
  */
 public class Event implements Serializable {
 
-    private String name;
+  private String name;
 
-    public Event(String eventName) {
-        this.name = eventName;
-    }
-    
-    public String getName() {
-        return name;
-    }
+  public Event(String eventName) {
+    this.name = eventName;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public String asXML() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\n      <event\n        name=\"");
-        sb.append(name);
-        sb.append("\"/>");
-        return sb.toString();
-    }
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String asXML() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("\n      <event\n        name=\"");
+    sb.append(name);
+    sb.append("\"/>");
+    return sb.toString();
+  }
 }

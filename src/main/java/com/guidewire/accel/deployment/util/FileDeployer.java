@@ -1,13 +1,10 @@
 package com.guidewire.accel.deployment.util;
 
-import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.FileUtil;
 
-import javax.annotation.processing.Filer;
 import java.io.File;
 
 /**
- *
  * User: afogleson
  * Date: 3/11/12
  * Time: 12:21 AM
@@ -21,9 +18,9 @@ public class FileDeployer {
   /**
    * deploy a file
    *
-   * @param fromDir The directory where the file is right now
+   * @param fromDir  The directory where the file is right now
    * @param fileName the filename of the file to deploy
-   * @param toDir the directory to deploy to
+   * @param toDir    the directory to deploy to
    * @return true if the file deploys.
    */
   public static boolean deployFile(File fromDir, String fileName, File toDir) {
@@ -31,7 +28,7 @@ public class FileDeployer {
 
     try {
       File fromFile = new File(fromDir.getAbsolutePath() + File.separator + fileName);
-      if(!toDir.exists()) {
+      if (!toDir.exists()) {
         toDir.mkdirs();
       }
       File toFile = new File(toDir.getAbsolutePath() + File.separator + fileName);

@@ -12,7 +12,7 @@ import java.io.File;
  */
 public class GosuComponent implements DeployableComponent {
 
-  private static String GosuPath  = AcceleratorHelper.getInstance().getProductRoot().getAbsolutePath() + File.separator + "modules" + File.separator + "configuration" + File.separator + "gsrc";
+  private static String GosuPath = AcceleratorHelper.getInstance().getProductRoot().getAbsolutePath() + File.separator + "modules" + File.separator + "configuration" + File.separator + "gsrc";
   private static String GunitPath = AcceleratorHelper.getInstance().getProductRoot().getAbsolutePath() + File.separator + "modules" + File.separator + "configuration" + File.separator + "gtest";
 
   private File gosuFile;

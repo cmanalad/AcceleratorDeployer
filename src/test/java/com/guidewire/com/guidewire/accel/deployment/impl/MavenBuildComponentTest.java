@@ -6,11 +6,9 @@ import junit.framework.TestCase;
 import java.io.File;
 
 /**
- *
  * User: afogleson
  * Date: 3/11/12
  * Time: 1:21 AM
- *
  */
 public class MavenBuildComponentTest extends TestCase {
 
