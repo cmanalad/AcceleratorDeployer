@@ -20,7 +20,7 @@ public class ComponentListTest extends TestCase {
 
   public void testAddComponent() {
     ComponentList list = new ComponentList();
-    DeployableComponent component = new DataExtensionComponent();
+    DeployableComponent component = new DataExtensionComponent(null);
     list.addComponent(component);
     component = new WebServiceComponent();
     list.addComponent(component);
@@ -38,7 +38,7 @@ public class ComponentListTest extends TestCase {
 
   public void testGetAllComponents() {
     ComponentList list = new ComponentList();
-    DeployableComponent component = new DataExtensionComponent();
+    DeployableComponent component = new DataExtensionComponent(null);
     list.addComponent(component);
     component = new WebServiceComponent();
     list.addComponent(component);

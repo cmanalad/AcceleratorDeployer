@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Localization
+        xmlns="http://guidewire.com/localization">
+    <!-- United Kingdom English -->
+    <GWLocale
+            code="en_GB"
+            name="English (UK)"
+            typecode="en_GB">
+        <DateFormat
+                long="E d MMM yyyy"
+                medium="d MMM yyyy"
+                short="dd/MM/yyyy"/>
+        <TimeFormat
+                long="HH:mm:ss"
+                medium="hh:mm aa"
+                short="HH:mm"/>
+        <NumberFormat
+                decimalSymbol="."
+                thousandsSymbol=","/>
+        <CurrencyFormat
+                negativePattern="(&#163;#)"
+                positivePattern="&#163;#"
+                zeroValue="-"/>
+    </GWLocale>
+</Localization>

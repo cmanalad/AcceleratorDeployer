@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  entityName="Document">
+  <implementsEntity name="Validatable"/>
+  <column
+    desc="Indicates that the document was created by the Post-FNOL automatic correspondence generator"
+    name="FNOLAutoDocFlag_Ext"
+    nullok="true"
+    type="bit"/>    
+  <typekey
+    desc="Type of channel used for this correspondence"
+    name="ChannelType_Ext"
+    typelist="Channel_Ext" typefilter="Correspondence"/>  
+  <column
+    desc="This flag will prevent an automatically generated document being stored against the claim"
+    name="SuppressAutoDocument_Ext"
+    nullok="true"
+    type="bit"/>
+  <typekey name="RecordedDelivery_Ext" desc="Does the document require recorded delivery"  typelist="YesNo"/>   
+  <column 
+      name="Destination_Ext" 
+      desc="The persistent destination address, email or fax of where the document was sent to" 
+      type="varchar">
+    <columnParam name="size" value="200"/>
+  </column>
+  <column
+    desc="Indicates that the document can be manually suppressed during FNOL to prevent it being generated"
+    name="FNOLSuppressableFlag_Ext"
+    nullok="true"
+    type="bit"/>  
+  <column
+    desc="Indicates that the document was generated as the result of an supplier instruction"
+    name="SupplierInstructionFlag_Ext"
+    nullok="true"
+    type="bit"/>    
+  <!-- Added by ALF -->
+  <column 
+    desc="has the document been produced"
+    name="DocumentProduced_Ext"
+    nullok="true"
+    type="bit" />
+  <column 
+    desc="Is this document a previewable or editable document"
+  name="ReviewCaseDocument_Ext"
+  nullok="true"
+  default="false"
+  type="bit" />
+  <column 
+    desc="the xml used to produce the review case "
+    name="ThunderheadXML_ext"
+    nullok="true"
+    type="blob"/>
+  <column 
+    desc="the xml used to produce the document"
+    name="XML_ext"
+    nullok="true"
+    type="blob"/>
+  <column
+    desc="The Batch Id of the document"
+    name="BatchId_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam name="size" value="100"/>  
+  </column>
+  <column
+    desc="The thunderhead batch name"
+    name="BatchName_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam name="size" value="255"/>  
+  </column>
+  <column
+    desc="The name of the scanner"
+    name="ScannerName_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam name="size" value="500"/>  
+  </column>
+  <column
+    desc="When the document was received for scanning"
+    name="Received_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam name="size" value="50"/> 
+  </column>
+  <column
+    desc="When the document was approved or produced for correspond now documents"
+    name="documentApprovedDate_ext"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="When the document was delivered. This is a best guess and is set whenever a document has a url returned to us from the dms"
+    name="documentDeliveredDate_ext"
+    nullok="true"
+    type="datetime"/>
+  <column
+    desc="When the document was received for scanning"
+    name="ReceivedDate_Ext"
+    nullok="true"
+    type="datetime">
+  </column>
+  <column
+    desc="When the document was received for scanning"
+    name="ScannedAt_Ext"
+    nullok="true"
+    type="varchar">
+    <columnParam name="size" value="50"/> 
+  </column>
+  <column
+    desc="When the document was received for scanning"
+    name="ScannedDate_Ext"
+    nullok="true"
+    type="datetime">
+  </column>
+  <array name="Attachments" arrayentity="DocumentAttachment_Ext" desc="Documents attached to this document when produced"/>
+
+  <!-- added for personal auto -->
+  <column
+    desc="When the document was received at the dms"
+    name="DmsReceivedAt_Ext"
+    nullok="true"
+    type="datetime">
+  </column>
+  <column 
+    desc="The exposure number this document refers to"
+    nullok="true"
+    type="varchar"
+    name="exposureReference_Ext">
+    <columnParam name="size" value="10"/>
+  </column>
+  <column 
+    desc="The vehicle reg this document is about. Redundant since you should tie this to an exposure, which would have an incident, which would have a vehicle, which has the licensePlate field."
+    nullok="true"
+    type="shorttext"
+    name="vehicleRegistration_Ext">
+  </column>
+  <column 
+    desc="The instruction (repair reference) this document is about."
+    nullok="true"
+    type="longtext"
+    name="instructionReference_Ext">
+  </column>
+  <column 
+    desc="The policy reference. We have this at document.claim.Policy.PolicyNumber"
+    nullok="true"
+    type="shorttext"
+    name="policyReference_Ext">
+  </column>
+  <column 
+    desc="The scanner name"
+    nullok="true"
+    type="shorttext"
+    name="scannedBy_Ext">
+  </column>
+  <column 
+    desc="The scanned batch name - needed to do rescan"
+    nullok="true"
+    type="shorttext"
+    name="scannedBatchName_Ext">
+  </column>
+  <column 
+    desc="The scanned batch type"
+    nullok="true"
+    type="shorttext"
+    name="scannedBatchType_Ext">
+  </column>
+  <column 
+    desc="The scanned document reference"
+    nullok="true"
+    type="shorttext"
+    name="scannedDocumentReference_Ext">
+  </column>
+  <column 
+    desc="The scanned image count"
+    nullok="true"
+    type="integer"
+    name="scannedImageCount_Ext">
+  </column>
+  <column 
+    desc="The scanned document information"
+    nullok="true"
+    type="shorttext"
+    name="scannedDocumentInformation_Ext">
+  </column>
+  <column 
+    desc="The scanned document contents"
+    nullok="true"
+    type="shorttext"
+    name="scannedDocumentComments_Ext">
+  </column>
+  <column 
+    desc="The scanned department"
+    nullok="true"
+    type="shorttext"
+    name="scannedDepartment_Ext">
+  </column>
+  <column 
+    desc="The dms document ID"
+    nullok="true"
+    type="shorttext"
+    name="dmsDocumentID_Ext">
+  </column>
+  <column 
+    desc="The source of the document"
+    nullok="true"
+    type="longtext"
+    name="source_Ext">
+  </column>
+
+  <!-- End added for personal auto -->
+
+  <!-- end added by ALF -->
+  <typekey
+    desc="The sender type for a scanned/emailed document"
+    name="SenderType_Ext"
+    nullok="true"
+    typelist="SenderType_Ext"/> 
+
+
+  <!-- end Added by ALF -->
+</extension>

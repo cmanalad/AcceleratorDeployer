@@ -16,13 +16,13 @@ import java.io.File;
  */
 public class MessagingConfigParserTest extends TestCase {
 
-  private File configDir = new File("src/test/resources/sample/");
+  private File configDir = new File("src/test/resources/product/");
 
   public void testMessageParsing() {
     MessagingConfigParser parser = new MessagingConfigParser(configDir);
     MessagingConfig config = parser.getMessageConfig();
     assertNotNull(config);
-    assertEquals(27, config.getDestinations().size());
+    assertEquals(9, config.getDestinations().size());
   }
 
   public void testGetDestinationByID() {
@@ -31,11 +31,11 @@ public class MessagingConfigParserTest extends TestCase {
     assertNotNull(config);
     Destination d = config.getDestinationById(1);
     assertNotNull(d);
-    assertEquals("CUE", d.getName());
+    assertEquals("MyDest", d.getName());
     assertEquals(3, d.getNumSenderThreads());
-    assertEquals("CueMessageRequest", d.getRequestPlugin());
+    assertEquals("MyMessageRequest", d.getRequestPlugin());
     assertNull(d.getReplyPlugin());
-    assertEquals("CueTransportPlugin", d.getTransportPlugin());
+    assertEquals("MyTransportPlugin", d.getTransportPlugin());
     assertEquals(8, d.getEvents().size());
   }
 }

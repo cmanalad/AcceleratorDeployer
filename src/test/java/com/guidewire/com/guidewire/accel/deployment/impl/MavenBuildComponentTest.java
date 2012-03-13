@@ -19,7 +19,7 @@ public class MavenBuildComponentTest extends TestCase {
   }
 
   public void testMavenBuildSuccess() {
-    File pom = new File("src/test/resources/sample/pom.xml");
+    File pom = new File("src/test/resources/product/pom.xml");
     String goals = "clean";
     MavenBuildComponent component = new MavenBuildComponent(pom, goals);
     assertTrue(component.deploy());

@@ -39,19 +39,27 @@ public class DisplayKeyComponent implements DeployableComponent {
     File localeDir = new File(productRoot.getAbsolutePath() + File.separator + localeBaseDir);
     File[] localeFiles = localeDir.listFiles();
     String localeFound = "en_US";
-    for (File f : localeFiles) {
-      if (!f.isDirectory() && f.getName().equals("localization.xml")) {
-        //Now we just have to do some minimal parsing to find the actual locale to use.
-        String possibleLocale = LocalizationsParser.getLocaleFromLocalizationsXml(f);
-        if (possibleLocale != null && possibleLocale.trim().length() > 0) {
-          localeFound = possibleLocale;
+    if(localeFiles != null && localeFiles.length > 0) {
+      for (File f : localeFiles) {
+        if (!f.isDirectory() && f.getName().equals("localization.xml")) {
+          //Now we just have to do some minimal parsing to find the actual locale to use.
+          String possibleLocale = LocalizationsParser.getLocaleFromLocalizationsXml(f);
+          if (possibleLocale != null && possibleLocale.trim().length() > 0) {
+            //if a display.properties file exists then we can use this file.
+            File possibleLocaleFile = new File(localeDir + File.separator + possibleLocale + File.separator + "display.properties");
+            if(possibleLocaleFile.exists()) {
+              localeFound = possibleLocale;
+            }
+          }
         }
+        //if we havent found one note that we will just continue on our way with the US default file.
       }
-      //if we havent found one note that we will just continue on our way with the US default file.
     }
-
+    else {
+      //Huh? must be a bad product dir.
+      return false;
+    }
     File productKeyFile = new File(localeDir + File.separator + localeFound + File.separator + "display.properties");
-
     if (!productKeyFile.exists()) {
       if (localeFound.endsWith("_US")) {
         //return a false we cannot move on. this should never happen. 
@@ -100,7 +108,7 @@ public class DisplayKeyComponent implements DeployableComponent {
       } catch (Throwable t) {
       }
     }
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return true;
   }
 
   @Override
