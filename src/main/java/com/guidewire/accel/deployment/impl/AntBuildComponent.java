@@ -41,7 +41,8 @@ public class AntBuildComponent implements DeployableComponent {
       helper.parse(p, buildFile);
       p.executeTarget(buildTarget);
       p.fireBuildFinished(null);
-    } catch (Throwable t) {
+    }
+    catch (Throwable t) {
       p.fireBuildFinished(t);
       success = false;
     }

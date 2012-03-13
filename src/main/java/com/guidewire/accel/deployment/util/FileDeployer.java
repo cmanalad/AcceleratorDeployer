@@ -53,7 +53,8 @@ public class FileDeployer {
       }
       //Now that we have any possible backup made, lets go ahead and move this one over.
       FileUtil.copyFileToFile(fromFile, toFile);
-    } catch (Throwable t) {
+    }
+    catch (Throwable t) {
       deployed = false;
     }
     return deployed;

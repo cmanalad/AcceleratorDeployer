@@ -7,16 +7,14 @@ import com.guidewire.accel.util.FileUtil;
 import java.io.File;
 
 /**
- *
  * User: afogleson
  * Date: 3/10/12
  * Time: 11:30 PM
- *
  */
 public class DataExtensionComponent implements DeployableComponent {
 
   private File dataDir;
-  
+
   public DataExtensionComponent(File extensionDirectory) {
     this.dataDir = extensionDirectory;
   }
@@ -25,7 +23,6 @@ public class DataExtensionComponent implements DeployableComponent {
    * Deploying a data extension is a bit more arduous than just copying an eti or etx file.
    *
    * @return
-   * 
    */
   @Override
   public boolean deploy() {
@@ -42,7 +39,7 @@ public class DataExtensionComponent implements DeployableComponent {
      */
     File[] extensions = FileUtil.listFiles(dataDir);
     String productExtDir = AcceleratorHelper.getInstance().getProductRoot().getAbsolutePath() + "/modules/configuration/config/extensions/";
-    for(File ext : extensions) {
+    for (File ext : extensions) {
       //First off for every file in here there are 2 options... 
       // 1) it exists already in the product directory. 
       // 2) it does not. 
@@ -50,21 +47,21 @@ public class DataExtensionComponent implements DeployableComponent {
       //
       String name = ext.getName();
       File prodFile = new File(productExtDir + name);
-      if(prodFile.exists()) {
+      if (prodFile.exists()) {
         // it exists... so we have the hard road.
-        if(name.contains(".etx")) {
+        if (name.contains(".etx")) {
           //We need to merge an extension.
 
         }
-        else if(name.contains(".ttx")) {
+        else if (name.contains(".ttx")) {
           //we need to merge a typelist extension
 
         }
-        else if(name.contains(".eti")) {
+        else if (name.contains(".eti")) {
           //we may have a big problem here... so we return false.
           return false;
         }
-        else if(name.contains(".tti")) {
+        else if (name.contains(".tti")) {
           //we may have a big problem here... so we return false.
           return false;
         }
@@ -76,7 +73,7 @@ public class DataExtensionComponent implements DeployableComponent {
           // since there is no file of this name present we can just copy it. 
           FileUtil.copyFileToFile(ext, prodFile);
         }
-        catch(Throwable t) {
+        catch (Throwable t) {
           isDeployed = false;
         }
       }

@@ -13,7 +13,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.util.ArrayList;
 
 /**
  * User: afogleson
@@ -62,11 +61,14 @@ public class AcceleratorParser {
         }
 
       }
-    } catch (ParserConfigurationException e) {
+    }
+    catch (ParserConfigurationException e) {
       System.out.println("The underlying parser does not support the requested features.");
-    } catch (FactoryConfigurationError e) {
+    }
+    catch (FactoryConfigurationError e) {
       System.out.println("Error occurred obtaining Document Builder Factory.");
-    } catch (Exception e) {
+    }
+    catch (Exception e) {
       e.printStackTrace();
     }
   }

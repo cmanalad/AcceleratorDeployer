@@ -8,20 +8,18 @@ import junit.framework.TestCase;
 import java.io.File;
 
 /**
- * 
  * User: tp23161
  * Date: 13/03/12
  * Time: 11:35
- * 
  */
 public class DataExtensionComponentTest extends TestCase {
-  
+
   public void testDataExtensionDeploySuccess() throws Exception {
     AcceleratorHelper helper = AcceleratorHelper.getInstance();
     helper.setProductRoot(new File("src/test/resources/product/"));
     File[] list = FileUtil.listFiles(new File("src/test/resources/product/modules/configuration/config/extensions"));
-    if(list != null && list.length > 0) {
-      for(File f : list) {
+    if (list != null && list.length > 0) {
+      for (File f : list) {
         f.delete();
       }
     }

@@ -102,16 +102,20 @@ public class FileUtil {
         out.write(buf, 0, l);
       }
       out.flush();
-    } catch (IOException e) {
+    }
+    catch (IOException e) {
       throw e;
-    } finally {
+    }
+    finally {
       try {
         out.close();
-      } catch (Exception ignored) {
+      }
+      catch (Exception ignored) {
       }
       try {
         in.close();
-      } catch (Exception ignored) {
+      }
+      catch (Exception ignored) {
       }
     }
   }
