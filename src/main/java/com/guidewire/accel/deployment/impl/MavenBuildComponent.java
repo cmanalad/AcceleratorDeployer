@@ -40,8 +40,7 @@ public class MavenBuildComponent implements DeployableComponent {
       if (result.getExitCode() != 0) {
         deployed = false;
       }
-    }
-    catch (Throwable t) {
+    } catch (Throwable t) {
       deployed = false;
     }
     return deployed;

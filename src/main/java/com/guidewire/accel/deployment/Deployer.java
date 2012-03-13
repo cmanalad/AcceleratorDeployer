@@ -13,7 +13,6 @@ import java.util.List;
 public class Deployer {
 
   /**
-   *
    * The parser is responsible for finding and creating all the components. The deployer is responsible
    * for ordering them, then deploying them in the correct order.
    *

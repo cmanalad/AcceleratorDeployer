@@ -31,7 +31,7 @@ public class ComponentListTest extends TestCase {
     assertEquals(1, components.size());
     DeployableComponent listComponent = components.get(0);
     assertNotNull(listComponent);
-   assertTrue(listComponent instanceof PluginComponent);
+    assertTrue(listComponent instanceof PluginComponent);
     components = list.getComponentList("mavenBuildComponent");
     assertNull(components);
   }

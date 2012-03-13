@@ -143,7 +143,8 @@ public class AppGui extends JFrame {
         if (helper.getAccelerator() != null && isValidAccelerator(helper.getAccelerator())) {
           //install it
           installAccelerator();
-        } else {
+        }
+        else {
           //Print an error to the statusbar
           statusBar.setText("Cannot install the selected accelerator");
         }
@@ -182,7 +183,8 @@ public class AppGui extends JFrame {
         File file = new File(rootDirectory.getText());
         if (isValidProductDir(file)) {
           setupProductDir(file);
-        } else {
+        }
+        else {
           rootLabel.setForeground(Color.RED);
           statusBar.setText("Invalid Product Directory");
         }
@@ -201,7 +203,8 @@ public class AppGui extends JFrame {
           rootDirectory.setText(file.getAbsolutePath());
           if (isValidProductDir(file)) {
             setupProductDir(file);
-          } else {
+          }
+          else {
             rootLabel.setForeground(Color.RED);
             statusBar.setText("Invalid Product Directory");
           }
@@ -222,7 +225,8 @@ public class AppGui extends JFrame {
         File file = new File(rootDirectory.getText());
         if (isValidAccelerator(file)) {
           setupAccellerator(file);
-        } else {
+        }
+        else {
           setupAccellerator(file);
           statusBar.setText(file.getAbsolutePath() + " is not a valid accelerator, or the deployment descriptor was not found.");
           accelLabel.setForeground(Color.RED);
@@ -245,9 +249,9 @@ public class AppGui extends JFrame {
     inputPanel.add(accelBrowseButton);
 
     SpringUtilities.makeCompactGrid(inputPanel,
-            2, 3, //rows, cols
-            5, 5, //initialX, initialY
-            5, 5);//xPad, yPad
+      2, 3, //rows, cols
+      5, 5, //initialX, initialY
+      5, 5);//xPad, yPad
 
 
     pack();
@@ -255,7 +259,7 @@ public class AppGui extends JFrame {
     this.addComponentListener(new java.awt.event.ComponentAdapter() {
       public void componentResized(ComponentEvent event) {
         setSize(Math.max(1024, getWidth()),
-                Math.max(768, getHeight()));
+          Math.max(768, getHeight()));
       }
     });
     this.setSize(1024, 768);
@@ -287,7 +291,8 @@ public class AppGui extends JFrame {
           for (File del : fileList) {
             del.delete();
           }
-        } else {
+        }
+        else {
           f.mkdirs();
         }
         fis = new FileInputStream(file);
@@ -313,20 +318,16 @@ public class AppGui extends JFrame {
           }
         }
         while (entry != null);
-      }
-      catch (Throwable t) {
+      } catch (Throwable t) {
         t.printStackTrace();
-      }
-      finally {
+      } finally {
         try {
           fis.close();
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
         }
         try {
           zin.close();
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
         }
       }
     }
@@ -352,7 +353,8 @@ public class AppGui extends JFrame {
       //see if this is really an xsd file.
       if (isValidAccelerator(file)) {
         setupAccellerator(file);
-      } else {
+      }
+      else {
         setupAccellerator(file);
         statusBar.setText(file.getAbsolutePath() + " is not a valid accelerator, or the deployment descriptor was not found.");
         accelLabel.setForeground(Color.RED);

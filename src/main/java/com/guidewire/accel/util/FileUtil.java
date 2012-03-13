@@ -14,7 +14,8 @@ public class FileUtil {
     ArrayList<File> fileList = new ArrayList<File>();
     if (!dir.isDirectory()) {
       fileList.add(dir);
-    } else {
+    }
+    else {
       File[] files = dir.listFiles();
       for (File f : files) {
         if (f.isDirectory()) {
@@ -22,7 +23,8 @@ public class FileUtil {
           for (File f1 : innerFiles) {
             fileList.add(f1);
           }
-        } else {
+        }
+        else {
           fileList.add(f);
         }
       }
@@ -42,7 +44,8 @@ public class FileUtil {
       if (!src.mkdirs()) {
         throw new IOException("deleteFiles: Could not create direcotry: " + src.getAbsolutePath() + ".");
       }
-    } else if (!src.canRead()) { // check to ensure we have rights to the source...
+    }
+    else if (!src.canRead()) { // check to ensure we have rights to the source...
       throw new IOException("copyFiles: No right to source: " + src.getAbsolutePath() + ".");
     }
     // is this a directory copy?
@@ -54,13 +57,15 @@ public class FileUtil {
         File src1 = new File(src, list[i]);
         deleteFilesRecursive(src1);
       }
-    } else {
+    }
+    else {
       src.delete();
     }
   }
 
   /**
    * Read a file into a string
+   *
    * @param filename
    * @return
    * @throws java.io.IOException
@@ -81,6 +86,7 @@ public class FileUtil {
 
   /**
    * Copy a file to a location given by another file.
+   *
    * @param file
    * @param outFile
    * @throws IOException
@@ -96,20 +102,16 @@ public class FileUtil {
         out.write(buf, 0, l);
       }
       out.flush();
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       throw e;
-    }
-    finally {
+    } finally {
       try {
         out.close();
-      }
-      catch (Exception ignored) {
+      } catch (Exception ignored) {
       }
       try {
         in.close();
-      }
-      catch (Exception ignored) {
+      } catch (Exception ignored) {
       }
     }
   }

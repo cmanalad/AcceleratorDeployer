@@ -63,7 +63,8 @@ public class StatusBar extends JPanel {
     }
     if (myText != null && myText.length() > 0) {
       _textLbl.setText(myText);
-    } else {
+    }
+    else {
       clearText();
     }
   }
@@ -85,7 +86,8 @@ public class StatusBar extends JPanel {
     final boolean wasEmpty = _textLbl.getText().equals(_msgWhenEmpty);
     if (value != null && value.length() > 0) {
       _msgWhenEmpty = value;
-    } else {
+    }
+    else {
       _msgWhenEmpty = " ";
     }
     if (wasEmpty) {
@@ -107,8 +109,8 @@ public class StatusBar extends JPanel {
 
   public static Border createComponentBorder() {
     return BorderFactory.createCompoundBorder(
-            BorderFactory.createBevelBorder(BevelBorder.LOWERED),
-            BorderFactory.createEmptyBorder(0, 4, 0, 4));
+      BorderFactory.createBevelBorder(BevelBorder.LOWERED),
+      BorderFactory.createEmptyBorder(0, 4, 0, 4));
   }
 
   private void createGUI() {
@@ -161,7 +163,8 @@ public class StatusBar extends JPanel {
 
     if (null != msg) {
       _progressBar.setString(msg);
-    } else {
+    }
+    else {
       _progressBar.setString("");
     }
   }

@@ -187,7 +187,8 @@ public class Destination {
         sb.append(e.asXML());
       }
       sb.append("\n");
-    } else {
+    }
+    else {
       sb.append("\n");
     }
     sb.append("    </destination>\n");

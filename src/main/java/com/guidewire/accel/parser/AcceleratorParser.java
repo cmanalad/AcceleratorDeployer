@@ -1,10 +1,7 @@
 package com.guidewire.accel.parser;
 
 import com.guidewire.accel.deployment.DeployableComponent;
-import com.guidewire.accel.deployment.impl.AntBuildComponent;
-import com.guidewire.accel.deployment.impl.GosuComponent;
-import com.guidewire.accel.deployment.impl.MavenBuildComponent;
-import com.guidewire.accel.deployment.impl.PCFComponent;
+import com.guidewire.accel.deployment.impl.*;
 import com.guidewire.accel.deployment.util.ComponentList;
 import com.guidewire.accel.util.FileUtil;
 import org.w3c.dom.Document;
@@ -65,14 +62,11 @@ public class AcceleratorParser {
         }
 
       }
-    }
-    catch (ParserConfigurationException e) {
+    } catch (ParserConfigurationException e) {
       System.out.println("The underlying parser does not support the requested features.");
-    }
-    catch (FactoryConfigurationError e) {
+    } catch (FactoryConfigurationError e) {
       System.out.println("Error occurred obtaining Document Builder Factory.");
-    }
-    catch (Exception e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
@@ -87,7 +81,8 @@ public class AcceleratorParser {
         Node n = children.item(i);
         if (n.getNodeName().trim().equals("directory")) {
           directory = directory + n.getFirstChild().getNodeValue().trim() + File.separator;
-        } else if (n.getNodeName().trim().equals("goals")) {
+        }
+        else if (n.getNodeName().trim().equals("goals")) {
           goals = n.getFirstChild().getNodeValue();
         }
       }
@@ -103,14 +98,16 @@ public class AcceleratorParser {
         Node n = children.item(i);
         if (n.getNodeName().trim().equals("target")) {
           target = n.getFirstChild().getNodeValue().trim();
-        } else if (n.getNodeName().trim().equals("buildFile")) {
+        }
+        else if (n.getNodeName().trim().equals("buildFile")) {
           directory = directory + n.getFirstChild().getNodeValue().trim();
           buildFile = new File(directory);
         }
       }
       AntBuildComponent component = new AntBuildComponent(buildFile, target);
       addToComponents(component);
-    } else if (node.getNodeName().equals("pcfRoot")) {
+    }
+    else if (node.getNodeName().equals("pcfRoot")) {
       String directory = accelRoot.getAbsolutePath() + File.separator;
       NodeList childDirs = node.getChildNodes();
       for (int i = 0; i < childDirs.getLength(); i++) {
@@ -126,7 +123,8 @@ public class AcceleratorParser {
           }
         }
       }
-    } else if (node.getNodeName().trim().equals("gosuRoot")) {
+    }
+    else if (node.getNodeName().trim().equals("gosuRoot")) {
       String directory = accelRoot.getAbsolutePath() + File.separator;
       NodeList childDirs = node.getChildNodes();
       for (int i = 0; i < childDirs.getLength(); i++) {
@@ -135,14 +133,15 @@ public class AcceleratorParser {
           String gosuDirPath = node.getFirstChild().getNodeValue().trim();
           File gosuDirectory = new File(directory + gosuDirPath);
           //Get every file in the config directory....
-          File[] pcfFiles = FileUtil.listFiles(gosuDirectory);
-          for (File f : pcfFiles) {
+          File[] gosuFiles = FileUtil.listFiles(gosuDirectory);
+          for (File f : gosuFiles) {
             GosuComponent component = new GosuComponent(f, false);
             addToComponents(component);
           }
         }
       }
-    } else if (node.getNodeName().trim().equals("gunitRoot")) {
+    }
+    else if (node.getNodeName().trim().equals("gunitRoot")) {
       String directory = accelRoot.getAbsolutePath() + File.separator;
       NodeList childDirs = node.getChildNodes();
       for (int i = 0; i < childDirs.getLength(); i++) {
@@ -151,11 +150,24 @@ public class AcceleratorParser {
           String gosuDirPath = node.getFirstChild().getNodeValue().trim();
           File gosuDirectory = new File(directory + gosuDirPath);
           //Get every file in the config directory....
-          File[] pcfFiles = FileUtil.listFiles(gosuDirectory);
-          for (File f : pcfFiles) {
+          File[] gunitFiles = FileUtil.listFiles(gosuDirectory);
+          for (File f : gunitFiles) {
             GosuComponent component = new GosuComponent(f, true);
             addToComponents(component);
           }
+        }
+      }
+    }
+    else if (node.getNodeName().trim().equals("displaykey")) {
+      String directory = accelRoot.getAbsolutePath() + File.separator;
+      NodeList childDirs = node.getChildNodes();
+      for (int i = 0; i < childDirs.getLength(); i++) {
+        Node displaykeyFile = childDirs.item(i);
+        if (node.getNodeName().equals("file")) {
+          String filePath = node.getNodeValue();
+          File displaykeys = new File(directory + filePath);
+          DisplayKeyComponent component = new DisplayKeyComponent(displaykeys);
+          addToComponents(component);
         }
       }
     }

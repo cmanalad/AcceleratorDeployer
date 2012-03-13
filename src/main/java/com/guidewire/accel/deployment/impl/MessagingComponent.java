@@ -332,7 +332,8 @@ public class MessagingComponent implements DeployableComponent {
       xml.append("  <plugin-gosu\n    gosuclass=\"");
       xml.append(className);
       xml.append("\">\n");
-    } else {
+    }
+    else {
       xml.append("  <plugin-java\n    javaclass=\"");
       xml.append(className);
       xml.append("\"");
@@ -355,7 +356,8 @@ public class MessagingComponent implements DeployableComponent {
     }
     if (type == MessageImplementationType.gosu) {
       xml.append("</plugin-gosu>\n</plugin>");
-    } else {
+    }
+    else {
       xml.append("</plugin-java>\n</plugin>");
     }
     return xml.toString();
