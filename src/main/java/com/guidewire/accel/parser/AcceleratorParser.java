@@ -4,6 +4,7 @@ import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.deployment.impl.*;
 import com.guidewire.accel.deployment.util.ComponentList;
 import com.guidewire.accel.util.FileUtil;
+import com.guidewire.accel.util.PluginParam;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -173,7 +174,7 @@ public class AcceleratorParser {
         }
       }
     }
-    else if (node.getNodeName().trim().equals("messageQueue")) {
+    else if(node.getNodeName().trim().equals("messageQueue")) {
       //Every messaging component has to have at least a transport and a destination so....
       boolean hasTransport = false;
       boolean hasDestination = false;
@@ -183,14 +184,134 @@ public class AcceleratorParser {
         Node n = childNodes.item(i);
         String name = n.getNodeName();
         if(name.equals("messageRequest")) {
-
+          //parse the children of the request node
+          NodeList requestNodes = n.getChildNodes();
+          for(int j=0; j<requestNodes.getLength(); j++) {
+            Node reqNode = requestNodes.item(j);
+            String rNodeName = reqNode.getNodeName();
+            if(rNodeName.equals("requestName")) {
+              component.setRequestName(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("requestType")) {
+              component.setRequestType(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("requestClass")) {
+              component.setRequestClass(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("requestParameters")) {
+              //now we have to get all the parameter name value pairs.
+              NodeList reqParams = reqNode.getChildNodes();
+              for(int k=0; k<reqParams.getLength(); k++) {
+                PluginParam parameter = new PluginParam();
+                Node paramNode = reqParams.item(k);
+                NodeList paramAttrNodes = paramNode.getChildNodes();
+                for(int l=0; l<paramAttrNodes.getLength(); l++) {
+                  Node attrNode = paramAttrNodes.item(l);
+                  String attrName = attrNode.getNodeName();
+                  if(attrName.equals("name")) {
+                    parameter.setName(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("value")) {
+                    parameter.setValue(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("server")) {
+                    parameter.setServer(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("env")) {
+                    parameter.setEnv(attrNode.getNodeValue().trim());
+                  }
+                }
+                component.addRequestParameter(parameter);
+              }
+            }
+          }
         }
         else if(name.equals("messageTransport")) {
-
+          //Parse the children of the transport node
+          NodeList transportNodes = n.getChildNodes();
+          for(int j=0; j<transportNodes.getLength(); j++) {
+            Node reqNode = transportNodes.item(j);
+            String rNodeName = reqNode.getNodeName();
+            if(rNodeName.equals("transportName")) {
+              component.setRequestName(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("transportType")) {
+              component.setRequestType(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("transportClass")) {
+              component.setRequestClass(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("transportParameters")) {
+              //now we have to get all the parameter name value pairs.
+              NodeList transportParams = reqNode.getChildNodes();
+              for(int k=0; k<transportParams.getLength(); k++) {
+                PluginParam parameter = new PluginParam();
+                Node paramNode = transportParams.item(k);
+                NodeList paramAttrNodes = paramNode.getChildNodes();
+                for(int l=0; l<paramAttrNodes.getLength(); l++) {
+                  Node attrNode = paramAttrNodes.item(l);
+                  String attrName = attrNode.getNodeName();
+                  if(attrName.equals("name")) {
+                    parameter.setName(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("value")) {
+                    parameter.setValue(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("server")) {
+                    parameter.setServer(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("env")) {
+                    parameter.setEnv(attrNode.getNodeValue().trim());
+                  }
+                }
+                component.addTransportParameter(parameter);
+              }
+            }
+          }
           hasTransport = true;
         }
         else if(name.equals("messageReply")) {
-
+          //parse the children of the reply node
+          NodeList replyNodes = n.getChildNodes();
+          for(int j=0; j<replyNodes.getLength(); j++) {
+            Node reqNode = replyNodes.item(j);
+            String rNodeName = reqNode.getNodeName();
+            if(rNodeName.equals("replyName")) {
+              component.setRequestName(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("replyType")) {
+              component.setRequestType(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("replyClass")) {
+              component.setRequestClass(reqNode.getNodeValue().trim());
+            }
+            else if(rNodeName.equals("replyParameters")) {
+              //now we have to get all the parameter name value pairs.
+              NodeList replyParams = reqNode.getChildNodes();
+              for(int k=0; k<replyParams.getLength(); k++) {
+                PluginParam parameter = new PluginParam();
+                Node paramNode = replyParams.item(k);
+                NodeList paramAttrNodes = paramNode.getChildNodes();
+                for(int l=0; l<paramAttrNodes.getLength(); l++) {
+                  Node attrNode = paramAttrNodes.item(l);
+                  String attrName = attrNode.getNodeName();
+                  if(attrName.equals("name")) {
+                    parameter.setName(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("value")) {
+                    parameter.setValue(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("server")) {
+                    parameter.setServer(attrNode.getNodeValue().trim());
+                  }
+                  else if(attrName.equals("env")) {
+                    parameter.setEnv(attrNode.getNodeValue().trim());
+                  }
+                }
+                component.addReplyParameter(parameter);
+              }
+            }
+          }
         }
         else if(name.equals("disabled")) {
           boolean val = Boolean.valueOf(node.getNodeValue().trim());
@@ -205,22 +326,28 @@ public class AcceleratorParser {
           component.setInitialRetryInterval(val);
         }
         else if(name.equals("maxRetries")) {
-
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setMaxRetries(val);
         }
         else if(name.equals("retryBackoffMultiplier")) {
-
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setRetryBackoffMultiplier(val);
         }
         else if(name.equals("numberThreads")) {
-
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setNumberThreads(val);
         }
         else if(name.equals("chunkSize")) {
-
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setChunkSize(val);
         }
         else if(name.equals("shutdownTimeout")) {
-
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setShutdownTimeout(val);
         }
         else if(name.equals("destination")) {
-
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setDestination(val);
           hasDestination = true;
         }
       }
@@ -241,6 +368,9 @@ public class AcceleratorParser {
           throw new IllegalArgumentException("Your accelerator deployment descriptor has a messaging component without a message transport or destination. You cannot deploy this accelerator");
         }
       }
+    }
+    else if(node.getNodeName().trim().equals("")) {
+
     }
   }
 

@@ -7,7 +7,7 @@ import com.guidewire.accel.parser.Messaging.MessagingConfigParser;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
 import com.guidewire.accel.util.AcceleratorHelper;
-import com.guidewire.accel.util.NameValuePair;
+import com.guidewire.accel.util.PluginParam;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,17 +25,17 @@ public class MessagingComponent implements DeployableComponent {
   private MessageImplementationType requestType;
   private String requestClass;
   private String requestPluginDir;
-  private ArrayList<NameValuePair> requestParams;
+  private ArrayList<PluginParam> requestParams;
   private String transportName;
   private MessageImplementationType transportType;
   private String transportClass;
   private String transportPluginDir;
-  private ArrayList<NameValuePair> transportParams;
+  private ArrayList<PluginParam> transportParams;
   private String replyName;
   private MessageImplementationType replyType;
   private String replyClass;
   private String replyPluginDir;
-  private ArrayList<NameValuePair> replyParams;
+  private ArrayList<PluginParam> replyParams;
   private int pollInterval = 0;
   private int initialRetryInterval = 0;
   private int maxRetries = 0;
@@ -76,11 +76,11 @@ public class MessagingComponent implements DeployableComponent {
     this.requestPluginDir = requestPluginDir;
   }
 
-  public ArrayList<NameValuePair> getRequestParams() {
+  public ArrayList<PluginParam> getRequestParams() {
     return requestParams;
   }
 
-  public void setRequestParams(ArrayList<NameValuePair> requestParams) {
+  public void setRequestParams(ArrayList<PluginParam> requestParams) {
     this.requestParams = requestParams;
   }
 
@@ -108,11 +108,11 @@ public class MessagingComponent implements DeployableComponent {
     this.transportPluginDir = transportPluginDir;
   }
 
-  public ArrayList<NameValuePair> getTransportParams() {
+  public ArrayList<PluginParam> getTransportParams() {
     return transportParams;
   }
 
-  public void setTransportParams(ArrayList<NameValuePair> transportParams) {
+  public void setTransportParams(ArrayList<PluginParam> transportParams) {
     this.transportParams = transportParams;
   }
 
@@ -140,11 +140,11 @@ public class MessagingComponent implements DeployableComponent {
     this.replyPluginDir = replyPluginDir;
   }
 
-  public ArrayList<NameValuePair> getReplyParams() {
+  public ArrayList<PluginParam> getReplyParams() {
     return replyParams;
   }
 
-  public void setReplyParams(ArrayList<NameValuePair> replyParams) {
+  public void setReplyParams(ArrayList<PluginParam> replyParams) {
     this.replyParams = replyParams;
   }
 
@@ -268,23 +268,23 @@ public class MessagingComponent implements DeployableComponent {
     }
   }
 
-  public void addRequestParameter(NameValuePair nvp) {
+  public void addRequestParameter(PluginParam nvp) {
     if (requestParams == null) {
-      requestParams = new ArrayList<NameValuePair>();
+      requestParams = new ArrayList<PluginParam>();
     }
     requestParams.add(nvp);
   }
 
-  public void addTransportParameter(NameValuePair nvp) {
+  public void addTransportParameter(PluginParam nvp) {
     if (transportParams == null) {
-      transportParams = new ArrayList<NameValuePair>();
+      transportParams = new ArrayList<PluginParam>();
     }
     transportParams.add(nvp);
   }
 
-  public void addReplyParameter(NameValuePair nvp) {
+  public void addReplyParameter(PluginParam nvp) {
     if (replyParams == null) {
-      replyParams = new ArrayList<NameValuePair>();
+      replyParams = new ArrayList<PluginParam>();
     }
     replyParams.add(nvp);
   }
@@ -321,7 +321,7 @@ public class MessagingComponent implements DeployableComponent {
    */
 
   private String generatePluginXml(String name, String className,
-                                   ArrayList<NameValuePair> params, MessageImplementationType type,
+                                   ArrayList<PluginParam> params, MessageImplementationType type,
                                    String pluginDir, String pluginType) {
     StringBuilder xml = new StringBuilder();
     xml.append("<?xml version=\"1.0\"?>\n");
@@ -348,11 +348,19 @@ public class MessagingComponent implements DeployableComponent {
     }
     //Handle parameters
     if (params != null && !params.isEmpty()) {
-      for (NameValuePair nvp : params) {
+      for (PluginParam nvp : params) {
         xml.append("    <param\n      name=\"");
         xml.append(nvp.getName());
         xml.append("\"\n      value=\"");
         xml.append(nvp.getValue());
+        if(nvp.getEnv() != null) {
+          xml.append("\"\n      env=\"");
+          xml.append(nvp.getEnv());
+        }
+        if(nvp.getServer() != null) {
+          xml.append("\"\n      server=\"");
+          xml.append(nvp.getServer());
+        }
         xml.append("\"/>\n");
       }
     }
