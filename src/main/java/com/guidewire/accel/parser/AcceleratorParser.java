@@ -173,6 +173,75 @@ public class AcceleratorParser {
         }
       }
     }
+    else if (node.getNodeName().trim().equals("messageQueue")) {
+      //Every messaging component has to have at least a transport and a destination so....
+      boolean hasTransport = false;
+      boolean hasDestination = false;
+      MessagingComponent component = new MessagingComponent();
+      NodeList childNodes = node.getChildNodes();
+      for (int i = 0; i < childNodes.getLength(); i++) {
+        Node n = childNodes.item(i);
+        String name = n.getNodeName();
+        if(name.equals("messageRequest")) {
+
+        }
+        else if(name.equals("messageTransport")) {
+
+          hasTransport = true;
+        }
+        else if(name.equals("messageReply")) {
+
+        }
+        else if(name.equals("disabled")) {
+          boolean val = Boolean.valueOf(node.getNodeValue().trim());
+          component.setEnabled(!val);
+        }
+        else if(name.equals("pollInterval")) {
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setPollInterval(val);
+        }
+        else if(name.equals("initialRetryInterval")) {
+          int val = Integer.parseInt(node.getNodeValue().trim());
+          component.setInitialRetryInterval(val);
+        }
+        else if(name.equals("maxRetries")) {
+
+        }
+        else if(name.equals("retryBackoffMultiplier")) {
+
+        }
+        else if(name.equals("numberThreads")) {
+
+        }
+        else if(name.equals("chunkSize")) {
+
+        }
+        else if(name.equals("shutdownTimeout")) {
+
+        }
+        else if(name.equals("destination")) {
+
+          hasDestination = true;
+        }
+      }
+      if(hasTransport && hasDestination) {
+        addToComponents(component);
+      }
+      else {
+        if(hasDestination) {
+          //inform of the missing transport
+          throw new IllegalArgumentException("Your accelerator deployment descriptor has a messaging component without a message transport. You cannot deploy this accelerator");
+        }
+        else if(hasTransport) {
+          //inform of the missing destination
+          throw new IllegalArgumentException("Your accelerator deployment descriptor has a messaging component without a destination. You cannot deploy this accelerator");
+        }
+        else {
+          //inform of both
+          throw new IllegalArgumentException("Your accelerator deployment descriptor has a messaging component without a message transport or destination. You cannot deploy this accelerator");
+        }
+      }
+    }
   }
 
   private void addToComponents(DeployableComponent component) {

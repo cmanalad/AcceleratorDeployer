@@ -1,5 +1,6 @@
 package com.guidewire.accel.parser.Messaging;
 
+import com.guidewire.accel.deployment.util.FileDeployer;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.Event;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
@@ -10,6 +11,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * User: tp23161
@@ -20,6 +22,7 @@ public class MessagingConfigParser {
 
   private Document messageConfig = null;
   private MessagingConfig msgConfig;
+  private File msgConfigFile = null;
 
   public MessagingConfigParser(File productRoot) {
     StringBuilder sb = new StringBuilder();
@@ -34,8 +37,8 @@ public class MessagingConfigParser {
     sb.append("messaging");
     sb.append(File.separator);
     sb.append("messaging-config.xml");
-    File config = new File(sb.toString());
-    if (!config.exists()) {
+    msgConfigFile = new File(sb.toString());
+    if (!msgConfigFile.exists()) {
       throw new IllegalArgumentException("Messaging config could not be found at " + sb.toString());
     }
 
@@ -47,7 +50,7 @@ public class MessagingConfigParser {
 
       DocumentBuilder builder = factory.newDocumentBuilder();
 
-      messageConfig = builder.parse(config);
+      messageConfig = builder.parse(msgConfigFile);
 
       NodeList nodes = messageConfig.getElementsByTagName("destination");
       msgConfig = new MessagingConfig();
@@ -112,15 +115,15 @@ public class MessagingConfigParser {
             }
           }
         }
-
-
         msgConfig.addToDestinations(dest);
       }
-
     }
     catch (Throwable t) {
     }
+  }
 
+  public void writeConfig() throws IOException {
+    FileDeployer.writeStringToFile(msgConfig.asXML(), msgConfigFile);
   }
 
   public MessagingConfig getMessageConfig() {

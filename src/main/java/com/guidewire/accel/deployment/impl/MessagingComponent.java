@@ -2,12 +2,14 @@ package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.deployment.impl.enums.MessageImplementationType;
+import com.guidewire.accel.deployment.util.FileDeployer;
 import com.guidewire.accel.parser.Messaging.MessagingConfigParser;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
 import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.NameValuePair;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -365,38 +367,72 @@ public class MessagingComponent implements DeployableComponent {
 
   @Override
   public boolean deploy() {
-
-    //First lets make sure there is an open queue. that is that the selected destination is not already used.
-    MessagingConfigParser parser = new MessagingConfigParser(AcceleratorHelper.getInstance().getProductRoot());
-    MessagingConfig msgConfig = parser.getMessageConfig();
-    Destination dest = msgConfig.getDestinationById(getDestination());
-    if (dest != null) {
-      //What are we going to do on this failure? there are likely efr that rely on this destinationID
-    }
-    //if we assume we fail when the destinationID is in use.....
-    //go ahead and get ready to deploy everything.
+    boolean isDeployed = true;
     String requestPluginXml = null;
     String transportPluginXml = null;
     String replyPluginXml = null;
 
+    MessagingConfigParser parser = null;
+    MessagingConfig msgConfig = null;
+    try {
+      //First lets make sure there is an open queue. that is that the selected destination is not already used.
+      parser = new MessagingConfigParser(AcceleratorHelper.getInstance().getProductRoot());
+      msgConfig = parser.getMessageConfig();
+      Destination dest = msgConfig.getDestinationById(getDestination());
+      if (dest != null) {
+        //What are we going to do on this failure? there are likely efr that rely on this destinationID
+        isDeployed = false;
+      }
+    }
+    catch(Throwable t) {
+      t.printStackTrace();
+      //most likely our illegal argument exception, but in any case we cannot deploy
+      isDeployed = false;
+    }
 
-    if (requestClass != null) {
+    //if we assume we fail when the destinationID is in use.....
+    //go ahead and get ready to deploy everything.
+    if (isDeployed && requestClass != null) {
       requestPluginXml = generatePluginXml(requestName, requestClass, requestParams, requestType, requestPluginDir, "Request");
     }
-    if (transportClass != null) {
+    if (isDeployed && transportClass != null) {
       transportPluginXml = generatePluginXml(transportName, transportClass, transportParams, transportType, transportPluginDir, "Transport");
     }
-    if (replyClass != null) {
+    if (isDeployed && replyClass != null) {
       replyPluginXml = generatePluginXml(replyName, replyClass, replyParams, replyType, replyPluginDir, "Reply");
     }
-
     //So, now we have all the plugin.xml we need to create a new destination and add it to our messaging config.
+    //if we are still valid to deploy
+    if(isDeployed) {
+      //so lets build one up....
+      Destination newDest = new Destination();
 
+      //Then add it to our messaging config
+      msgConfig.addToDestinations(newDest);
 
-    //plugins go in productRoot + /modules/configuration/config/olugins/registry + pluginName + .xml
-
-
-    return false;
+      //Then save the plugins and messaging config out
+      try {
+        parser.writeConfig();
+        //plugin xml goes in productRoot + /modules/configuration/config/plugins/registry + pluginName + .xml
+        String pluginDir = AcceleratorHelper.getInstance().getProductRoot() + File.separator + "modules" +
+                File.separator + "configuration" + File.separator + "config" + File.separator +
+                "plugins" + File.separator + "registry" + File.separator;
+        if(requestPluginXml != null) {
+          FileDeployer.writeStringToFile(requestPluginXml , new File(pluginDir + requestName + ".xml"));
+        }
+        if(transportPluginXml != null) {
+          FileDeployer.writeStringToFile(transportPluginXml , new File(pluginDir + transportName + ".xml"));
+        }
+        if(replyPluginXml != null) {
+          FileDeployer.writeStringToFile(replyPluginXml , new File(pluginDir + replyName + ".xml"));
+        }
+      }
+      catch(Throwable t) {
+        t.printStackTrace();
+        isDeployed = false;
+      }
+    }
+    return isDeployed;
   }
 
   @Override

@@ -86,7 +86,7 @@ public class FileUtil {
 
   /**
    * Copy a file to a location given by another file.
-   *
+   * This makes a backup implicity
    * @param file
    * @param outFile
    * @throws IOException

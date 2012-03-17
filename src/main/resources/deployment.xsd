@@ -60,41 +60,59 @@
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="messageQueue">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="requestName" type="xsd:string"/>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="requestType" type="xsd:string"/>
-                        <xsd:element maxOccurs="1" minOccurs="0" name="requestParameters">
+                        <xsd:element maxOccurs="1" name="messageRequest">
                             <xsd:complexType>
                                 <xsd:sequence>
-                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
-                                                 type="nameValuePair"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="requestName" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="requestType" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="requestParameters">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
+                                                             type="nameValuePair"/>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
                                 </xsd:sequence>
                             </xsd:complexType>
                         </xsd:element>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="transportName" type="xsd:string"/>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="transportType" type="xsd:string"/>
-                        <xsd:element maxOccurs="1" minOccurs="0" name="transportParameters">
+                        <xsd:element maxOccurs="1" name="messageTransport">
                             <xsd:complexType>
                                 <xsd:sequence>
-                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
-                                                 type="nameValuePair"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="transportName" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="transportType" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="transportParameters">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
+                                                             type="nameValuePair"/>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="events">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element maxOccurs="unbounded" minOccurs="1" name="eventName"
+                                                             type="xsd:string"/>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
                                 </xsd:sequence>
                             </xsd:complexType>
                         </xsd:element>
-                        <xsd:element maxOccurs="1" minOccurs="0" name="events">
+                        <xsd:element maxOccurs="1" name="messageReply">
                             <xsd:complexType>
                                 <xsd:sequence>
-                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="eventName"
-                                                 type="xsd:string"/>
-                                </xsd:sequence>
-                            </xsd:complexType>
-                        </xsd:element>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="replyName" type="xsd:string"/>
-                        <xsd:element maxOccurs="1" minOccurs="1" name="replyType" type="xsd:string"/>
-                        <xsd:element maxOccurs="1" minOccurs="0" name="replyParameters">
-                            <xsd:complexType>
-                                <xsd:sequence>
-                                    <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
-                                                 type="nameValuePair"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="replyName" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="replyType" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="replyParameters">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element maxOccurs="unbounded" minOccurs="1" name="parameter"
+                                                             type="nameValuePair"/>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
                                 </xsd:sequence>
                             </xsd:complexType>
                         </xsd:element>
