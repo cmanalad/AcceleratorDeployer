@@ -1,7 +1,7 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
-import com.guidewire.accel.deployment.impl.enums.MessageImplementationType;
+import com.guidewire.accel.deployment.impl.enums.PluginImplementationType;
 import com.guidewire.accel.deployment.util.FileDeployer;
 import com.guidewire.accel.parser.Messaging.MessagingConfigParser;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
@@ -22,27 +22,27 @@ public class MessagingComponent implements DeployableComponent {
   private String registryDir = "modules/configuration/config/plguin/registry";
 
   private String requestName;
-  private MessageImplementationType requestType;
+  private PluginImplementationType requestType;
   private String requestClass;
   private String requestPluginDir;
   private ArrayList<PluginParam> requestParams;
   private String transportName;
-  private MessageImplementationType transportType;
+  private PluginImplementationType transportType;
   private String transportClass;
   private String transportPluginDir;
   private ArrayList<PluginParam> transportParams;
   private String replyName;
-  private MessageImplementationType replyType;
+  private PluginImplementationType replyType;
   private String replyClass;
   private String replyPluginDir;
   private ArrayList<PluginParam> replyParams;
-  private int pollInterval = 0;
-  private int initialRetryInterval = 0;
-  private int maxRetries = 0;
-  private int retryBackoffMultiplier = 0;
-  private int numberThreads = 0;
-  private int chunkSize = 0;
-  private int shutdownTimeout = 0;
+  private long pollInterval = 0;
+  private long initialRetryInterval = 0;
+  private long maxRetries = 0;
+  private long retryBackoffMultiplier = 0;
+  private long numberThreads = 0;
+  private long chunkSize = 0;
+  private long shutdownTimeout = 0;
 
   public String getRegistryDir() {
     return registryDir;
@@ -163,82 +163,82 @@ public class MessagingComponent implements DeployableComponent {
 
   //Basic setters and getters for the types
   public void setRequestType(String type) {
-    requestType = MessageImplementationType.valueOf(type.toLowerCase().trim());
+    requestType = PluginImplementationType.valueOf(type.toLowerCase().trim());
   }
 
-  public MessageImplementationType getRequestType() {
+  public PluginImplementationType getRequestType() {
     return requestType;
   }
 
   public void setTransportType(String type) {
-    transportType = MessageImplementationType.valueOf(type.toLowerCase().trim());
+    transportType = PluginImplementationType.valueOf(type.toLowerCase().trim());
   }
 
-  public MessageImplementationType getTransportType() {
+  public PluginImplementationType getTransportType() {
     return transportType;
   }
 
   public void setReplyType(String type) {
-    replyType = MessageImplementationType.valueOf(type.toLowerCase().trim());
+    replyType = PluginImplementationType.valueOf(type.toLowerCase().trim());
   }
 
-  public MessageImplementationType getReplyType() {
+  public PluginImplementationType getReplyType() {
     return replyType;
   }
 
-  public int getPollInterval() {
+  public long getPollInterval() {
     return pollInterval;
   }
 
-  public void setPollInterval(int pollInterval) {
+  public void setPollInterval(long pollInterval) {
     this.pollInterval = pollInterval;
   }
 
-  public int getInitialRetryInterval() {
+  public long getInitialRetryInterval() {
     return initialRetryInterval;
   }
 
-  public void setInitialRetryInterval(int initialRetryInterval) {
+  public void setInitialRetryInterval(long initialRetryInterval) {
     this.initialRetryInterval = initialRetryInterval;
   }
 
-  public int getMaxRetries() {
+  public long getMaxRetries() {
     return maxRetries;
   }
 
-  public void setMaxRetries(int maxRetries) {
+  public void setMaxRetries(long maxRetries) {
     this.maxRetries = maxRetries;
   }
 
-  public int getRetryBackoffMultiplier() {
+  public long getRetryBackoffMultiplier() {
     return retryBackoffMultiplier;
   }
 
-  public void setRetryBackoffMultiplier(int retryBackoffMultiplier) {
+  public void setRetryBackoffMultiplier(long retryBackoffMultiplier) {
     this.retryBackoffMultiplier = retryBackoffMultiplier;
   }
 
-  public int getNumberThreads() {
+  public long getNumberThreads() {
     return numberThreads;
   }
 
-  public void setNumberThreads(int numberThreads) {
+  public void setNumberThreads(long numberThreads) {
     this.numberThreads = numberThreads;
   }
 
-  public int getChunkSize() {
+  public long getChunkSize() {
     return chunkSize;
   }
 
-  public void setChunkSize(int chunkSize) {
+  public void setChunkSize(long chunkSize) {
     this.chunkSize = chunkSize;
   }
 
-  public int getShutdownTimeout() {
+  public long getShutdownTimeout() {
     return shutdownTimeout;
   }
 
-  public void setShutdownTimeout(int shutdownTimeout) {
+  public void setShutdownTimeout(long shutdownTimeout) {
     this.shutdownTimeout = shutdownTimeout;
   }
 
@@ -321,7 +321,7 @@ public class MessagingComponent implements DeployableComponent {
    */
 
   private String generatePluginXml(String name, String className,
-                                   ArrayList<PluginParam> params, MessageImplementationType type,
+                                   ArrayList<PluginParam> params, PluginImplementationType type,
                                    String pluginDir, String pluginType) {
     StringBuilder xml = new StringBuilder();
     xml.append("<?xml version=\"1.0\"?>\n");
@@ -330,7 +330,7 @@ public class MessagingComponent implements DeployableComponent {
     xml.append("\"\n  name=\"");
     xml.append(name);
     xml.append("\">\n");
-    if (type == MessageImplementationType.gosu) {
+    if (type == PluginImplementationType.gosu) {
       xml.append("  <plugin-gosu\n    gosuclass=\"");
       xml.append(className);
       xml.append("\">\n");
@@ -364,7 +364,7 @@ public class MessagingComponent implements DeployableComponent {
         xml.append("\"/>\n");
       }
     }
-    if (type == MessageImplementationType.gosu) {
+    if (type == PluginImplementationType.gosu) {
       xml.append("</plugin-gosu>\n</plugin>");
     }
     else {
@@ -441,6 +441,15 @@ public class MessagingComponent implements DeployableComponent {
       }
     }
     return isDeployed;
+  }
+
+  @Override
+  public boolean isValid() {
+    boolean isValid = true;
+    if(transportClass == null || transportName == null || transportType == null || destination == 0) {
+      isValid = false;
+    }
+    return isValid;
   }
 
   @Override

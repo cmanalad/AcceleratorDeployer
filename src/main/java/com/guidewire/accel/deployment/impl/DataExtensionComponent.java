@@ -83,6 +83,11 @@ public class DataExtensionComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "dataExtensionComponent";
   }

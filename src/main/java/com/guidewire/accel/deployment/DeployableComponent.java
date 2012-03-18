@@ -14,5 +14,6 @@ public interface DeployableComponent {
    */
   public boolean deploy();
 
+  public boolean isValid();
   public String getComponentName();
 }

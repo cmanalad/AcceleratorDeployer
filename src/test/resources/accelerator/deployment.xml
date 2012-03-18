@@ -1,4 +1,7 @@
-<accelerator>
+<accelerator xmlns="http://guidewire.com/accelerator/deployment">
+    <pcfRoot>
+        <directory>src/test/resources/accelerator/configuration/</directory>
+    </pcfRoot>
     <mavenBuild>
         <directory>.</directory>
         <goals>clean</goals>
@@ -7,4 +10,36 @@
         <buildFile>../build.xml</buildFile>
         <target>test</target>
     </antBuild>
+    <messageQueue>
+        <messageTransport>
+            <transportName>MyTransport</transportName>
+            <transportType>gosu</transportType>
+            <transportClass>gwservices.MyTransport</transportClass>
+            <transportParameters>
+                <parameter>
+                    <name>test</name>
+                    <value>test</value>
+                </parameter>
+                <parameter>
+                    <name>test1</name>
+                    <value>test1</value>
+                    <env>Dev</env>
+                </parameter>
+                <parameter>
+                    <name>test1</name>
+                    <value>test2</value>
+                    <env>UAT</env>
+                </parameter>
+            </transportParameters>
+        </messageTransport>
+        <pollInterval>2000</pollInterval>
+        <initialRetryInterval>10000</initialRetryInterval>
+        <maxRetries>3</maxRetries>
+        <retryBackoffMultiplier>1</retryBackoffMultiplier>
+        <numberThreads>5</numberThreads>
+        <destination>15</destination>
+    </messageQueue>
+    <displaykey>
+        <file>keys/displaykey.properties</file>
+    </displaykey>
 </accelerator>

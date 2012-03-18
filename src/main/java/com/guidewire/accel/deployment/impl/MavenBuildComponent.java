@@ -48,6 +48,11 @@ public class MavenBuildComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "mavenBuildComponent";
   }

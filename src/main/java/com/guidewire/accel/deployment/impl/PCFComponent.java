@@ -45,6 +45,14 @@ public class PCFComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    if(pcfPage == null || accelConfigRoot == null) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "pcfComponent";
   }

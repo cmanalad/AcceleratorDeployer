@@ -33,6 +33,11 @@ public class GosuComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "gosuComponent";
   }

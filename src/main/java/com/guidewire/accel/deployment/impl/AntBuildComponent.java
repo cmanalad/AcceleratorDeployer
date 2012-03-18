@@ -50,6 +50,11 @@ public class AntBuildComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "antBuildComponent";
   }

@@ -113,6 +113,11 @@ public class DisplayKeyComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "displayKeyComponent";
   }

@@ -31,6 +31,11 @@ public class LibraryComponent implements DeployableComponent {
   }
 
   @Override
+  public boolean isValid() {
+    return true;
+  }
+
+  @Override
   public String getComponentName() {
     return "libraryComponent";
   }
