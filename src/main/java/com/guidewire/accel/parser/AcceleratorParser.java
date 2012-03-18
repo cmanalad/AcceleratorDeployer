@@ -3,21 +3,13 @@ package com.guidewire.accel.parser;
 import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.deployment.impl.*;
 import com.guidewire.accel.deployment.util.ComponentList;
+import com.guidewire.accel.parser.plugin.pojo.GosuPlugin;
+import com.guidewire.accel.parser.plugin.pojo.JavaPlugin;
 import com.guidewire.accel.util.FileUtil;
 import com.guidewire.accel.util.PluginParam;
 import com.guidewire.accelerator.deployment.Accelerator;
 import com.guidewire.accelerator.deployment.AcceleratorDocument;
-import org.apache.xmlbeans.XmlException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.FactoryConfigurationError;
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * User: afogleson
@@ -81,7 +73,7 @@ public class AcceleratorParser {
         //Get every file in the config directory....
         File[] gosuFiles = FileUtil.listFiles(gosuDirectory);
         for (File f : gosuFiles) {
-          GosuComponent component = new GosuComponent(f, false);
+          GosuComponent component = new GosuComponent(f, new File(gosuDirPath));
           addToComponents(component);
         }
       }
@@ -92,7 +84,7 @@ public class AcceleratorParser {
         //Get every file in the config directory....
         File[] gunitFiles = FileUtil.listFiles(gosuDirectory);
         for (File f : gunitFiles) {
-          GosuComponent component = new GosuComponent(f, true);
+          GosuComponent component = new GosuComponent(f, new File(gosuDirPath), true);
           addToComponents(component);
         }
       }
@@ -176,6 +168,70 @@ public class AcceleratorParser {
           addToComponents(component);
         }
       }
+      for(Accelerator.Library libComp : accel.getLibraryArray()) {
+        File f = new File(accelRoot.getAbsolutePath() + File.separator + libComp.getDirectory());
+        LibraryComponent component = null;
+        if(libComp.getPluginDirectory() == null || libComp.getPluginDirectory().trim().length() == 0) {
+          component = new LibraryComponent(f);
+        }
+        else {
+          component = new LibraryComponent(f, libComp.getPluginDirectory());
+        }
+        addToComponents(component);
+      }
+      for(Accelerator.Plugin plugin : accel.getPluginArray()) {
+
+        PluginComponent component = new PluginComponent();
+        //TODO: Need to set up the plugin component and do the parsing in here.
+        component.setPluginName(plugin.getName());
+        for(Accelerator.Plugin.Java jp : plugin.getJavaArray()) {
+          JavaPlugin jPlugin = new JavaPlugin();
+          jPlugin.setDisabled(jp.getDisabled());
+          jPlugin.setEnv(jp.getEnv());
+          jPlugin.setJavaClass(jp.getClassname());
+          jPlugin.setPluginDir(jp.getPlugindir());
+          jPlugin.setServer(jp.getServer());
+          if(jp.getPluginParamArray() != null && jp.getPluginParamArray().length > 0) {
+            for(com.guidewire.accelerator.deployment.PluginParam param : jp.getPluginParamArray()) {
+              PluginParam parameter = new PluginParam();
+              parameter.setServer(param.getServer());
+              parameter.setEnv(param.getEnv());
+              parameter.setName(param.getName());
+              parameter.setValue(param.getValue());
+              jPlugin.addParameter(parameter);
+            }
+          }
+          component.addJavaPlugin(jPlugin);
+        }
+        for(Accelerator.Plugin.Gosu gp : plugin.getGosuArray()) {
+          GosuPlugin gPlugin = new GosuPlugin();
+          gPlugin.setDisabled(gp.getDisabled());
+          gPlugin.setEnv(gp.getEnv());
+          gPlugin.setGosuClass(gp.getClassname());
+          gPlugin.setServer(gp.getServer());
+          if(gp.getPluginParamArray() != null && gp.getPluginParamArray().length > 0) {
+            for(com.guidewire.accelerator.deployment.PluginParam param : gp.getPluginParamArray()) {
+              PluginParam parameter = new PluginParam();
+              parameter.setServer(param.getServer());
+              parameter.setEnv(param.getEnv());
+              parameter.setName(param.getName());
+              parameter.setValue(param.getValue());
+              gPlugin.addParameter(parameter);
+            }
+          }
+          component.addGosuPlugin(gPlugin);
+        }
+        addToComponents(component);
+      }
+
+      if(accel.getDataExtension() != null) {
+        Accelerator.DataExtension comp = accel.getDataExtension();
+        String directory = accelRoot.getAbsolutePath() + File.separator;
+        String filePath = comp.getDirectory();
+        File extensionDir = new File(directory + filePath);
+        DataExtensionComponent component = new DataExtensionComponent(extensionDir);
+        addToComponents(component);
+      }
       if(accel.getDisplaykey() != null) {
         Accelerator.Displaykey comp = accel.getDisplaykey();
         String directory = accelRoot.getAbsolutePath() + File.separator;
@@ -184,16 +240,10 @@ public class AcceleratorParser {
         DisplayKeyComponent component = new DisplayKeyComponent(displaykeys);
         addToComponents(component);
       }
+
     }
     catch (Throwable e) {
       e.printStackTrace();
-    }
-  }
-
-  private void parse(Node node) {
-    //For every node except accelerator we should be creating a deployable component.
-    if(node.getNodeName().trim().equals("")) {
-
     }
   }
 

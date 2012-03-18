@@ -51,4 +51,26 @@ public class PluginParam {
   public void setValue(String value) {
     this.value = value;
   }
+
+  public String asXML() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("    <param");
+    sb.append("\n      name=\"");
+    sb.append(name);
+    sb.append("\"");
+    if(server != null && server.trim().length() > 0) {
+      sb.append("\n      server=\"");
+      sb.append(server);
+      sb.append("\"");
+    }
+    if(env != null && env.trim().length() > 0) {
+      sb.append("\n      env=\"");
+      sb.append(env);
+      sb.append("\"");
+    }
+    sb.append("\n      value=\"");
+    sb.append(value);
+    sb.append("/>\n");
+    return sb.toString();
+  }
 }

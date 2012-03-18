@@ -16,7 +16,7 @@ package com.guidewire.accelerator.deployment;
 public interface Accelerator extends org.apache.xmlbeans.XmlObject
 {
     public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Accelerator.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("accelerator57f8type");
+        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Accelerator.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("accelerator57f8type");
     
     /**
      * Gets array of all "pcfRoot" elements
@@ -396,7 +396,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface PcfRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(PcfRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("pcfroot5579elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(PcfRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("pcfroot5579elemtype");
         
         /**
          * Gets the "directory" element
@@ -443,7 +443,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface GosuRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GosuRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("gosuroot57e0elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GosuRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("gosuroot57e0elemtype");
         
         /**
          * Gets the "directory" element
@@ -490,7 +490,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface GunitRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GunitRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("gunitrootbf11elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GunitRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("gunitrootbf11elemtype");
         
         /**
          * Gets the "directory" element
@@ -537,7 +537,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface AntBuild extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AntBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("antbuildab9belemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AntBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("antbuildab9belemtype");
         
         /**
          * Gets the "directory" element
@@ -624,7 +624,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Library extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Library.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("library0a5felemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Library.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("library0a5felemtype");
         
         /**
          * Gets the "directory" element
@@ -691,7 +691,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface MavenBuild extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MavenBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("mavenbuild9977elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MavenBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("mavenbuild9977elemtype");
         
         /**
          * Gets the "directory" element
@@ -758,7 +758,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface DataExtension extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(DataExtension.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("dataextension36d9elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(DataExtension.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("dataextension36d9elemtype");
         
         /**
          * Gets the "directory" element
@@ -805,7 +805,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface MessageQueue extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageQueue.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("messagequeue065eelemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageQueue.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagequeue065eelemtype");
         
         /**
          * Gets the "messageRequest" element
@@ -1070,7 +1070,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageRequest extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageRequest.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("messagerequest8bbaelemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageRequest.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagerequest8bbaelemtype");
             
             /**
              * Gets the "requestName" element
@@ -1165,7 +1165,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface RequestParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("requestparameters8bbfelemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("requestparameters8bbfelemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1249,7 +1249,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageTransport extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageTransport.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("messagetransport7ca0elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageTransport.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagetransport7ca0elemtype");
             
             /**
              * Gets the "transportName" element
@@ -1369,7 +1369,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface TransportParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("transportparameters867felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("transportparameters867felemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1436,7 +1436,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface Events extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Events.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("events7ad5elemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Events.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("events7ad5elemtype");
                 
                 /**
                  * Gets array of all "eventName" elements
@@ -1550,7 +1550,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageReply extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageReply.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("messagereply517felemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageReply.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagereply517felemtype");
             
             /**
              * Gets the "replyName" element
@@ -1645,7 +1645,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface ReplyParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("replyparametersfa5felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("replyparametersfa5felemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1746,37 +1746,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Plugin extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Plugin.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("plugin4d07elemtype");
-        
-        /**
-         * Gets the "interface" element
-         */
-        java.lang.String getInterface();
-        
-        /**
-         * Gets (as xml) the "interface" element
-         */
-        org.apache.xmlbeans.XmlString xgetInterface();
-        
-        /**
-         * True if has "interface" element
-         */
-        boolean isSetInterface();
-        
-        /**
-         * Sets the "interface" element
-         */
-        void setInterface(java.lang.String xinterface);
-        
-        /**
-         * Sets (as xml) the "interface" element
-         */
-        void xsetInterface(org.apache.xmlbeans.XmlString xinterface);
-        
-        /**
-         * Unsets the "interface" element
-         */
-        void unsetInterface();
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Plugin.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("plugin4d07elemtype");
         
         /**
          * Gets the "name" element
@@ -1797,6 +1767,470 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
          * Sets (as xml) the "name" element
          */
         void xsetName(org.apache.xmlbeans.XmlString name);
+        
+        /**
+         * Gets array of all "java" elements
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Java[] getJavaArray();
+        
+        /**
+         * Gets ith "java" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Java getJavaArray(int i);
+        
+        /**
+         * Returns number of "java" element
+         */
+        int sizeOfJavaArray();
+        
+        /**
+         * Sets array of all "java" element
+         */
+        void setJavaArray(com.guidewire.accelerator.deployment.Accelerator.Plugin.Java[] javaArray);
+        
+        /**
+         * Sets ith "java" element
+         */
+        void setJavaArray(int i, com.guidewire.accelerator.deployment.Accelerator.Plugin.Java java);
+        
+        /**
+         * Inserts and returns a new empty value (as xml) as the ith "java" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Java insertNewJava(int i);
+        
+        /**
+         * Appends and returns a new empty value (as xml) as the last "java" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Java addNewJava();
+        
+        /**
+         * Removes the ith "java" element
+         */
+        void removeJava(int i);
+        
+        /**
+         * Gets array of all "gosu" elements
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu[] getGosuArray();
+        
+        /**
+         * Gets ith "gosu" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu getGosuArray(int i);
+        
+        /**
+         * Returns number of "gosu" element
+         */
+        int sizeOfGosuArray();
+        
+        /**
+         * Sets array of all "gosu" element
+         */
+        void setGosuArray(com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu[] gosuArray);
+        
+        /**
+         * Sets ith "gosu" element
+         */
+        void setGosuArray(int i, com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu gosu);
+        
+        /**
+         * Inserts and returns a new empty value (as xml) as the ith "gosu" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu insertNewGosu(int i);
+        
+        /**
+         * Appends and returns a new empty value (as xml) as the last "gosu" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu addNewGosu();
+        
+        /**
+         * Removes the ith "gosu" element
+         */
+        void removeGosu(int i);
+        
+        /**
+         * An XML java(@http://guidewire.com/accelerator/deployment).
+         *
+         * This is a complex type.
+         */
+        public interface Java extends org.apache.xmlbeans.XmlObject
+        {
+            public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Java.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("java3589elemtype");
+            
+            /**
+             * Gets the "disabled" element
+             */
+            boolean getDisabled();
+            
+            /**
+             * Gets (as xml) the "disabled" element
+             */
+            org.apache.xmlbeans.XmlBoolean xgetDisabled();
+            
+            /**
+             * True if has "disabled" element
+             */
+            boolean isSetDisabled();
+            
+            /**
+             * Sets the "disabled" element
+             */
+            void setDisabled(boolean disabled);
+            
+            /**
+             * Sets (as xml) the "disabled" element
+             */
+            void xsetDisabled(org.apache.xmlbeans.XmlBoolean disabled);
+            
+            /**
+             * Unsets the "disabled" element
+             */
+            void unsetDisabled();
+            
+            /**
+             * Gets the "classname" element
+             */
+            java.lang.String getClassname();
+            
+            /**
+             * Gets (as xml) the "classname" element
+             */
+            org.apache.xmlbeans.XmlString xgetClassname();
+            
+            /**
+             * Sets the "classname" element
+             */
+            void setClassname(java.lang.String classname);
+            
+            /**
+             * Sets (as xml) the "classname" element
+             */
+            void xsetClassname(org.apache.xmlbeans.XmlString classname);
+            
+            /**
+             * Gets the "plugindir" element
+             */
+            java.lang.String getPlugindir();
+            
+            /**
+             * Gets (as xml) the "plugindir" element
+             */
+            org.apache.xmlbeans.XmlString xgetPlugindir();
+            
+            /**
+             * True if has "plugindir" element
+             */
+            boolean isSetPlugindir();
+            
+            /**
+             * Sets the "plugindir" element
+             */
+            void setPlugindir(java.lang.String plugindir);
+            
+            /**
+             * Sets (as xml) the "plugindir" element
+             */
+            void xsetPlugindir(org.apache.xmlbeans.XmlString plugindir);
+            
+            /**
+             * Unsets the "plugindir" element
+             */
+            void unsetPlugindir();
+            
+            /**
+             * Gets the "env" element
+             */
+            java.lang.String getEnv();
+            
+            /**
+             * Gets (as xml) the "env" element
+             */
+            org.apache.xmlbeans.XmlString xgetEnv();
+            
+            /**
+             * True if has "env" element
+             */
+            boolean isSetEnv();
+            
+            /**
+             * Sets the "env" element
+             */
+            void setEnv(java.lang.String env);
+            
+            /**
+             * Sets (as xml) the "env" element
+             */
+            void xsetEnv(org.apache.xmlbeans.XmlString env);
+            
+            /**
+             * Unsets the "env" element
+             */
+            void unsetEnv();
+            
+            /**
+             * Gets the "server" element
+             */
+            java.lang.String getServer();
+            
+            /**
+             * Gets (as xml) the "server" element
+             */
+            org.apache.xmlbeans.XmlString xgetServer();
+            
+            /**
+             * True if has "server" element
+             */
+            boolean isSetServer();
+            
+            /**
+             * Sets the "server" element
+             */
+            void setServer(java.lang.String server);
+            
+            /**
+             * Sets (as xml) the "server" element
+             */
+            void xsetServer(org.apache.xmlbeans.XmlString server);
+            
+            /**
+             * Unsets the "server" element
+             */
+            void unsetServer();
+            
+            /**
+             * Gets array of all "pluginParam" elements
+             */
+            com.guidewire.accelerator.deployment.PluginParam[] getPluginParamArray();
+            
+            /**
+             * Gets ith "pluginParam" element
+             */
+            com.guidewire.accelerator.deployment.PluginParam getPluginParamArray(int i);
+            
+            /**
+             * Returns number of "pluginParam" element
+             */
+            int sizeOfPluginParamArray();
+            
+            /**
+             * Sets array of all "pluginParam" element
+             */
+            void setPluginParamArray(com.guidewire.accelerator.deployment.PluginParam[] pluginParamArray);
+            
+            /**
+             * Sets ith "pluginParam" element
+             */
+            void setPluginParamArray(int i, com.guidewire.accelerator.deployment.PluginParam pluginParam);
+            
+            /**
+             * Inserts and returns a new empty value (as xml) as the ith "pluginParam" element
+             */
+            com.guidewire.accelerator.deployment.PluginParam insertNewPluginParam(int i);
+            
+            /**
+             * Appends and returns a new empty value (as xml) as the last "pluginParam" element
+             */
+            com.guidewire.accelerator.deployment.PluginParam addNewPluginParam();
+            
+            /**
+             * Removes the ith "pluginParam" element
+             */
+            void removePluginParam(int i);
+            
+            /**
+             * A factory class with static methods for creating instances
+             * of this type.
+             */
+            
+            public static final class Factory
+            {
+                public static com.guidewire.accelerator.deployment.Accelerator.Plugin.Java newInstance() {
+                  return (com.guidewire.accelerator.deployment.Accelerator.Plugin.Java) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                
+                public static com.guidewire.accelerator.deployment.Accelerator.Plugin.Java newInstance(org.apache.xmlbeans.XmlOptions options) {
+                  return (com.guidewire.accelerator.deployment.Accelerator.Plugin.Java) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                
+                private Factory() { } // No instance of this class allowed
+            }
+        }
+        
+        /**
+         * An XML gosu(@http://guidewire.com/accelerator/deployment).
+         *
+         * This is a complex type.
+         */
+        public interface Gosu extends org.apache.xmlbeans.XmlObject
+        {
+            public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Gosu.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("gosu6d61elemtype");
+            
+            /**
+             * Gets the "disabled" element
+             */
+            boolean getDisabled();
+            
+            /**
+             * Gets (as xml) the "disabled" element
+             */
+            org.apache.xmlbeans.XmlBoolean xgetDisabled();
+            
+            /**
+             * True if has "disabled" element
+             */
+            boolean isSetDisabled();
+            
+            /**
+             * Sets the "disabled" element
+             */
+            void setDisabled(boolean disabled);
+            
+            /**
+             * Sets (as xml) the "disabled" element
+             */
+            void xsetDisabled(org.apache.xmlbeans.XmlBoolean disabled);
+            
+            /**
+             * Unsets the "disabled" element
+             */
+            void unsetDisabled();
+            
+            /**
+             * Gets the "classname" element
+             */
+            java.lang.String getClassname();
+            
+            /**
+             * Gets (as xml) the "classname" element
+             */
+            org.apache.xmlbeans.XmlString xgetClassname();
+            
+            /**
+             * Sets the "classname" element
+             */
+            void setClassname(java.lang.String classname);
+            
+            /**
+             * Sets (as xml) the "classname" element
+             */
+            void xsetClassname(org.apache.xmlbeans.XmlString classname);
+            
+            /**
+             * Gets the "env" element
+             */
+            java.lang.String getEnv();
+            
+            /**
+             * Gets (as xml) the "env" element
+             */
+            org.apache.xmlbeans.XmlString xgetEnv();
+            
+            /**
+             * True if has "env" element
+             */
+            boolean isSetEnv();
+            
+            /**
+             * Sets the "env" element
+             */
+            void setEnv(java.lang.String env);
+            
+            /**
+             * Sets (as xml) the "env" element
+             */
+            void xsetEnv(org.apache.xmlbeans.XmlString env);
+            
+            /**
+             * Unsets the "env" element
+             */
+            void unsetEnv();
+            
+            /**
+             * Gets the "server" element
+             */
+            java.lang.String getServer();
+            
+            /**
+             * Gets (as xml) the "server" element
+             */
+            org.apache.xmlbeans.XmlString xgetServer();
+            
+            /**
+             * True if has "server" element
+             */
+            boolean isSetServer();
+            
+            /**
+             * Sets the "server" element
+             */
+            void setServer(java.lang.String server);
+            
+            /**
+             * Sets (as xml) the "server" element
+             */
+            void xsetServer(org.apache.xmlbeans.XmlString server);
+            
+            /**
+             * Unsets the "server" element
+             */
+            void unsetServer();
+            
+            /**
+             * Gets array of all "pluginParam" elements
+             */
+            com.guidewire.accelerator.deployment.PluginParam[] getPluginParamArray();
+            
+            /**
+             * Gets ith "pluginParam" element
+             */
+            com.guidewire.accelerator.deployment.PluginParam getPluginParamArray(int i);
+            
+            /**
+             * Returns number of "pluginParam" element
+             */
+            int sizeOfPluginParamArray();
+            
+            /**
+             * Sets array of all "pluginParam" element
+             */
+            void setPluginParamArray(com.guidewire.accelerator.deployment.PluginParam[] pluginParamArray);
+            
+            /**
+             * Sets ith "pluginParam" element
+             */
+            void setPluginParamArray(int i, com.guidewire.accelerator.deployment.PluginParam pluginParam);
+            
+            /**
+             * Inserts and returns a new empty value (as xml) as the ith "pluginParam" element
+             */
+            com.guidewire.accelerator.deployment.PluginParam insertNewPluginParam(int i);
+            
+            /**
+             * Appends and returns a new empty value (as xml) as the last "pluginParam" element
+             */
+            com.guidewire.accelerator.deployment.PluginParam addNewPluginParam();
+            
+            /**
+             * Removes the ith "pluginParam" element
+             */
+            void removePluginParam(int i);
+            
+            /**
+             * A factory class with static methods for creating instances
+             * of this type.
+             */
+            
+            public static final class Factory
+            {
+                public static com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu newInstance() {
+                  return (com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                
+                public static com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu newInstance(org.apache.xmlbeans.XmlOptions options) {
+                  return (com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                
+                private Factory() { } // No instance of this class allowed
+            }
+        }
         
         /**
          * A factory class with static methods for creating instances
@@ -1823,7 +2257,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Displaykey extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Displaykey.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sD450B541D3584CA6E665928135369BCE").resolveHandle("displaykey5fb1elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Displaykey.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("displaykey5fb1elemtype");
         
         /**
          * Gets the "file" element

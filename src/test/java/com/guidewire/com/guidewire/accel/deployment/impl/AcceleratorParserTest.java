@@ -3,6 +3,7 @@ package com.guidewire.com.guidewire.accel.deployment.impl;
 import com.guidewire.accel.deployment.impl.*;
 import com.guidewire.accel.deployment.impl.enums.PluginImplementationType;
 import com.guidewire.accel.parser.AcceleratorParser;
+import com.guidewire.accel.util.AcceleratorHelper;
 import junit.framework.TestCase;
 
 import java.io.File;
@@ -15,14 +16,21 @@ import java.io.File;
 public class AcceleratorParserTest extends TestCase {
 
   public void testParser() {
+    AcceleratorHelper.getInstance().setProductRoot(new File("src/test/resources/product/"));
     AcceleratorParser parser = new AcceleratorParser(new File("src/test/resources/accelerator/"));
     parser.parseAccelerator();
+
     assertNotNull(parser.getAcceleratorComponents());
-    assertEquals(5, parser.getAcceleratorComponents().getAllComponents().length);
+    assertEquals(11, parser.getAcceleratorComponents().getAllComponents().length);
 
     //Check the pcfComponent
     assertEquals(1, parser.getAcceleratorComponents().getComponentList("pcfComponent").size());
     assertTrue(parser.getAcceleratorComponents().getComponentList("pcfComponent").get(0) instanceof PCFComponent);
+
+    //Check the gosuComponents
+    assertEquals(2, parser.getAcceleratorComponents().getComponentList("gosuComponent").size());
+    assertTrue(parser.getAcceleratorComponents().getComponentList("gosuComponent").get(0) instanceof GosuComponent);
+    assertTrue(parser.getAcceleratorComponents().getComponentList("gosuComponent").get(1) instanceof GosuComponent);
 
     //Check the antBuildComponent
     assertEquals(1, parser.getAcceleratorComponents().getComponentList("antBuildComponent").size());
@@ -55,14 +63,29 @@ public class AcceleratorParserTest extends TestCase {
     assertEquals(1, parser.getAcceleratorComponents().getComponentList("displayKeyComponent").size());
     assertTrue(parser.getAcceleratorComponents().getComponentList("displayKeyComponent").get(0) instanceof DisplayKeyComponent);
 
+    //Check the dataExtensionComponent has been instantiated.
+    assertEquals(1, parser.getAcceleratorComponents().getComponentList("dataExtensionComponent").size());
+    assertTrue(parser.getAcceleratorComponents().getComponentList("dataExtensionComponent").get(0) instanceof DataExtensionComponent);
 
+    //Check the LibraryComponent
+    assertEquals(2, parser.getAcceleratorComponents().getComponentList("libraryComponent").size());
+    assertTrue(parser.getAcceleratorComponents().getComponentList("libraryComponent").get(0) instanceof LibraryComponent);
+    assertTrue(parser.getAcceleratorComponents().getComponentList("libraryComponent").get(1) instanceof LibraryComponent);
+
+    //Check the PluginComponent
+    assertEquals(1, parser.getAcceleratorComponents().getComponentList("pluginComponent").size());
+    assertTrue(parser.getAcceleratorComponents().getComponentList("pluginComponent").get(0) instanceof PluginComponent);
+
+    String valid = "<?xml version=\"1.0\"?>\n" +
+            "<plugin\n" +
+            "  name=\"AuthenticationSourceCreatorPlugin\">\n" +
+            "  <plugin-java\n" +
+            "    javaclass=\"com.guidewire.pl.web.auth.DefaultAuthenticationSourceCreatorPlugin\"\n" +
+            "    plugindir=\"authenticationsourcecreator\"/>\n" +
+            "</plugin>".trim();
+    assertEquals(valid, ((PluginComponent) parser.getAcceleratorComponents().getComponentList("pluginComponent").get(0)).getPlugin().asXML().trim());
 
     //Shouldnt need this, but lets make sure we are not passing back lists for components we do not have.
-    assertNull(parser.getAcceleratorComponents().getComponentList("dataExtensionComponent"));
-    assertNull(parser.getAcceleratorComponents().getComponentList("gosuComponent"));
-    assertNull(parser.getAcceleratorComponents().getComponentList("libraryComponent"));
-    assertNull(parser.getAcceleratorComponents().getComponentList("pluginComponent"));
     assertNull(parser.getAcceleratorComponents().getComponentList("webServiceComponent"));
-
   }
 }

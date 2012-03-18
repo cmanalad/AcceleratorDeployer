@@ -157,8 +157,30 @@
             <xsd:element maxOccurs="unbounded" minOccurs="0" name="plugin">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element maxOccurs="1" minOccurs="0" name="interface" type="xsd:string"/>
                         <xsd:element maxOccurs="1" minOccurs="1" name="name" type="xsd:string"/>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" name="java">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="disabled"  type="xsd:boolean"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="classname" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="plugindir" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="env" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="server" type="xsd:string"/>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="pluginParam" type="ns1:pluginParam"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" name="gosu">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="disabled"  type="xsd:boolean"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="classname" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="env" type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="0" name="server" type="xsd:string"/>
+                                    <xsd:element maxOccurs="unbounded" minOccurs="0" name="pluginParam" type="ns1:pluginParam"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>

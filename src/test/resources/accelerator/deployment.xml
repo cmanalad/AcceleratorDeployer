@@ -2,14 +2,30 @@
     <pcfRoot>
         <directory>src/test/resources/accelerator/configuration/</directory>
     </pcfRoot>
-    <mavenBuild>
-        <directory>.</directory>
-        <goals>clean</goals>
-    </mavenBuild>
+    <gosuRoot>
+        <directory>src/test/resources/accelerator/gsrc/</directory>
+    </gosuRoot>
+    <gunitRoot>
+        <directory>src/test/resources/accelerator/gtest/</directory>
+    </gunitRoot>
     <antBuild>
         <buildFile>../build.xml</buildFile>
         <target>test</target>
     </antBuild>
+    <library>
+        <directory>src/test/resources/accelerator/lib</directory>
+        <pluginDirectory>MyLib</pluginDirectory>
+    </library>
+    <library>
+        <directory>src/test/resources/accelerator/lib2</directory>
+    </library>
+    <mavenBuild>
+        <directory>.</directory>
+        <goals>clean</goals>
+    </mavenBuild>
+    <dataExtension>
+        <directory>extensions</directory>
+    </dataExtension>
     <messageQueue>
         <messageTransport>
             <transportName>MyTransport</transportName>
@@ -39,6 +55,13 @@
         <numberThreads>5</numberThreads>
         <destination>15</destination>
     </messageQueue>
+    <plugin>
+        <name>AuthenticationSourceCreatorPlugin</name>
+        <java>
+            <classname>com.guidewire.pl.web.auth.DefaultAuthenticationSourceCreatorPlugin</classname>
+            <plugindir>authenticationsourcecreator</plugindir>
+        </java>
+    </plugin>
     <displaykey>
         <file>keys/displaykey.properties</file>
     </displaykey>

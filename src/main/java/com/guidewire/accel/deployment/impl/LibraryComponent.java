@@ -1,6 +1,7 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
+import com.guidewire.accel.util.FileUtil;
 
 import java.io.File;
 
@@ -27,7 +28,47 @@ public class LibraryComponent implements DeployableComponent {
 
   @Override
   public boolean deploy() {
-    return false;
+    boolean deployed = true;
+    try {
+      //If we have a plugindir we deploy to modules/configuration/plugins/$pluginDir/lib
+      StringBuilder sb = new StringBuilder();
+      sb.append("Modules");
+      sb.append(File.separator);
+      sb.append("configuration");
+      sb.append(File.separator);
+      sb.append("plugins");
+      sb.append(File.separator);
+      if (pluginDir != null && pluginDir.trim().length() > 0) {
+        sb.append(pluginDir);
+      }
+      //Otherwise we deploy to modules/configuration/plugins/shared/lib
+      else {
+        sb.append("shared");
+      }
+      sb.append(File.separator);
+      sb.append("lib");
+      sb.append(File.separator);
+
+      File deployDir = new File(sb.toString());
+      if (!deployDir.exists()) {
+        deployed = deployDir.mkdirs();
+      }
+      //if we are still ok...
+      if (deployed) {
+        //The Library Component points to a directory... so list all the files in there.
+        File[] list = libraryFile.listFiles();
+        for(File libFile : list) {
+          String fileName = libFile.getName();
+          File outFile = new File(deployDir.getAbsolutePath() + File.separator + fileName);
+          FileUtil.copyFileToFile(libFile, outFile);
+        }
+      }
+    }
+    catch (Throwable t) {
+      t.printStackTrace();
+      deployed = false;
+    }
+    return deployed;
   }
 
   @Override

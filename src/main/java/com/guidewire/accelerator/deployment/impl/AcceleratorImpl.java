@@ -4498,103 +4498,13 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             super(sType);
         }
         
-        private static final javax.xml.namespace.QName INTERFACE$0 = 
-            new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "interface");
-        private static final javax.xml.namespace.QName NAME$2 = 
+        private static final javax.xml.namespace.QName NAME$0 = 
             new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "name");
+        private static final javax.xml.namespace.QName JAVA$2 = 
+            new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "java");
+        private static final javax.xml.namespace.QName GOSU$4 = 
+            new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "gosu");
         
-        
-        /**
-         * Gets the "interface" element
-         */
-        public java.lang.String getInterface()
-        {
-            synchronized (monitor())
-            {
-                check_orphaned();
-                org.apache.xmlbeans.SimpleValue target = null;
-                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(INTERFACE$0, 0);
-                if (target == null)
-                {
-                    return null;
-                }
-                return target.getStringValue();
-            }
-        }
-        
-        /**
-         * Gets (as xml) the "interface" element
-         */
-        public org.apache.xmlbeans.XmlString xgetInterface()
-        {
-            synchronized (monitor())
-            {
-                check_orphaned();
-                org.apache.xmlbeans.XmlString target = null;
-                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(INTERFACE$0, 0);
-                return target;
-            }
-        }
-        
-        /**
-         * True if has "interface" element
-         */
-        public boolean isSetInterface()
-        {
-            synchronized (monitor())
-            {
-                check_orphaned();
-                return get_store().count_elements(INTERFACE$0) != 0;
-            }
-        }
-        
-        /**
-         * Sets the "interface" element
-         */
-        public void setInterface(java.lang.String xinterface)
-        {
-            synchronized (monitor())
-            {
-                check_orphaned();
-                org.apache.xmlbeans.SimpleValue target = null;
-                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(INTERFACE$0, 0);
-                if (target == null)
-                {
-                    target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(INTERFACE$0);
-                }
-                target.setStringValue(xinterface);
-            }
-        }
-        
-        /**
-         * Sets (as xml) the "interface" element
-         */
-        public void xsetInterface(org.apache.xmlbeans.XmlString xinterface)
-        {
-            synchronized (monitor())
-            {
-                check_orphaned();
-                org.apache.xmlbeans.XmlString target = null;
-                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(INTERFACE$0, 0);
-                if (target == null)
-                {
-                    target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(INTERFACE$0);
-                }
-                target.set(xinterface);
-            }
-        }
-        
-        /**
-         * Unsets the "interface" element
-         */
-        public void unsetInterface()
-        {
-            synchronized (monitor())
-            {
-                check_orphaned();
-                get_store().remove_element(INTERFACE$0, 0);
-            }
-        }
         
         /**
          * Gets the "name" element
@@ -4605,7 +4515,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             {
                 check_orphaned();
                 org.apache.xmlbeans.SimpleValue target = null;
-                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(NAME$2, 0);
+                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(NAME$0, 0);
                 if (target == null)
                 {
                     return null;
@@ -4623,7 +4533,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             {
                 check_orphaned();
                 org.apache.xmlbeans.XmlString target = null;
-                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(NAME$2, 0);
+                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(NAME$0, 0);
                 return target;
             }
         }
@@ -4637,10 +4547,10 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             {
                 check_orphaned();
                 org.apache.xmlbeans.SimpleValue target = null;
-                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(NAME$2, 0);
+                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(NAME$0, 0);
                 if (target == null)
                 {
-                    target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(NAME$2);
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(NAME$0);
                 }
                 target.setStringValue(name);
             }
@@ -4655,12 +4565,1310 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             {
                 check_orphaned();
                 org.apache.xmlbeans.XmlString target = null;
-                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(NAME$2, 0);
+                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(NAME$0, 0);
                 if (target == null)
                 {
-                    target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(NAME$2);
+                    target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(NAME$0);
                 }
                 target.set(name);
+            }
+        }
+        
+        /**
+         * Gets array of all "java" elements
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Java[] getJavaArray()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                java.util.List targetList = new java.util.ArrayList();
+                get_store().find_all_element_users(JAVA$2, targetList);
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Java[] result = new com.guidewire.accelerator.deployment.Accelerator.Plugin.Java[targetList.size()];
+                targetList.toArray(result);
+                return result;
+            }
+        }
+        
+        /**
+         * Gets ith "java" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Java getJavaArray(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Java target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Java)get_store().find_element_user(JAVA$2, i);
+                if (target == null)
+                {
+                    throw new IndexOutOfBoundsException();
+                }
+                return target;
+            }
+        }
+        
+        /**
+         * Returns number of "java" element
+         */
+        public int sizeOfJavaArray()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                return get_store().count_elements(JAVA$2);
+            }
+        }
+        
+        /**
+         * Sets array of all "java" element
+         */
+        public void setJavaArray(com.guidewire.accelerator.deployment.Accelerator.Plugin.Java[] javaArray)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                arraySetterHelper(javaArray, JAVA$2);
+            }
+        }
+        
+        /**
+         * Sets ith "java" element
+         */
+        public void setJavaArray(int i, com.guidewire.accelerator.deployment.Accelerator.Plugin.Java java)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Java target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Java)get_store().find_element_user(JAVA$2, i);
+                if (target == null)
+                {
+                    throw new IndexOutOfBoundsException();
+                }
+                target.set(java);
+            }
+        }
+        
+        /**
+         * Inserts and returns a new empty value (as xml) as the ith "java" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Java insertNewJava(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Java target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Java)get_store().insert_element_user(JAVA$2, i);
+                return target;
+            }
+        }
+        
+        /**
+         * Appends and returns a new empty value (as xml) as the last "java" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Java addNewJava()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Java target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Java)get_store().add_element_user(JAVA$2);
+                return target;
+            }
+        }
+        
+        /**
+         * Removes the ith "java" element
+         */
+        public void removeJava(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                get_store().remove_element(JAVA$2, i);
+            }
+        }
+        
+        /**
+         * Gets array of all "gosu" elements
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu[] getGosuArray()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                java.util.List targetList = new java.util.ArrayList();
+                get_store().find_all_element_users(GOSU$4, targetList);
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu[] result = new com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu[targetList.size()];
+                targetList.toArray(result);
+                return result;
+            }
+        }
+        
+        /**
+         * Gets ith "gosu" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu getGosuArray(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu)get_store().find_element_user(GOSU$4, i);
+                if (target == null)
+                {
+                    throw new IndexOutOfBoundsException();
+                }
+                return target;
+            }
+        }
+        
+        /**
+         * Returns number of "gosu" element
+         */
+        public int sizeOfGosuArray()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                return get_store().count_elements(GOSU$4);
+            }
+        }
+        
+        /**
+         * Sets array of all "gosu" element
+         */
+        public void setGosuArray(com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu[] gosuArray)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                arraySetterHelper(gosuArray, GOSU$4);
+            }
+        }
+        
+        /**
+         * Sets ith "gosu" element
+         */
+        public void setGosuArray(int i, com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu gosu)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu)get_store().find_element_user(GOSU$4, i);
+                if (target == null)
+                {
+                    throw new IndexOutOfBoundsException();
+                }
+                target.set(gosu);
+            }
+        }
+        
+        /**
+         * Inserts and returns a new empty value (as xml) as the ith "gosu" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu insertNewGosu(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu)get_store().insert_element_user(GOSU$4, i);
+                return target;
+            }
+        }
+        
+        /**
+         * Appends and returns a new empty value (as xml) as the last "gosu" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu addNewGosu()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu)get_store().add_element_user(GOSU$4);
+                return target;
+            }
+        }
+        
+        /**
+         * Removes the ith "gosu" element
+         */
+        public void removeGosu(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                get_store().remove_element(GOSU$4, i);
+            }
+        }
+        /**
+         * An XML java(@http://guidewire.com/accelerator/deployment).
+         *
+         * This is a complex type.
+         */
+        public static class JavaImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements com.guidewire.accelerator.deployment.Accelerator.Plugin.Java
+        {
+            private static final long serialVersionUID = 1L;
+            
+            public JavaImpl(org.apache.xmlbeans.SchemaType sType)
+            {
+                super(sType);
+            }
+            
+            private static final javax.xml.namespace.QName DISABLED$0 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "disabled");
+            private static final javax.xml.namespace.QName CLASSNAME$2 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "classname");
+            private static final javax.xml.namespace.QName PLUGINDIR$4 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "plugindir");
+            private static final javax.xml.namespace.QName ENV$6 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "env");
+            private static final javax.xml.namespace.QName SERVER$8 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "server");
+            private static final javax.xml.namespace.QName PLUGINPARAM$10 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "pluginParam");
+            
+            
+            /**
+             * Gets the "disabled" element
+             */
+            public boolean getDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(DISABLED$0, 0);
+                    if (target == null)
+                    {
+                      return false;
+                    }
+                    return target.getBooleanValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "disabled" element
+             */
+            public org.apache.xmlbeans.XmlBoolean xgetDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlBoolean target = null;
+                    target = (org.apache.xmlbeans.XmlBoolean)get_store().find_element_user(DISABLED$0, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "disabled" element
+             */
+            public boolean isSetDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(DISABLED$0) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "disabled" element
+             */
+            public void setDisabled(boolean disabled)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(DISABLED$0, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(DISABLED$0);
+                    }
+                    target.setBooleanValue(disabled);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "disabled" element
+             */
+            public void xsetDisabled(org.apache.xmlbeans.XmlBoolean disabled)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlBoolean target = null;
+                    target = (org.apache.xmlbeans.XmlBoolean)get_store().find_element_user(DISABLED$0, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlBoolean)get_store().add_element_user(DISABLED$0);
+                    }
+                    target.set(disabled);
+                }
+            }
+            
+            /**
+             * Unsets the "disabled" element
+             */
+            public void unsetDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(DISABLED$0, 0);
+                }
+            }
+            
+            /**
+             * Gets the "classname" element
+             */
+            public java.lang.String getClassname()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(CLASSNAME$2, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "classname" element
+             */
+            public org.apache.xmlbeans.XmlString xgetClassname()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(CLASSNAME$2, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * Sets the "classname" element
+             */
+            public void setClassname(java.lang.String classname)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(CLASSNAME$2, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(CLASSNAME$2);
+                    }
+                    target.setStringValue(classname);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "classname" element
+             */
+            public void xsetClassname(org.apache.xmlbeans.XmlString classname)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(CLASSNAME$2, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(CLASSNAME$2);
+                    }
+                    target.set(classname);
+                }
+            }
+            
+            /**
+             * Gets the "plugindir" element
+             */
+            public java.lang.String getPlugindir()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(PLUGINDIR$4, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "plugindir" element
+             */
+            public org.apache.xmlbeans.XmlString xgetPlugindir()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(PLUGINDIR$4, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "plugindir" element
+             */
+            public boolean isSetPlugindir()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(PLUGINDIR$4) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "plugindir" element
+             */
+            public void setPlugindir(java.lang.String plugindir)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(PLUGINDIR$4, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(PLUGINDIR$4);
+                    }
+                    target.setStringValue(plugindir);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "plugindir" element
+             */
+            public void xsetPlugindir(org.apache.xmlbeans.XmlString plugindir)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(PLUGINDIR$4, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(PLUGINDIR$4);
+                    }
+                    target.set(plugindir);
+                }
+            }
+            
+            /**
+             * Unsets the "plugindir" element
+             */
+            public void unsetPlugindir()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(PLUGINDIR$4, 0);
+                }
+            }
+            
+            /**
+             * Gets the "env" element
+             */
+            public java.lang.String getEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(ENV$6, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "env" element
+             */
+            public org.apache.xmlbeans.XmlString xgetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(ENV$6, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "env" element
+             */
+            public boolean isSetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(ENV$6) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "env" element
+             */
+            public void setEnv(java.lang.String env)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(ENV$6, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(ENV$6);
+                    }
+                    target.setStringValue(env);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "env" element
+             */
+            public void xsetEnv(org.apache.xmlbeans.XmlString env)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(ENV$6, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(ENV$6);
+                    }
+                    target.set(env);
+                }
+            }
+            
+            /**
+             * Unsets the "env" element
+             */
+            public void unsetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(ENV$6, 0);
+                }
+            }
+            
+            /**
+             * Gets the "server" element
+             */
+            public java.lang.String getServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVER$8, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "server" element
+             */
+            public org.apache.xmlbeans.XmlString xgetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVER$8, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "server" element
+             */
+            public boolean isSetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(SERVER$8) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "server" element
+             */
+            public void setServer(java.lang.String server)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVER$8, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(SERVER$8);
+                    }
+                    target.setStringValue(server);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "server" element
+             */
+            public void xsetServer(org.apache.xmlbeans.XmlString server)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVER$8, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(SERVER$8);
+                    }
+                    target.set(server);
+                }
+            }
+            
+            /**
+             * Unsets the "server" element
+             */
+            public void unsetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(SERVER$8, 0);
+                }
+            }
+            
+            /**
+             * Gets array of all "pluginParam" elements
+             */
+            public com.guidewire.accelerator.deployment.PluginParam[] getPluginParamArray()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    java.util.List targetList = new java.util.ArrayList();
+                    get_store().find_all_element_users(PLUGINPARAM$10, targetList);
+                    com.guidewire.accelerator.deployment.PluginParam[] result = new com.guidewire.accelerator.deployment.PluginParam[targetList.size()];
+                    targetList.toArray(result);
+                    return result;
+                }
+            }
+            
+            /**
+             * Gets ith "pluginParam" element
+             */
+            public com.guidewire.accelerator.deployment.PluginParam getPluginParamArray(int i)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().find_element_user(PLUGINPARAM$10, i);
+                    if (target == null)
+                    {
+                      throw new IndexOutOfBoundsException();
+                    }
+                    return target;
+                }
+            }
+            
+            /**
+             * Returns number of "pluginParam" element
+             */
+            public int sizeOfPluginParamArray()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(PLUGINPARAM$10);
+                }
+            }
+            
+            /**
+             * Sets array of all "pluginParam" element
+             */
+            public void setPluginParamArray(com.guidewire.accelerator.deployment.PluginParam[] pluginParamArray)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    arraySetterHelper(pluginParamArray, PLUGINPARAM$10);
+                }
+            }
+            
+            /**
+             * Sets ith "pluginParam" element
+             */
+            public void setPluginParamArray(int i, com.guidewire.accelerator.deployment.PluginParam pluginParam)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().find_element_user(PLUGINPARAM$10, i);
+                    if (target == null)
+                    {
+                      throw new IndexOutOfBoundsException();
+                    }
+                    target.set(pluginParam);
+                }
+            }
+            
+            /**
+             * Inserts and returns a new empty value (as xml) as the ith "pluginParam" element
+             */
+            public com.guidewire.accelerator.deployment.PluginParam insertNewPluginParam(int i)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().insert_element_user(PLUGINPARAM$10, i);
+                    return target;
+                }
+            }
+            
+            /**
+             * Appends and returns a new empty value (as xml) as the last "pluginParam" element
+             */
+            public com.guidewire.accelerator.deployment.PluginParam addNewPluginParam()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().add_element_user(PLUGINPARAM$10);
+                    return target;
+                }
+            }
+            
+            /**
+             * Removes the ith "pluginParam" element
+             */
+            public void removePluginParam(int i)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(PLUGINPARAM$10, i);
+                }
+            }
+        }
+        /**
+         * An XML gosu(@http://guidewire.com/accelerator/deployment).
+         *
+         * This is a complex type.
+         */
+        public static class GosuImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements com.guidewire.accelerator.deployment.Accelerator.Plugin.Gosu
+        {
+            private static final long serialVersionUID = 1L;
+            
+            public GosuImpl(org.apache.xmlbeans.SchemaType sType)
+            {
+                super(sType);
+            }
+            
+            private static final javax.xml.namespace.QName DISABLED$0 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "disabled");
+            private static final javax.xml.namespace.QName CLASSNAME$2 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "classname");
+            private static final javax.xml.namespace.QName ENV$4 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "env");
+            private static final javax.xml.namespace.QName SERVER$6 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "server");
+            private static final javax.xml.namespace.QName PLUGINPARAM$8 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "pluginParam");
+            
+            
+            /**
+             * Gets the "disabled" element
+             */
+            public boolean getDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(DISABLED$0, 0);
+                    if (target == null)
+                    {
+                      return false;
+                    }
+                    return target.getBooleanValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "disabled" element
+             */
+            public org.apache.xmlbeans.XmlBoolean xgetDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlBoolean target = null;
+                    target = (org.apache.xmlbeans.XmlBoolean)get_store().find_element_user(DISABLED$0, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "disabled" element
+             */
+            public boolean isSetDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(DISABLED$0) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "disabled" element
+             */
+            public void setDisabled(boolean disabled)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(DISABLED$0, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(DISABLED$0);
+                    }
+                    target.setBooleanValue(disabled);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "disabled" element
+             */
+            public void xsetDisabled(org.apache.xmlbeans.XmlBoolean disabled)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlBoolean target = null;
+                    target = (org.apache.xmlbeans.XmlBoolean)get_store().find_element_user(DISABLED$0, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlBoolean)get_store().add_element_user(DISABLED$0);
+                    }
+                    target.set(disabled);
+                }
+            }
+            
+            /**
+             * Unsets the "disabled" element
+             */
+            public void unsetDisabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(DISABLED$0, 0);
+                }
+            }
+            
+            /**
+             * Gets the "classname" element
+             */
+            public java.lang.String getClassname()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(CLASSNAME$2, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "classname" element
+             */
+            public org.apache.xmlbeans.XmlString xgetClassname()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(CLASSNAME$2, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * Sets the "classname" element
+             */
+            public void setClassname(java.lang.String classname)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(CLASSNAME$2, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(CLASSNAME$2);
+                    }
+                    target.setStringValue(classname);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "classname" element
+             */
+            public void xsetClassname(org.apache.xmlbeans.XmlString classname)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(CLASSNAME$2, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(CLASSNAME$2);
+                    }
+                    target.set(classname);
+                }
+            }
+            
+            /**
+             * Gets the "env" element
+             */
+            public java.lang.String getEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(ENV$4, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "env" element
+             */
+            public org.apache.xmlbeans.XmlString xgetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(ENV$4, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "env" element
+             */
+            public boolean isSetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(ENV$4) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "env" element
+             */
+            public void setEnv(java.lang.String env)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(ENV$4, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(ENV$4);
+                    }
+                    target.setStringValue(env);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "env" element
+             */
+            public void xsetEnv(org.apache.xmlbeans.XmlString env)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(ENV$4, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(ENV$4);
+                    }
+                    target.set(env);
+                }
+            }
+            
+            /**
+             * Unsets the "env" element
+             */
+            public void unsetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(ENV$4, 0);
+                }
+            }
+            
+            /**
+             * Gets the "server" element
+             */
+            public java.lang.String getServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVER$6, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "server" element
+             */
+            public org.apache.xmlbeans.XmlString xgetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVER$6, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "server" element
+             */
+            public boolean isSetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(SERVER$6) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "server" element
+             */
+            public void setServer(java.lang.String server)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVER$6, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(SERVER$6);
+                    }
+                    target.setStringValue(server);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "server" element
+             */
+            public void xsetServer(org.apache.xmlbeans.XmlString server)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVER$6, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(SERVER$6);
+                    }
+                    target.set(server);
+                }
+            }
+            
+            /**
+             * Unsets the "server" element
+             */
+            public void unsetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(SERVER$6, 0);
+                }
+            }
+            
+            /**
+             * Gets array of all "pluginParam" elements
+             */
+            public com.guidewire.accelerator.deployment.PluginParam[] getPluginParamArray()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    java.util.List targetList = new java.util.ArrayList();
+                    get_store().find_all_element_users(PLUGINPARAM$8, targetList);
+                    com.guidewire.accelerator.deployment.PluginParam[] result = new com.guidewire.accelerator.deployment.PluginParam[targetList.size()];
+                    targetList.toArray(result);
+                    return result;
+                }
+            }
+            
+            /**
+             * Gets ith "pluginParam" element
+             */
+            public com.guidewire.accelerator.deployment.PluginParam getPluginParamArray(int i)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().find_element_user(PLUGINPARAM$8, i);
+                    if (target == null)
+                    {
+                      throw new IndexOutOfBoundsException();
+                    }
+                    return target;
+                }
+            }
+            
+            /**
+             * Returns number of "pluginParam" element
+             */
+            public int sizeOfPluginParamArray()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(PLUGINPARAM$8);
+                }
+            }
+            
+            /**
+             * Sets array of all "pluginParam" element
+             */
+            public void setPluginParamArray(com.guidewire.accelerator.deployment.PluginParam[] pluginParamArray)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    arraySetterHelper(pluginParamArray, PLUGINPARAM$8);
+                }
+            }
+            
+            /**
+             * Sets ith "pluginParam" element
+             */
+            public void setPluginParamArray(int i, com.guidewire.accelerator.deployment.PluginParam pluginParam)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().find_element_user(PLUGINPARAM$8, i);
+                    if (target == null)
+                    {
+                      throw new IndexOutOfBoundsException();
+                    }
+                    target.set(pluginParam);
+                }
+            }
+            
+            /**
+             * Inserts and returns a new empty value (as xml) as the ith "pluginParam" element
+             */
+            public com.guidewire.accelerator.deployment.PluginParam insertNewPluginParam(int i)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().insert_element_user(PLUGINPARAM$8, i);
+                    return target;
+                }
+            }
+            
+            /**
+             * Appends and returns a new empty value (as xml) as the last "pluginParam" element
+             */
+            public com.guidewire.accelerator.deployment.PluginParam addNewPluginParam()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.PluginParam target = null;
+                    target = (com.guidewire.accelerator.deployment.PluginParam)get_store().add_element_user(PLUGINPARAM$8);
+                    return target;
+                }
+            }
+            
+            /**
+             * Removes the ith "pluginParam" element
+             */
+            public void removePluginParam(int i)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(PLUGINPARAM$8, i);
+                }
             }
         }
     }
