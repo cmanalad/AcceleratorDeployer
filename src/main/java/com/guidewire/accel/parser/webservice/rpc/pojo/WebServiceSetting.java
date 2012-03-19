@@ -32,7 +32,25 @@ public class WebServiceSetting {
       sb.append(callTimeout);
       sb.append("\"");
     }
+    if(env != null && env.trim().length() > 0) {
+      sb.append("\n    env=\"");
+      sb.append(env);
+      sb.append("\"");
+    }
+    if(server != null && server.trim().length() > 0) {
+      sb.append("\n    server=\"");
+      sb.append(server);
+      sb.append("\"");
+    }
     sb.append(">\n");
+    if(authenticationType != null && authenticationType.trim().length() > 0) {
+      sb.append("    <http-authentication");
+      sb.append("\n      password=\"");
+      sb.append(password);
+      sb.append("\"\n      username=\"");
+      sb.append(username);
+      sb.append("\"/>\n");
+    }
     if(overrideEnabled || (overrideUrl != null && overrideUrl.trim().length() > 0)) {
       sb.append("    <service\n      override-enable=\"");
       sb.append(overrideEnabled);
@@ -42,14 +60,6 @@ public class WebServiceSetting {
       sb.append("\"");
       sb.append("\n      service-name=\"");
       sb.append(serviceName);
-      sb.append("/>\n");
-    }
-    if(authenticationType != null && authenticationType.trim().length() > 0) {
-      sb.append("    <http-authentication");
-      sb.append("\n      password=\"");
-      sb.append(password);
-      sb.append("\"\n      username=\"");
-      sb.append(username);
       sb.append("\"/>\n");
     }
     sb.append("  </settings>\n");

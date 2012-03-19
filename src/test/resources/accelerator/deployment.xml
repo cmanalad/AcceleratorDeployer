@@ -65,4 +65,8 @@
     <displaykey>
         <file>keys/displaykey.properties</file>
     </displaykey>
+    <rpcWebService>
+        <name>test</name>
+        <wsdlLocation>http://wl-gdwdev2gw-middle.group.net:8080/cc/soap/IClaimAPI?wsdl</wsdlLocation>
+    </rpcWebService>
 </accelerator>

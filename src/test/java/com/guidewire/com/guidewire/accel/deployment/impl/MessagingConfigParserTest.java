@@ -8,11 +8,11 @@ import junit.framework.TestCase;
 import java.io.File;
 
 /**
- * Created by IntelliJ IDEA.
+ *
  * User: tp23161
  * Date: 12/03/12
  * Time: 14:05
- * To change this template use File | Settings | File Templates.
+ *
  */
 public class MessagingConfigParserTest extends TestCase {
 

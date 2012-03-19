@@ -5,6 +5,8 @@ import com.guidewire.accel.deployment.impl.*;
 import com.guidewire.accel.deployment.util.ComponentList;
 import com.guidewire.accel.parser.plugin.pojo.GosuPlugin;
 import com.guidewire.accel.parser.plugin.pojo.JavaPlugin;
+import com.guidewire.accel.parser.webservice.rpc.pojo.WebService;
+import com.guidewire.accel.parser.webservice.rpc.pojo.WebServiceSetting;
 import com.guidewire.accel.util.FileUtil;
 import com.guidewire.accel.util.PluginParam;
 import com.guidewire.accelerator.deployment.Accelerator;
@@ -221,6 +223,29 @@ public class AcceleratorParser {
           }
           component.addGosuPlugin(gPlugin);
         }
+        addToComponents(component);
+      }
+      for(Accelerator.RpcWebService ws : accel.getRpcWebServiceArray()) {
+        RpcWebServiceComponent component = new RpcWebServiceComponent();
+        WebService service = new WebService();
+        service.setName(ws.getName());
+        service.setWsdlLocation(ws.getWsdlLocation());
+        if(ws.getSettingArray() != null && ws.getSettingArray().length > 0) {
+          for(Accelerator.RpcWebService.Setting s : ws.getSettingArray()) {
+            WebServiceSetting setting = new WebServiceSetting();
+            setting.setCallTimeout(s.getCallTimeout());
+            setting.setEnv(s.getEnv());
+            setting.setServer(s.getServer());
+            setting.setOverrideEnabled(s.getOverrideEnabled());
+            setting.setOverrideUrl(s.getOverrideUrl());
+            setting.setServiceName(s.getServiceName());
+            setting.setAuthenticationType(s.getAuthentication().getAuthenticationType());
+            setting.setUsername(s.getAuthentication().getUsername());
+            setting.setPassword(s.getAuthentication().getPassword());
+            service.addToSettings(setting);
+          }
+        }
+        component.setWebService(service);
         addToComponents(component);
       }
 

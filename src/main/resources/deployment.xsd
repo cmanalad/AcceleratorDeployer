@@ -72,7 +72,13 @@
                                 <xsd:sequence>
                                     <xsd:element maxOccurs="1" minOccurs="1" name="requestName"
                                         type="xsd:string"/>
-                                    <xsd:element maxOccurs="1" minOccurs="1" name="requestType" type="xsd:string">
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="requestType">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:enumeration value="gosu" />
+                                                <xsd:enumeration value="java" />
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
                                     </xsd:element>
                                     <xsd:element maxOccurs="1" minOccurs="1" name="requestClass"
                                         type="xsd:string"/>
@@ -93,8 +99,14 @@
                                 <xsd:sequence>
                                     <xsd:element maxOccurs="1" minOccurs="1" name="transportName"
                                         type="xsd:string"/>
-                                    <xsd:element maxOccurs="1" minOccurs="1" name="transportType"
-                                        type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="transportType">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:enumeration value="gosu" />
+                                                <xsd:enumeration value="java" />
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:element>
                                     <xsd:element maxOccurs="1" minOccurs="1" name="transportClass"
                                         type="xsd:string"/>
                                     <xsd:element maxOccurs="1" minOccurs="0"
@@ -122,8 +134,14 @@
                                 <xsd:sequence>
                                     <xsd:element maxOccurs="1" minOccurs="1" name="replyName"
                                         type="xsd:string"/>
-                                    <xsd:element maxOccurs="1" minOccurs="1" name="replyType"
-                                        type="xsd:string"/>
+                                    <xsd:element maxOccurs="1" minOccurs="1" name="replyType">
+                                        <xsd:simpleType>
+                                            <xsd:restriction base="xsd:string">
+                                                <xsd:enumeration value="gosu" />
+                                                <xsd:enumeration value="java" />
+                                            </xsd:restriction>
+                                        </xsd:simpleType>
+                                    </xsd:element>
                                     <xsd:element maxOccurs="1" minOccurs="1" name="replyClass"
                                         type="xsd:string"/>
                                     <xsd:element maxOccurs="1" minOccurs="0" name="replyParameters">
@@ -188,6 +206,35 @@
                 <xsd:complexType>
                     <xsd:sequence>
                         <xsd:element maxOccurs="1" minOccurs="0" name="file" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="rpcWebService">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="name" type="xsd:string"/>
+                        <xsd:element minOccurs="1" maxOccurs="1" name="wsdlLocation" type="xsd:string"/>
+                        <xsd:element minOccurs="0" maxOccurs="unbounded" name="setting">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element minOccurs="0" maxOccurs="1" name="authentication">
+                                        <xsd:complexType>
+                                            <xsd:sequence>
+                                                <xsd:element minOccurs="1" maxOccurs="1" type="xsd:string"  name="authenticationType"/>
+                                                <xsd:element minOccurs="1" maxOccurs="1" type="xsd:string"  name="username"/>
+                                                <xsd:element minOccurs="1" maxOccurs="1" type="xsd:string"  name="password"/>
+                                            </xsd:sequence>
+                                        </xsd:complexType>
+                                    </xsd:element>
+                                    <xsd:element minOccurs="0" maxOccurs="1" type="xsd:int"     name="callTimeout"/>
+                                    <xsd:element minOccurs="0" maxOccurs="1" type="xsd:string"  name="env"/>
+                                    <xsd:element minOccurs="0" maxOccurs="1" type="xsd:string"  name="server"/>
+                                    <xsd:element minOccurs="0" maxOccurs="1" type="xsd:boolean" name="overrideEnabled"/>
+                                    <xsd:element minOccurs="0" maxOccurs="1" type="xsd:string"  name="overrideUrl"/>
+                                    <xsd:element minOccurs="0" maxOccurs="1" type="xsd:string"  name="serviceName"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
                     </xsd:sequence>
                 </xsd:complexType>
             </xsd:element>

@@ -21,7 +21,7 @@ public class AcceleratorParserTest extends TestCase {
     parser.parseAccelerator();
 
     assertNotNull(parser.getAcceleratorComponents());
-    assertEquals(11, parser.getAcceleratorComponents().getAllComponents().length);
+    assertEquals(12, parser.getAcceleratorComponents().getAllComponents().length);
 
     //Check the pcfComponent
     assertEquals(1, parser.getAcceleratorComponents().getComponentList("pcfComponent").size());
@@ -85,7 +85,8 @@ public class AcceleratorParserTest extends TestCase {
             "</plugin>".trim();
     assertEquals(valid, ((PluginComponent) parser.getAcceleratorComponents().getComponentList("pluginComponent").get(0)).getPlugin().asXML().trim());
 
-    //Shouldnt need this, but lets make sure we are not passing back lists for components we do not have.
-    assertNull(parser.getAcceleratorComponents().getComponentList("webServiceComponent"));
+    //Check the RPC web service
+    assertEquals(1, parser.getAcceleratorComponents().getComponentList("rpcWebServiceComponent").size());
+    assertTrue(parser.getAcceleratorComponents().getComponentList("rpcWebServiceComponent").get(0) instanceof RpcWebServiceComponent);
   }
 }

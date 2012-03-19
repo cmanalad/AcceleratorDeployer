@@ -3,7 +3,7 @@ package com.guidewire.com.guidewire.accel.deployment.impl;
 import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.deployment.impl.DataExtensionComponent;
 import com.guidewire.accel.deployment.impl.PluginComponent;
-import com.guidewire.accel.deployment.impl.WebServiceComponent;
+import com.guidewire.accel.deployment.impl.RpcWebServiceComponent;
 import com.guidewire.accel.deployment.util.ComponentList;
 import junit.framework.TestCase;
 
@@ -22,7 +22,7 @@ public class ComponentListTest extends TestCase {
     ComponentList list = new ComponentList();
     DeployableComponent component = new DataExtensionComponent(null);
     list.addComponent(component);
-    component = new WebServiceComponent();
+    component = new RpcWebServiceComponent();
     list.addComponent(component);
     component = new PluginComponent();
     list.addComponent(component);
@@ -40,7 +40,7 @@ public class ComponentListTest extends TestCase {
     ComponentList list = new ComponentList();
     DeployableComponent component = new DataExtensionComponent(null);
     list.addComponent(component);
-    component = new WebServiceComponent();
+    component = new RpcWebServiceComponent();
     list.addComponent(component);
     component = new PluginComponent();
     list.addComponent(component);

@@ -40,6 +40,8 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
         new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "plugin");
     private static final javax.xml.namespace.QName DISPLAYKEY$18 = 
         new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "displaykey");
+    private static final javax.xml.namespace.QName RPCWEBSERVICE$20 = 
+        new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "rpcWebService");
     
     
     /**
@@ -1115,6 +1117,122 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
         {
             check_orphaned();
             get_store().remove_element(DISPLAYKEY$18, 0);
+        }
+    }
+    
+    /**
+     * Gets array of all "rpcWebService" elements
+     */
+    public com.guidewire.accelerator.deployment.Accelerator.RpcWebService[] getRpcWebServiceArray()
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            java.util.List targetList = new java.util.ArrayList();
+            get_store().find_all_element_users(RPCWEBSERVICE$20, targetList);
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService[] result = new com.guidewire.accelerator.deployment.Accelerator.RpcWebService[targetList.size()];
+            targetList.toArray(result);
+            return result;
+        }
+    }
+    
+    /**
+     * Gets ith "rpcWebService" element
+     */
+    public com.guidewire.accelerator.deployment.Accelerator.RpcWebService getRpcWebServiceArray(int i)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService target = null;
+            target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService)get_store().find_element_user(RPCWEBSERVICE$20, i);
+            if (target == null)
+            {
+                throw new IndexOutOfBoundsException();
+            }
+            return target;
+        }
+    }
+    
+    /**
+     * Returns number of "rpcWebService" element
+     */
+    public int sizeOfRpcWebServiceArray()
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            return get_store().count_elements(RPCWEBSERVICE$20);
+        }
+    }
+    
+    /**
+     * Sets array of all "rpcWebService" element
+     */
+    public void setRpcWebServiceArray(com.guidewire.accelerator.deployment.Accelerator.RpcWebService[] rpcWebServiceArray)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            arraySetterHelper(rpcWebServiceArray, RPCWEBSERVICE$20);
+        }
+    }
+    
+    /**
+     * Sets ith "rpcWebService" element
+     */
+    public void setRpcWebServiceArray(int i, com.guidewire.accelerator.deployment.Accelerator.RpcWebService rpcWebService)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService target = null;
+            target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService)get_store().find_element_user(RPCWEBSERVICE$20, i);
+            if (target == null)
+            {
+                throw new IndexOutOfBoundsException();
+            }
+            target.set(rpcWebService);
+        }
+    }
+    
+    /**
+     * Inserts and returns a new empty value (as xml) as the ith "rpcWebService" element
+     */
+    public com.guidewire.accelerator.deployment.Accelerator.RpcWebService insertNewRpcWebService(int i)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService target = null;
+            target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService)get_store().insert_element_user(RPCWEBSERVICE$20, i);
+            return target;
+        }
+    }
+    
+    /**
+     * Appends and returns a new empty value (as xml) as the last "rpcWebService" element
+     */
+    public com.guidewire.accelerator.deployment.Accelerator.RpcWebService addNewRpcWebService()
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService target = null;
+            target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService)get_store().add_element_user(RPCWEBSERVICE$20);
+            return target;
+        }
+    }
+    
+    /**
+     * Removes the ith "rpcWebService" element
+     */
+    public void removeRpcWebService(int i)
+    {
+        synchronized (monitor())
+        {
+            check_orphaned();
+            get_store().remove_element(RPCWEBSERVICE$20, i);
         }
     }
     /**
@@ -2967,7 +3085,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             /**
              * Gets the "requestType" element
              */
-            public java.lang.String getRequestType()
+            public com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType.Enum getRequestType()
             {
                 synchronized (monitor())
                 {
@@ -2978,20 +3096,20 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                     {
                       return null;
                     }
-                    return target.getStringValue();
+                    return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType.Enum)target.getEnumValue();
                 }
             }
             
             /**
              * Gets (as xml) the "requestType" element
              */
-            public org.apache.xmlbeans.XmlString xgetRequestType()
+            public com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType xgetRequestType()
             {
                 synchronized (monitor())
                 {
                     check_orphaned();
-                    org.apache.xmlbeans.XmlString target = null;
-                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(REQUESTTYPE$2, 0);
+                    com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType)get_store().find_element_user(REQUESTTYPE$2, 0);
                     return target;
                 }
             }
@@ -2999,7 +3117,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             /**
              * Sets the "requestType" element
              */
-            public void setRequestType(java.lang.String requestType)
+            public void setRequestType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType.Enum requestType)
             {
                 synchronized (monitor())
                 {
@@ -3010,23 +3128,23 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                     {
                       target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(REQUESTTYPE$2);
                     }
-                    target.setStringValue(requestType);
+                    target.setEnumValue(requestType);
                 }
             }
             
             /**
              * Sets (as xml) the "requestType" element
              */
-            public void xsetRequestType(org.apache.xmlbeans.XmlString requestType)
+            public void xsetRequestType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType requestType)
             {
                 synchronized (monitor())
                 {
                     check_orphaned();
-                    org.apache.xmlbeans.XmlString target = null;
-                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(REQUESTTYPE$2, 0);
+                    com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType)get_store().find_element_user(REQUESTTYPE$2, 0);
                     if (target == null)
                     {
-                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(REQUESTTYPE$2);
+                      target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType)get_store().add_element_user(REQUESTTYPE$2);
                     }
                     target.set(requestType);
                 }
@@ -3171,6 +3289,25 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                 {
                     check_orphaned();
                     get_store().remove_element(REQUESTPARAMETERS$6, 0);
+                }
+            }
+            /**
+             * An XML requestType(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is an atomic type that is a restriction of com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageRequest$RequestType.
+             */
+            public static class RequestTypeImpl extends org.apache.xmlbeans.impl.values.JavaStringEnumerationHolderEx implements com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType
+            {
+                private static final long serialVersionUID = 1L;
+                
+                public RequestTypeImpl(org.apache.xmlbeans.SchemaType sType)
+                {
+                    super(sType, false);
+                }
+                
+                protected RequestTypeImpl(org.apache.xmlbeans.SchemaType sType, boolean b)
+                {
+                    super(sType, b);
                 }
             }
             /**
@@ -3405,7 +3542,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             /**
              * Gets the "transportType" element
              */
-            public java.lang.String getTransportType()
+            public com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType.Enum getTransportType()
             {
                 synchronized (monitor())
                 {
@@ -3416,20 +3553,20 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                     {
                       return null;
                     }
-                    return target.getStringValue();
+                    return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType.Enum)target.getEnumValue();
                 }
             }
             
             /**
              * Gets (as xml) the "transportType" element
              */
-            public org.apache.xmlbeans.XmlString xgetTransportType()
+            public com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType xgetTransportType()
             {
                 synchronized (monitor())
                 {
                     check_orphaned();
-                    org.apache.xmlbeans.XmlString target = null;
-                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(TRANSPORTTYPE$2, 0);
+                    com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType)get_store().find_element_user(TRANSPORTTYPE$2, 0);
                     return target;
                 }
             }
@@ -3437,7 +3574,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             /**
              * Sets the "transportType" element
              */
-            public void setTransportType(java.lang.String transportType)
+            public void setTransportType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType.Enum transportType)
             {
                 synchronized (monitor())
                 {
@@ -3448,23 +3585,23 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                     {
                       target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(TRANSPORTTYPE$2);
                     }
-                    target.setStringValue(transportType);
+                    target.setEnumValue(transportType);
                 }
             }
             
             /**
              * Sets (as xml) the "transportType" element
              */
-            public void xsetTransportType(org.apache.xmlbeans.XmlString transportType)
+            public void xsetTransportType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType transportType)
             {
                 synchronized (monitor())
                 {
                     check_orphaned();
-                    org.apache.xmlbeans.XmlString target = null;
-                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(TRANSPORTTYPE$2, 0);
+                    com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType)get_store().find_element_user(TRANSPORTTYPE$2, 0);
                     if (target == null)
                     {
-                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(TRANSPORTTYPE$2);
+                      target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType)get_store().add_element_user(TRANSPORTTYPE$2);
                     }
                     target.set(transportType);
                 }
@@ -3683,6 +3820,25 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                 {
                     check_orphaned();
                     get_store().remove_element(EVENTS$8, 0);
+                }
+            }
+            /**
+             * An XML transportType(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is an atomic type that is a restriction of com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageTransport$TransportType.
+             */
+            public static class TransportTypeImpl extends org.apache.xmlbeans.impl.values.JavaStringEnumerationHolderEx implements com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType
+            {
+                private static final long serialVersionUID = 1L;
+                
+                public TransportTypeImpl(org.apache.xmlbeans.SchemaType sType)
+                {
+                    super(sType, false);
+                }
+                
+                protected TransportTypeImpl(org.apache.xmlbeans.SchemaType sType, boolean b)
+                {
+                    super(sType, b);
                 }
             }
             /**
@@ -4142,7 +4298,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             /**
              * Gets the "replyType" element
              */
-            public java.lang.String getReplyType()
+            public com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType.Enum getReplyType()
             {
                 synchronized (monitor())
                 {
@@ -4153,20 +4309,20 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                     {
                       return null;
                     }
-                    return target.getStringValue();
+                    return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType.Enum)target.getEnumValue();
                 }
             }
             
             /**
              * Gets (as xml) the "replyType" element
              */
-            public org.apache.xmlbeans.XmlString xgetReplyType()
+            public com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType xgetReplyType()
             {
                 synchronized (monitor())
                 {
                     check_orphaned();
-                    org.apache.xmlbeans.XmlString target = null;
-                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(REPLYTYPE$2, 0);
+                    com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType)get_store().find_element_user(REPLYTYPE$2, 0);
                     return target;
                 }
             }
@@ -4174,7 +4330,7 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             /**
              * Sets the "replyType" element
              */
-            public void setReplyType(java.lang.String replyType)
+            public void setReplyType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType.Enum replyType)
             {
                 synchronized (monitor())
                 {
@@ -4185,23 +4341,23 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                     {
                       target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(REPLYTYPE$2);
                     }
-                    target.setStringValue(replyType);
+                    target.setEnumValue(replyType);
                 }
             }
             
             /**
              * Sets (as xml) the "replyType" element
              */
-            public void xsetReplyType(org.apache.xmlbeans.XmlString replyType)
+            public void xsetReplyType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType replyType)
             {
                 synchronized (monitor())
                 {
                     check_orphaned();
-                    org.apache.xmlbeans.XmlString target = null;
-                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(REPLYTYPE$2, 0);
+                    com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType)get_store().find_element_user(REPLYTYPE$2, 0);
                     if (target == null)
                     {
-                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(REPLYTYPE$2);
+                      target = (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType)get_store().add_element_user(REPLYTYPE$2);
                     }
                     target.set(replyType);
                 }
@@ -4346,6 +4502,25 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
                 {
                     check_orphaned();
                     get_store().remove_element(REPLYPARAMETERS$6, 0);
+                }
+            }
+            /**
+             * An XML replyType(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is an atomic type that is a restriction of com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageReply$ReplyType.
+             */
+            public static class ReplyTypeImpl extends org.apache.xmlbeans.impl.values.JavaStringEnumerationHolderEx implements com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType
+            {
+                private static final long serialVersionUID = 1L;
+                
+                public ReplyTypeImpl(org.apache.xmlbeans.SchemaType sType)
+                {
+                    super(sType, false);
+                }
+                
+                protected ReplyTypeImpl(org.apache.xmlbeans.SchemaType sType, boolean b)
+                {
+                    super(sType, b);
                 }
             }
             /**
@@ -5979,6 +6154,1162 @@ public class AcceleratorImpl extends org.apache.xmlbeans.impl.values.XmlComplexC
             {
                 check_orphaned();
                 get_store().remove_element(FILE$0, 0);
+            }
+        }
+    }
+    /**
+     * An XML rpcWebService(@http://guidewire.com/accelerator/deployment).
+     *
+     * This is a complex type.
+     */
+    public static class RpcWebServiceImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements com.guidewire.accelerator.deployment.Accelerator.RpcWebService
+    {
+        private static final long serialVersionUID = 1L;
+        
+        public RpcWebServiceImpl(org.apache.xmlbeans.SchemaType sType)
+        {
+            super(sType);
+        }
+        
+        private static final javax.xml.namespace.QName NAME$0 = 
+            new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "name");
+        private static final javax.xml.namespace.QName WSDLLOCATION$2 = 
+            new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "wsdlLocation");
+        private static final javax.xml.namespace.QName SETTING$4 = 
+            new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "setting");
+        
+        
+        /**
+         * Gets the "name" element
+         */
+        public java.lang.String getName()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.SimpleValue target = null;
+                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(NAME$0, 0);
+                if (target == null)
+                {
+                    return null;
+                }
+                return target.getStringValue();
+            }
+        }
+        
+        /**
+         * Gets (as xml) the "name" element
+         */
+        public org.apache.xmlbeans.XmlString xgetName()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.XmlString target = null;
+                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(NAME$0, 0);
+                return target;
+            }
+        }
+        
+        /**
+         * Sets the "name" element
+         */
+        public void setName(java.lang.String name)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.SimpleValue target = null;
+                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(NAME$0, 0);
+                if (target == null)
+                {
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(NAME$0);
+                }
+                target.setStringValue(name);
+            }
+        }
+        
+        /**
+         * Sets (as xml) the "name" element
+         */
+        public void xsetName(org.apache.xmlbeans.XmlString name)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.XmlString target = null;
+                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(NAME$0, 0);
+                if (target == null)
+                {
+                    target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(NAME$0);
+                }
+                target.set(name);
+            }
+        }
+        
+        /**
+         * Gets the "wsdlLocation" element
+         */
+        public java.lang.String getWsdlLocation()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.SimpleValue target = null;
+                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(WSDLLOCATION$2, 0);
+                if (target == null)
+                {
+                    return null;
+                }
+                return target.getStringValue();
+            }
+        }
+        
+        /**
+         * Gets (as xml) the "wsdlLocation" element
+         */
+        public org.apache.xmlbeans.XmlString xgetWsdlLocation()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.XmlString target = null;
+                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(WSDLLOCATION$2, 0);
+                return target;
+            }
+        }
+        
+        /**
+         * Sets the "wsdlLocation" element
+         */
+        public void setWsdlLocation(java.lang.String wsdlLocation)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.SimpleValue target = null;
+                target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(WSDLLOCATION$2, 0);
+                if (target == null)
+                {
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(WSDLLOCATION$2);
+                }
+                target.setStringValue(wsdlLocation);
+            }
+        }
+        
+        /**
+         * Sets (as xml) the "wsdlLocation" element
+         */
+        public void xsetWsdlLocation(org.apache.xmlbeans.XmlString wsdlLocation)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                org.apache.xmlbeans.XmlString target = null;
+                target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(WSDLLOCATION$2, 0);
+                if (target == null)
+                {
+                    target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(WSDLLOCATION$2);
+                }
+                target.set(wsdlLocation);
+            }
+        }
+        
+        /**
+         * Gets array of all "setting" elements
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting[] getSettingArray()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                java.util.List targetList = new java.util.ArrayList();
+                get_store().find_all_element_users(SETTING$4, targetList);
+                com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting[] result = new com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting[targetList.size()];
+                targetList.toArray(result);
+                return result;
+            }
+        }
+        
+        /**
+         * Gets ith "setting" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting getSettingArray(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting)get_store().find_element_user(SETTING$4, i);
+                if (target == null)
+                {
+                    throw new IndexOutOfBoundsException();
+                }
+                return target;
+            }
+        }
+        
+        /**
+         * Returns number of "setting" element
+         */
+        public int sizeOfSettingArray()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                return get_store().count_elements(SETTING$4);
+            }
+        }
+        
+        /**
+         * Sets array of all "setting" element
+         */
+        public void setSettingArray(com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting[] settingArray)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                arraySetterHelper(settingArray, SETTING$4);
+            }
+        }
+        
+        /**
+         * Sets ith "setting" element
+         */
+        public void setSettingArray(int i, com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting setting)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting)get_store().find_element_user(SETTING$4, i);
+                if (target == null)
+                {
+                    throw new IndexOutOfBoundsException();
+                }
+                target.set(setting);
+            }
+        }
+        
+        /**
+         * Inserts and returns a new empty value (as xml) as the ith "setting" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting insertNewSetting(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting)get_store().insert_element_user(SETTING$4, i);
+                return target;
+            }
+        }
+        
+        /**
+         * Appends and returns a new empty value (as xml) as the last "setting" element
+         */
+        public com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting addNewSetting()
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting target = null;
+                target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting)get_store().add_element_user(SETTING$4);
+                return target;
+            }
+        }
+        
+        /**
+         * Removes the ith "setting" element
+         */
+        public void removeSetting(int i)
+        {
+            synchronized (monitor())
+            {
+                check_orphaned();
+                get_store().remove_element(SETTING$4, i);
+            }
+        }
+        /**
+         * An XML setting(@http://guidewire.com/accelerator/deployment).
+         *
+         * This is a complex type.
+         */
+        public static class SettingImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting
+        {
+            private static final long serialVersionUID = 1L;
+            
+            public SettingImpl(org.apache.xmlbeans.SchemaType sType)
+            {
+                super(sType);
+            }
+            
+            private static final javax.xml.namespace.QName AUTHENTICATION$0 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "authentication");
+            private static final javax.xml.namespace.QName CALLTIMEOUT$2 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "callTimeout");
+            private static final javax.xml.namespace.QName ENV$4 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "env");
+            private static final javax.xml.namespace.QName SERVER$6 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "server");
+            private static final javax.xml.namespace.QName OVERRIDEENABLED$8 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "overrideEnabled");
+            private static final javax.xml.namespace.QName OVERRIDEURL$10 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "overrideUrl");
+            private static final javax.xml.namespace.QName SERVICENAME$12 = 
+                new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "serviceName");
+            
+            
+            /**
+             * Gets the "authentication" element
+             */
+            public com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication getAuthentication()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication)get_store().find_element_user(AUTHENTICATION$0, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "authentication" element
+             */
+            public boolean isSetAuthentication()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(AUTHENTICATION$0) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "authentication" element
+             */
+            public void setAuthentication(com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication authentication)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication)get_store().find_element_user(AUTHENTICATION$0, 0);
+                    if (target == null)
+                    {
+                      target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication)get_store().add_element_user(AUTHENTICATION$0);
+                    }
+                    target.set(authentication);
+                }
+            }
+            
+            /**
+             * Appends and returns a new empty "authentication" element
+             */
+            public com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication addNewAuthentication()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication target = null;
+                    target = (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication)get_store().add_element_user(AUTHENTICATION$0);
+                    return target;
+                }
+            }
+            
+            /**
+             * Unsets the "authentication" element
+             */
+            public void unsetAuthentication()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(AUTHENTICATION$0, 0);
+                }
+            }
+            
+            /**
+             * Gets the "callTimeout" element
+             */
+            public int getCallTimeout()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(CALLTIMEOUT$2, 0);
+                    if (target == null)
+                    {
+                      return 0;
+                    }
+                    return target.getIntValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "callTimeout" element
+             */
+            public org.apache.xmlbeans.XmlInt xgetCallTimeout()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlInt target = null;
+                    target = (org.apache.xmlbeans.XmlInt)get_store().find_element_user(CALLTIMEOUT$2, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "callTimeout" element
+             */
+            public boolean isSetCallTimeout()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(CALLTIMEOUT$2) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "callTimeout" element
+             */
+            public void setCallTimeout(int callTimeout)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(CALLTIMEOUT$2, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(CALLTIMEOUT$2);
+                    }
+                    target.setIntValue(callTimeout);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "callTimeout" element
+             */
+            public void xsetCallTimeout(org.apache.xmlbeans.XmlInt callTimeout)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlInt target = null;
+                    target = (org.apache.xmlbeans.XmlInt)get_store().find_element_user(CALLTIMEOUT$2, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlInt)get_store().add_element_user(CALLTIMEOUT$2);
+                    }
+                    target.set(callTimeout);
+                }
+            }
+            
+            /**
+             * Unsets the "callTimeout" element
+             */
+            public void unsetCallTimeout()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(CALLTIMEOUT$2, 0);
+                }
+            }
+            
+            /**
+             * Gets the "env" element
+             */
+            public java.lang.String getEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(ENV$4, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "env" element
+             */
+            public org.apache.xmlbeans.XmlString xgetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(ENV$4, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "env" element
+             */
+            public boolean isSetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(ENV$4) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "env" element
+             */
+            public void setEnv(java.lang.String env)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(ENV$4, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(ENV$4);
+                    }
+                    target.setStringValue(env);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "env" element
+             */
+            public void xsetEnv(org.apache.xmlbeans.XmlString env)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(ENV$4, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(ENV$4);
+                    }
+                    target.set(env);
+                }
+            }
+            
+            /**
+             * Unsets the "env" element
+             */
+            public void unsetEnv()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(ENV$4, 0);
+                }
+            }
+            
+            /**
+             * Gets the "server" element
+             */
+            public java.lang.String getServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVER$6, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "server" element
+             */
+            public org.apache.xmlbeans.XmlString xgetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVER$6, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "server" element
+             */
+            public boolean isSetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(SERVER$6) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "server" element
+             */
+            public void setServer(java.lang.String server)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVER$6, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(SERVER$6);
+                    }
+                    target.setStringValue(server);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "server" element
+             */
+            public void xsetServer(org.apache.xmlbeans.XmlString server)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVER$6, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(SERVER$6);
+                    }
+                    target.set(server);
+                }
+            }
+            
+            /**
+             * Unsets the "server" element
+             */
+            public void unsetServer()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(SERVER$6, 0);
+                }
+            }
+            
+            /**
+             * Gets the "overrideEnabled" element
+             */
+            public boolean getOverrideEnabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(OVERRIDEENABLED$8, 0);
+                    if (target == null)
+                    {
+                      return false;
+                    }
+                    return target.getBooleanValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "overrideEnabled" element
+             */
+            public org.apache.xmlbeans.XmlBoolean xgetOverrideEnabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlBoolean target = null;
+                    target = (org.apache.xmlbeans.XmlBoolean)get_store().find_element_user(OVERRIDEENABLED$8, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "overrideEnabled" element
+             */
+            public boolean isSetOverrideEnabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(OVERRIDEENABLED$8) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "overrideEnabled" element
+             */
+            public void setOverrideEnabled(boolean overrideEnabled)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(OVERRIDEENABLED$8, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(OVERRIDEENABLED$8);
+                    }
+                    target.setBooleanValue(overrideEnabled);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "overrideEnabled" element
+             */
+            public void xsetOverrideEnabled(org.apache.xmlbeans.XmlBoolean overrideEnabled)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlBoolean target = null;
+                    target = (org.apache.xmlbeans.XmlBoolean)get_store().find_element_user(OVERRIDEENABLED$8, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlBoolean)get_store().add_element_user(OVERRIDEENABLED$8);
+                    }
+                    target.set(overrideEnabled);
+                }
+            }
+            
+            /**
+             * Unsets the "overrideEnabled" element
+             */
+            public void unsetOverrideEnabled()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(OVERRIDEENABLED$8, 0);
+                }
+            }
+            
+            /**
+             * Gets the "overrideUrl" element
+             */
+            public java.lang.String getOverrideUrl()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(OVERRIDEURL$10, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "overrideUrl" element
+             */
+            public org.apache.xmlbeans.XmlString xgetOverrideUrl()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(OVERRIDEURL$10, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "overrideUrl" element
+             */
+            public boolean isSetOverrideUrl()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(OVERRIDEURL$10) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "overrideUrl" element
+             */
+            public void setOverrideUrl(java.lang.String overrideUrl)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(OVERRIDEURL$10, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(OVERRIDEURL$10);
+                    }
+                    target.setStringValue(overrideUrl);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "overrideUrl" element
+             */
+            public void xsetOverrideUrl(org.apache.xmlbeans.XmlString overrideUrl)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(OVERRIDEURL$10, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(OVERRIDEURL$10);
+                    }
+                    target.set(overrideUrl);
+                }
+            }
+            
+            /**
+             * Unsets the "overrideUrl" element
+             */
+            public void unsetOverrideUrl()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(OVERRIDEURL$10, 0);
+                }
+            }
+            
+            /**
+             * Gets the "serviceName" element
+             */
+            public java.lang.String getServiceName()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVICENAME$12, 0);
+                    if (target == null)
+                    {
+                      return null;
+                    }
+                    return target.getStringValue();
+                }
+            }
+            
+            /**
+             * Gets (as xml) the "serviceName" element
+             */
+            public org.apache.xmlbeans.XmlString xgetServiceName()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVICENAME$12, 0);
+                    return target;
+                }
+            }
+            
+            /**
+             * True if has "serviceName" element
+             */
+            public boolean isSetServiceName()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    return get_store().count_elements(SERVICENAME$12) != 0;
+                }
+            }
+            
+            /**
+             * Sets the "serviceName" element
+             */
+            public void setServiceName(java.lang.String serviceName)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.SimpleValue target = null;
+                    target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(SERVICENAME$12, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(SERVICENAME$12);
+                    }
+                    target.setStringValue(serviceName);
+                }
+            }
+            
+            /**
+             * Sets (as xml) the "serviceName" element
+             */
+            public void xsetServiceName(org.apache.xmlbeans.XmlString serviceName)
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    org.apache.xmlbeans.XmlString target = null;
+                    target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(SERVICENAME$12, 0);
+                    if (target == null)
+                    {
+                      target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(SERVICENAME$12);
+                    }
+                    target.set(serviceName);
+                }
+            }
+            
+            /**
+             * Unsets the "serviceName" element
+             */
+            public void unsetServiceName()
+            {
+                synchronized (monitor())
+                {
+                    check_orphaned();
+                    get_store().remove_element(SERVICENAME$12, 0);
+                }
+            }
+            /**
+             * An XML authentication(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is a complex type.
+             */
+            public static class AuthenticationImpl extends org.apache.xmlbeans.impl.values.XmlComplexContentImpl implements com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication
+            {
+                private static final long serialVersionUID = 1L;
+                
+                public AuthenticationImpl(org.apache.xmlbeans.SchemaType sType)
+                {
+                    super(sType);
+                }
+                
+                private static final javax.xml.namespace.QName AUTHENTICATIONTYPE$0 = 
+                    new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "authenticationType");
+                private static final javax.xml.namespace.QName USERNAME$2 = 
+                    new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "username");
+                private static final javax.xml.namespace.QName PASSWORD$4 = 
+                    new javax.xml.namespace.QName("http://guidewire.com/accelerator/deployment", "password");
+                
+                
+                /**
+                 * Gets the "authenticationType" element
+                 */
+                public java.lang.String getAuthenticationType()
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.SimpleValue target = null;
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(AUTHENTICATIONTYPE$0, 0);
+                      if (target == null)
+                      {
+                        return null;
+                      }
+                      return target.getStringValue();
+                    }
+                }
+                
+                /**
+                 * Gets (as xml) the "authenticationType" element
+                 */
+                public org.apache.xmlbeans.XmlString xgetAuthenticationType()
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.XmlString target = null;
+                      target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(AUTHENTICATIONTYPE$0, 0);
+                      return target;
+                    }
+                }
+                
+                /**
+                 * Sets the "authenticationType" element
+                 */
+                public void setAuthenticationType(java.lang.String authenticationType)
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.SimpleValue target = null;
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(AUTHENTICATIONTYPE$0, 0);
+                      if (target == null)
+                      {
+                        target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(AUTHENTICATIONTYPE$0);
+                      }
+                      target.setStringValue(authenticationType);
+                    }
+                }
+                
+                /**
+                 * Sets (as xml) the "authenticationType" element
+                 */
+                public void xsetAuthenticationType(org.apache.xmlbeans.XmlString authenticationType)
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.XmlString target = null;
+                      target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(AUTHENTICATIONTYPE$0, 0);
+                      if (target == null)
+                      {
+                        target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(AUTHENTICATIONTYPE$0);
+                      }
+                      target.set(authenticationType);
+                    }
+                }
+                
+                /**
+                 * Gets the "username" element
+                 */
+                public java.lang.String getUsername()
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.SimpleValue target = null;
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(USERNAME$2, 0);
+                      if (target == null)
+                      {
+                        return null;
+                      }
+                      return target.getStringValue();
+                    }
+                }
+                
+                /**
+                 * Gets (as xml) the "username" element
+                 */
+                public org.apache.xmlbeans.XmlString xgetUsername()
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.XmlString target = null;
+                      target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(USERNAME$2, 0);
+                      return target;
+                    }
+                }
+                
+                /**
+                 * Sets the "username" element
+                 */
+                public void setUsername(java.lang.String username)
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.SimpleValue target = null;
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(USERNAME$2, 0);
+                      if (target == null)
+                      {
+                        target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(USERNAME$2);
+                      }
+                      target.setStringValue(username);
+                    }
+                }
+                
+                /**
+                 * Sets (as xml) the "username" element
+                 */
+                public void xsetUsername(org.apache.xmlbeans.XmlString username)
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.XmlString target = null;
+                      target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(USERNAME$2, 0);
+                      if (target == null)
+                      {
+                        target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(USERNAME$2);
+                      }
+                      target.set(username);
+                    }
+                }
+                
+                /**
+                 * Gets the "password" element
+                 */
+                public java.lang.String getPassword()
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.SimpleValue target = null;
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(PASSWORD$4, 0);
+                      if (target == null)
+                      {
+                        return null;
+                      }
+                      return target.getStringValue();
+                    }
+                }
+                
+                /**
+                 * Gets (as xml) the "password" element
+                 */
+                public org.apache.xmlbeans.XmlString xgetPassword()
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.XmlString target = null;
+                      target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(PASSWORD$4, 0);
+                      return target;
+                    }
+                }
+                
+                /**
+                 * Sets the "password" element
+                 */
+                public void setPassword(java.lang.String password)
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.SimpleValue target = null;
+                      target = (org.apache.xmlbeans.SimpleValue)get_store().find_element_user(PASSWORD$4, 0);
+                      if (target == null)
+                      {
+                        target = (org.apache.xmlbeans.SimpleValue)get_store().add_element_user(PASSWORD$4);
+                      }
+                      target.setStringValue(password);
+                    }
+                }
+                
+                /**
+                 * Sets (as xml) the "password" element
+                 */
+                public void xsetPassword(org.apache.xmlbeans.XmlString password)
+                {
+                    synchronized (monitor())
+                    {
+                      check_orphaned();
+                      org.apache.xmlbeans.XmlString target = null;
+                      target = (org.apache.xmlbeans.XmlString)get_store().find_element_user(PASSWORD$4, 0);
+                      if (target == null)
+                      {
+                        target = (org.apache.xmlbeans.XmlString)get_store().add_element_user(PASSWORD$4);
+                      }
+                      target.set(password);
+                    }
+                }
             }
         }
     }

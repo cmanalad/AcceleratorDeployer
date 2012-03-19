@@ -16,7 +16,7 @@ package com.guidewire.accelerator.deployment;
 public interface Accelerator extends org.apache.xmlbeans.XmlObject
 {
     public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Accelerator.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("accelerator57f8type");
+        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Accelerator.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("accelerator57f8type");
     
     /**
      * Gets array of all "pcfRoot" elements
@@ -389,6 +389,46 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     void unsetDisplaykey();
     
     /**
+     * Gets array of all "rpcWebService" elements
+     */
+    com.guidewire.accelerator.deployment.Accelerator.RpcWebService[] getRpcWebServiceArray();
+    
+    /**
+     * Gets ith "rpcWebService" element
+     */
+    com.guidewire.accelerator.deployment.Accelerator.RpcWebService getRpcWebServiceArray(int i);
+    
+    /**
+     * Returns number of "rpcWebService" element
+     */
+    int sizeOfRpcWebServiceArray();
+    
+    /**
+     * Sets array of all "rpcWebService" element
+     */
+    void setRpcWebServiceArray(com.guidewire.accelerator.deployment.Accelerator.RpcWebService[] rpcWebServiceArray);
+    
+    /**
+     * Sets ith "rpcWebService" element
+     */
+    void setRpcWebServiceArray(int i, com.guidewire.accelerator.deployment.Accelerator.RpcWebService rpcWebService);
+    
+    /**
+     * Inserts and returns a new empty value (as xml) as the ith "rpcWebService" element
+     */
+    com.guidewire.accelerator.deployment.Accelerator.RpcWebService insertNewRpcWebService(int i);
+    
+    /**
+     * Appends and returns a new empty value (as xml) as the last "rpcWebService" element
+     */
+    com.guidewire.accelerator.deployment.Accelerator.RpcWebService addNewRpcWebService();
+    
+    /**
+     * Removes the ith "rpcWebService" element
+     */
+    void removeRpcWebService(int i);
+    
+    /**
      * An XML pcfRoot(@http://guidewire.com/accelerator/deployment).
      *
      * This is a complex type.
@@ -396,7 +436,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface PcfRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(PcfRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("pcfroot5579elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(PcfRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("pcfroot5579elemtype");
         
         /**
          * Gets the "directory" element
@@ -443,7 +483,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface GosuRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GosuRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("gosuroot57e0elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GosuRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("gosuroot57e0elemtype");
         
         /**
          * Gets the "directory" element
@@ -490,7 +530,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface GunitRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GunitRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("gunitrootbf11elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GunitRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("gunitrootbf11elemtype");
         
         /**
          * Gets the "directory" element
@@ -537,7 +577,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface AntBuild extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AntBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("antbuildab9belemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AntBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("antbuildab9belemtype");
         
         /**
          * Gets the "directory" element
@@ -624,7 +664,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Library extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Library.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("library0a5felemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Library.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("library0a5felemtype");
         
         /**
          * Gets the "directory" element
@@ -691,7 +731,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface MavenBuild extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MavenBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("mavenbuild9977elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MavenBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("mavenbuild9977elemtype");
         
         /**
          * Gets the "directory" element
@@ -758,7 +798,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface DataExtension extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(DataExtension.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("dataextension36d9elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(DataExtension.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("dataextension36d9elemtype");
         
         /**
          * Gets the "directory" element
@@ -805,7 +845,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface MessageQueue extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageQueue.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagequeue065eelemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageQueue.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagequeue065eelemtype");
         
         /**
          * Gets the "messageRequest" element
@@ -1070,7 +1110,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageRequest extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageRequest.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagerequest8bbaelemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageRequest.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagerequest8bbaelemtype");
             
             /**
              * Gets the "requestName" element
@@ -1095,22 +1135,22 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             /**
              * Gets the "requestType" element
              */
-            java.lang.String getRequestType();
+            com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType.Enum getRequestType();
             
             /**
              * Gets (as xml) the "requestType" element
              */
-            org.apache.xmlbeans.XmlString xgetRequestType();
+            com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType xgetRequestType();
             
             /**
              * Sets the "requestType" element
              */
-            void setRequestType(java.lang.String requestType);
+            void setRequestType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType.Enum requestType);
             
             /**
              * Sets (as xml) the "requestType" element
              */
-            void xsetRequestType(org.apache.xmlbeans.XmlString requestType);
+            void xsetRequestType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType requestType);
             
             /**
              * Gets the "requestClass" element
@@ -1158,6 +1198,92 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             void unsetRequestParameters();
             
             /**
+             * An XML requestType(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is an atomic type that is a restriction of com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageRequest$RequestType.
+             */
+            public interface RequestType extends org.apache.xmlbeans.XmlString
+            {
+                public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("requesttype124felemtype");
+                
+                org.apache.xmlbeans.StringEnumAbstractBase enumValue();
+                void set(org.apache.xmlbeans.StringEnumAbstractBase e);
+                
+                static final Enum GOSU = Enum.forString("gosu");
+                static final Enum JAVA = Enum.forString("java");
+                
+                static final int INT_GOSU = Enum.INT_GOSU;
+                static final int INT_JAVA = Enum.INT_JAVA;
+                
+                /**
+                 * Enumeration value class for com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageRequest$RequestType.
+                 * These enum values can be used as follows:
+                 * <pre>
+                 * enum.toString(); // returns the string value of the enum
+                 * enum.intValue(); // returns an int value, useful for switches
+                 * // e.g., case Enum.INT_GOSU
+                 * Enum.forString(s); // returns the enum value for a string
+                 * Enum.forInt(i); // returns the enum value for an int
+                 * </pre>
+                 * Enumeration objects are immutable singleton objects that
+                 * can be compared using == object equality. They have no
+                 * public constructor. See the constants defined within this
+                 * class for all the valid values.
+                 */
+                static final class Enum extends org.apache.xmlbeans.StringEnumAbstractBase
+                {
+                    /**
+                     * Returns the enum value for a string, or null if none.
+                     */
+                    public static Enum forString(java.lang.String s)
+                        { return (Enum)table.forString(s); }
+                    /**
+                     * Returns the enum value corresponding to an int, or null if none.
+                     */
+                    public static Enum forInt(int i)
+                        { return (Enum)table.forInt(i); }
+                    
+                    private Enum(java.lang.String s, int i)
+                        { super(s, i); }
+                    
+                    static final int INT_GOSU = 1;
+                    static final int INT_JAVA = 2;
+                    
+                    public static final org.apache.xmlbeans.StringEnumAbstractBase.Table table =
+                        new org.apache.xmlbeans.StringEnumAbstractBase.Table
+                    (
+                      new Enum[]
+                      {
+                        new Enum("gosu", INT_GOSU),
+                        new Enum("java", INT_JAVA),
+                      }
+                    );
+                    private static final long serialVersionUID = 1L;
+                    private java.lang.Object readResolve() { return forInt(intValue()); } 
+                }
+                
+                /**
+                 * A factory class with static methods for creating instances
+                 * of this type.
+                 */
+                
+                public static final class Factory
+                {
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType newValue(java.lang.Object obj) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType) type.newValue( obj ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType newInstance() {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType newInstance(org.apache.xmlbeans.XmlOptions options) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageRequest.RequestType) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                    
+                    private Factory() { } // No instance of this class allowed
+                }
+            }
+            
+            /**
              * An XML requestParameters(@http://guidewire.com/accelerator/deployment).
              *
              * This is a complex type.
@@ -1165,7 +1291,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface RequestParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("requestparameters8bbfelemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("requestparameters8bbfelemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1249,7 +1375,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageTransport extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageTransport.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagetransport7ca0elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageTransport.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagetransport7ca0elemtype");
             
             /**
              * Gets the "transportName" element
@@ -1274,22 +1400,22 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             /**
              * Gets the "transportType" element
              */
-            java.lang.String getTransportType();
+            com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType.Enum getTransportType();
             
             /**
              * Gets (as xml) the "transportType" element
              */
-            org.apache.xmlbeans.XmlString xgetTransportType();
+            com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType xgetTransportType();
             
             /**
              * Sets the "transportType" element
              */
-            void setTransportType(java.lang.String transportType);
+            void setTransportType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType.Enum transportType);
             
             /**
              * Sets (as xml) the "transportType" element
              */
-            void xsetTransportType(org.apache.xmlbeans.XmlString transportType);
+            void xsetTransportType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType transportType);
             
             /**
              * Gets the "transportClass" element
@@ -1362,6 +1488,92 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             void unsetEvents();
             
             /**
+             * An XML transportType(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is an atomic type that is a restriction of com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageTransport$TransportType.
+             */
+            public interface TransportType extends org.apache.xmlbeans.XmlString
+            {
+                public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("transporttype848felemtype");
+                
+                org.apache.xmlbeans.StringEnumAbstractBase enumValue();
+                void set(org.apache.xmlbeans.StringEnumAbstractBase e);
+                
+                static final Enum GOSU = Enum.forString("gosu");
+                static final Enum JAVA = Enum.forString("java");
+                
+                static final int INT_GOSU = Enum.INT_GOSU;
+                static final int INT_JAVA = Enum.INT_JAVA;
+                
+                /**
+                 * Enumeration value class for com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageTransport$TransportType.
+                 * These enum values can be used as follows:
+                 * <pre>
+                 * enum.toString(); // returns the string value of the enum
+                 * enum.intValue(); // returns an int value, useful for switches
+                 * // e.g., case Enum.INT_GOSU
+                 * Enum.forString(s); // returns the enum value for a string
+                 * Enum.forInt(i); // returns the enum value for an int
+                 * </pre>
+                 * Enumeration objects are immutable singleton objects that
+                 * can be compared using == object equality. They have no
+                 * public constructor. See the constants defined within this
+                 * class for all the valid values.
+                 */
+                static final class Enum extends org.apache.xmlbeans.StringEnumAbstractBase
+                {
+                    /**
+                     * Returns the enum value for a string, or null if none.
+                     */
+                    public static Enum forString(java.lang.String s)
+                        { return (Enum)table.forString(s); }
+                    /**
+                     * Returns the enum value corresponding to an int, or null if none.
+                     */
+                    public static Enum forInt(int i)
+                        { return (Enum)table.forInt(i); }
+                    
+                    private Enum(java.lang.String s, int i)
+                        { super(s, i); }
+                    
+                    static final int INT_GOSU = 1;
+                    static final int INT_JAVA = 2;
+                    
+                    public static final org.apache.xmlbeans.StringEnumAbstractBase.Table table =
+                        new org.apache.xmlbeans.StringEnumAbstractBase.Table
+                    (
+                      new Enum[]
+                      {
+                        new Enum("gosu", INT_GOSU),
+                        new Enum("java", INT_JAVA),
+                      }
+                    );
+                    private static final long serialVersionUID = 1L;
+                    private java.lang.Object readResolve() { return forInt(intValue()); } 
+                }
+                
+                /**
+                 * A factory class with static methods for creating instances
+                 * of this type.
+                 */
+                
+                public static final class Factory
+                {
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType newValue(java.lang.Object obj) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType) type.newValue( obj ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType newInstance() {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType newInstance(org.apache.xmlbeans.XmlOptions options) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageTransport.TransportType) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                    
+                    private Factory() { } // No instance of this class allowed
+                }
+            }
+            
+            /**
              * An XML transportParameters(@http://guidewire.com/accelerator/deployment).
              *
              * This is a complex type.
@@ -1369,7 +1581,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface TransportParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("transportparameters867felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("transportparameters867felemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1436,7 +1648,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface Events extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Events.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("events7ad5elemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Events.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("events7ad5elemtype");
                 
                 /**
                  * Gets array of all "eventName" elements
@@ -1550,7 +1762,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageReply extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageReply.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("messagereply517felemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageReply.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagereply517felemtype");
             
             /**
              * Gets the "replyName" element
@@ -1575,22 +1787,22 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             /**
              * Gets the "replyType" element
              */
-            java.lang.String getReplyType();
+            com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType.Enum getReplyType();
             
             /**
              * Gets (as xml) the "replyType" element
              */
-            org.apache.xmlbeans.XmlString xgetReplyType();
+            com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType xgetReplyType();
             
             /**
              * Sets the "replyType" element
              */
-            void setReplyType(java.lang.String replyType);
+            void setReplyType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType.Enum replyType);
             
             /**
              * Sets (as xml) the "replyType" element
              */
-            void xsetReplyType(org.apache.xmlbeans.XmlString replyType);
+            void xsetReplyType(com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType replyType);
             
             /**
              * Gets the "replyClass" element
@@ -1638,6 +1850,92 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             void unsetReplyParameters();
             
             /**
+             * An XML replyType(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is an atomic type that is a restriction of com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageReply$ReplyType.
+             */
+            public interface ReplyType extends org.apache.xmlbeans.XmlString
+            {
+                public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("replytype752felemtype");
+                
+                org.apache.xmlbeans.StringEnumAbstractBase enumValue();
+                void set(org.apache.xmlbeans.StringEnumAbstractBase e);
+                
+                static final Enum GOSU = Enum.forString("gosu");
+                static final Enum JAVA = Enum.forString("java");
+                
+                static final int INT_GOSU = Enum.INT_GOSU;
+                static final int INT_JAVA = Enum.INT_JAVA;
+                
+                /**
+                 * Enumeration value class for com.guidewire.accelerator.deployment.Accelerator$MessageQueue$MessageReply$ReplyType.
+                 * These enum values can be used as follows:
+                 * <pre>
+                 * enum.toString(); // returns the string value of the enum
+                 * enum.intValue(); // returns an int value, useful for switches
+                 * // e.g., case Enum.INT_GOSU
+                 * Enum.forString(s); // returns the enum value for a string
+                 * Enum.forInt(i); // returns the enum value for an int
+                 * </pre>
+                 * Enumeration objects are immutable singleton objects that
+                 * can be compared using == object equality. They have no
+                 * public constructor. See the constants defined within this
+                 * class for all the valid values.
+                 */
+                static final class Enum extends org.apache.xmlbeans.StringEnumAbstractBase
+                {
+                    /**
+                     * Returns the enum value for a string, or null if none.
+                     */
+                    public static Enum forString(java.lang.String s)
+                        { return (Enum)table.forString(s); }
+                    /**
+                     * Returns the enum value corresponding to an int, or null if none.
+                     */
+                    public static Enum forInt(int i)
+                        { return (Enum)table.forInt(i); }
+                    
+                    private Enum(java.lang.String s, int i)
+                        { super(s, i); }
+                    
+                    static final int INT_GOSU = 1;
+                    static final int INT_JAVA = 2;
+                    
+                    public static final org.apache.xmlbeans.StringEnumAbstractBase.Table table =
+                        new org.apache.xmlbeans.StringEnumAbstractBase.Table
+                    (
+                      new Enum[]
+                      {
+                        new Enum("gosu", INT_GOSU),
+                        new Enum("java", INT_JAVA),
+                      }
+                    );
+                    private static final long serialVersionUID = 1L;
+                    private java.lang.Object readResolve() { return forInt(intValue()); } 
+                }
+                
+                /**
+                 * A factory class with static methods for creating instances
+                 * of this type.
+                 */
+                
+                public static final class Factory
+                {
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType newValue(java.lang.Object obj) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType) type.newValue( obj ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType newInstance() {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType newInstance(org.apache.xmlbeans.XmlOptions options) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.MessageQueue.MessageReply.ReplyType) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                    
+                    private Factory() { } // No instance of this class allowed
+                }
+            }
+            
+            /**
              * An XML replyParameters(@http://guidewire.com/accelerator/deployment).
              *
              * This is a complex type.
@@ -1645,7 +1943,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface ReplyParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("replyparametersfa5felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("replyparametersfa5felemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1746,7 +2044,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Plugin extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Plugin.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("plugin4d07elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Plugin.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("plugin4d07elemtype");
         
         /**
          * Gets the "name" element
@@ -1856,7 +2154,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface Java extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Java.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("java3589elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Java.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("java3589elemtype");
             
             /**
              * Gets the "disabled" element
@@ -2063,7 +2361,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface Gosu extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Gosu.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("gosu6d61elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Gosu.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("gosu6d61elemtype");
             
             /**
              * Gets the "disabled" element
@@ -2257,7 +2555,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Displaykey extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Displaykey.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.sCBB4077D4841BA4AB598DAD76B5BDAFF").resolveHandle("displaykey5fb1elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Displaykey.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("displaykey5fb1elemtype");
         
         /**
          * Gets the "file" element
@@ -2301,6 +2599,432 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             
             public static com.guidewire.accelerator.deployment.Accelerator.Displaykey newInstance(org.apache.xmlbeans.XmlOptions options) {
               return (com.guidewire.accelerator.deployment.Accelerator.Displaykey) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+            
+            private Factory() { } // No instance of this class allowed
+        }
+    }
+    
+    /**
+     * An XML rpcWebService(@http://guidewire.com/accelerator/deployment).
+     *
+     * This is a complex type.
+     */
+    public interface RpcWebService extends org.apache.xmlbeans.XmlObject
+    {
+        public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RpcWebService.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("rpcwebservice3c6aelemtype");
+        
+        /**
+         * Gets the "name" element
+         */
+        java.lang.String getName();
+        
+        /**
+         * Gets (as xml) the "name" element
+         */
+        org.apache.xmlbeans.XmlString xgetName();
+        
+        /**
+         * Sets the "name" element
+         */
+        void setName(java.lang.String name);
+        
+        /**
+         * Sets (as xml) the "name" element
+         */
+        void xsetName(org.apache.xmlbeans.XmlString name);
+        
+        /**
+         * Gets the "wsdlLocation" element
+         */
+        java.lang.String getWsdlLocation();
+        
+        /**
+         * Gets (as xml) the "wsdlLocation" element
+         */
+        org.apache.xmlbeans.XmlString xgetWsdlLocation();
+        
+        /**
+         * Sets the "wsdlLocation" element
+         */
+        void setWsdlLocation(java.lang.String wsdlLocation);
+        
+        /**
+         * Sets (as xml) the "wsdlLocation" element
+         */
+        void xsetWsdlLocation(org.apache.xmlbeans.XmlString wsdlLocation);
+        
+        /**
+         * Gets array of all "setting" elements
+         */
+        com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting[] getSettingArray();
+        
+        /**
+         * Gets ith "setting" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting getSettingArray(int i);
+        
+        /**
+         * Returns number of "setting" element
+         */
+        int sizeOfSettingArray();
+        
+        /**
+         * Sets array of all "setting" element
+         */
+        void setSettingArray(com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting[] settingArray);
+        
+        /**
+         * Sets ith "setting" element
+         */
+        void setSettingArray(int i, com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting setting);
+        
+        /**
+         * Inserts and returns a new empty value (as xml) as the ith "setting" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting insertNewSetting(int i);
+        
+        /**
+         * Appends and returns a new empty value (as xml) as the last "setting" element
+         */
+        com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting addNewSetting();
+        
+        /**
+         * Removes the ith "setting" element
+         */
+        void removeSetting(int i);
+        
+        /**
+         * An XML setting(@http://guidewire.com/accelerator/deployment).
+         *
+         * This is a complex type.
+         */
+        public interface Setting extends org.apache.xmlbeans.XmlObject
+        {
+            public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Setting.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("settingcc26elemtype");
+            
+            /**
+             * Gets the "authentication" element
+             */
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication getAuthentication();
+            
+            /**
+             * True if has "authentication" element
+             */
+            boolean isSetAuthentication();
+            
+            /**
+             * Sets the "authentication" element
+             */
+            void setAuthentication(com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication authentication);
+            
+            /**
+             * Appends and returns a new empty "authentication" element
+             */
+            com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication addNewAuthentication();
+            
+            /**
+             * Unsets the "authentication" element
+             */
+            void unsetAuthentication();
+            
+            /**
+             * Gets the "callTimeout" element
+             */
+            int getCallTimeout();
+            
+            /**
+             * Gets (as xml) the "callTimeout" element
+             */
+            org.apache.xmlbeans.XmlInt xgetCallTimeout();
+            
+            /**
+             * True if has "callTimeout" element
+             */
+            boolean isSetCallTimeout();
+            
+            /**
+             * Sets the "callTimeout" element
+             */
+            void setCallTimeout(int callTimeout);
+            
+            /**
+             * Sets (as xml) the "callTimeout" element
+             */
+            void xsetCallTimeout(org.apache.xmlbeans.XmlInt callTimeout);
+            
+            /**
+             * Unsets the "callTimeout" element
+             */
+            void unsetCallTimeout();
+            
+            /**
+             * Gets the "env" element
+             */
+            java.lang.String getEnv();
+            
+            /**
+             * Gets (as xml) the "env" element
+             */
+            org.apache.xmlbeans.XmlString xgetEnv();
+            
+            /**
+             * True if has "env" element
+             */
+            boolean isSetEnv();
+            
+            /**
+             * Sets the "env" element
+             */
+            void setEnv(java.lang.String env);
+            
+            /**
+             * Sets (as xml) the "env" element
+             */
+            void xsetEnv(org.apache.xmlbeans.XmlString env);
+            
+            /**
+             * Unsets the "env" element
+             */
+            void unsetEnv();
+            
+            /**
+             * Gets the "server" element
+             */
+            java.lang.String getServer();
+            
+            /**
+             * Gets (as xml) the "server" element
+             */
+            org.apache.xmlbeans.XmlString xgetServer();
+            
+            /**
+             * True if has "server" element
+             */
+            boolean isSetServer();
+            
+            /**
+             * Sets the "server" element
+             */
+            void setServer(java.lang.String server);
+            
+            /**
+             * Sets (as xml) the "server" element
+             */
+            void xsetServer(org.apache.xmlbeans.XmlString server);
+            
+            /**
+             * Unsets the "server" element
+             */
+            void unsetServer();
+            
+            /**
+             * Gets the "overrideEnabled" element
+             */
+            boolean getOverrideEnabled();
+            
+            /**
+             * Gets (as xml) the "overrideEnabled" element
+             */
+            org.apache.xmlbeans.XmlBoolean xgetOverrideEnabled();
+            
+            /**
+             * True if has "overrideEnabled" element
+             */
+            boolean isSetOverrideEnabled();
+            
+            /**
+             * Sets the "overrideEnabled" element
+             */
+            void setOverrideEnabled(boolean overrideEnabled);
+            
+            /**
+             * Sets (as xml) the "overrideEnabled" element
+             */
+            void xsetOverrideEnabled(org.apache.xmlbeans.XmlBoolean overrideEnabled);
+            
+            /**
+             * Unsets the "overrideEnabled" element
+             */
+            void unsetOverrideEnabled();
+            
+            /**
+             * Gets the "overrideUrl" element
+             */
+            java.lang.String getOverrideUrl();
+            
+            /**
+             * Gets (as xml) the "overrideUrl" element
+             */
+            org.apache.xmlbeans.XmlString xgetOverrideUrl();
+            
+            /**
+             * True if has "overrideUrl" element
+             */
+            boolean isSetOverrideUrl();
+            
+            /**
+             * Sets the "overrideUrl" element
+             */
+            void setOverrideUrl(java.lang.String overrideUrl);
+            
+            /**
+             * Sets (as xml) the "overrideUrl" element
+             */
+            void xsetOverrideUrl(org.apache.xmlbeans.XmlString overrideUrl);
+            
+            /**
+             * Unsets the "overrideUrl" element
+             */
+            void unsetOverrideUrl();
+            
+            /**
+             * Gets the "serviceName" element
+             */
+            java.lang.String getServiceName();
+            
+            /**
+             * Gets (as xml) the "serviceName" element
+             */
+            org.apache.xmlbeans.XmlString xgetServiceName();
+            
+            /**
+             * True if has "serviceName" element
+             */
+            boolean isSetServiceName();
+            
+            /**
+             * Sets the "serviceName" element
+             */
+            void setServiceName(java.lang.String serviceName);
+            
+            /**
+             * Sets (as xml) the "serviceName" element
+             */
+            void xsetServiceName(org.apache.xmlbeans.XmlString serviceName);
+            
+            /**
+             * Unsets the "serviceName" element
+             */
+            void unsetServiceName();
+            
+            /**
+             * An XML authentication(@http://guidewire.com/accelerator/deployment).
+             *
+             * This is a complex type.
+             */
+            public interface Authentication extends org.apache.xmlbeans.XmlObject
+            {
+                public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Authentication.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("authenticationdb3aelemtype");
+                
+                /**
+                 * Gets the "authenticationType" element
+                 */
+                java.lang.String getAuthenticationType();
+                
+                /**
+                 * Gets (as xml) the "authenticationType" element
+                 */
+                org.apache.xmlbeans.XmlString xgetAuthenticationType();
+                
+                /**
+                 * Sets the "authenticationType" element
+                 */
+                void setAuthenticationType(java.lang.String authenticationType);
+                
+                /**
+                 * Sets (as xml) the "authenticationType" element
+                 */
+                void xsetAuthenticationType(org.apache.xmlbeans.XmlString authenticationType);
+                
+                /**
+                 * Gets the "username" element
+                 */
+                java.lang.String getUsername();
+                
+                /**
+                 * Gets (as xml) the "username" element
+                 */
+                org.apache.xmlbeans.XmlString xgetUsername();
+                
+                /**
+                 * Sets the "username" element
+                 */
+                void setUsername(java.lang.String username);
+                
+                /**
+                 * Sets (as xml) the "username" element
+                 */
+                void xsetUsername(org.apache.xmlbeans.XmlString username);
+                
+                /**
+                 * Gets the "password" element
+                 */
+                java.lang.String getPassword();
+                
+                /**
+                 * Gets (as xml) the "password" element
+                 */
+                org.apache.xmlbeans.XmlString xgetPassword();
+                
+                /**
+                 * Sets the "password" element
+                 */
+                void setPassword(java.lang.String password);
+                
+                /**
+                 * Sets (as xml) the "password" element
+                 */
+                void xsetPassword(org.apache.xmlbeans.XmlString password);
+                
+                /**
+                 * A factory class with static methods for creating instances
+                 * of this type.
+                 */
+                
+                public static final class Factory
+                {
+                    public static com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication newInstance() {
+                      return (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                    
+                    public static com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication newInstance(org.apache.xmlbeans.XmlOptions options) {
+                      return (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting.Authentication) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                    
+                    private Factory() { } // No instance of this class allowed
+                }
+            }
+            
+            /**
+             * A factory class with static methods for creating instances
+             * of this type.
+             */
+            
+            public static final class Factory
+            {
+                public static com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting newInstance() {
+                  return (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+                
+                public static com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting newInstance(org.apache.xmlbeans.XmlOptions options) {
+                  return (com.guidewire.accelerator.deployment.Accelerator.RpcWebService.Setting) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
+                
+                private Factory() { } // No instance of this class allowed
+            }
+        }
+        
+        /**
+         * A factory class with static methods for creating instances
+         * of this type.
+         */
+        
+        public static final class Factory
+        {
+            public static com.guidewire.accelerator.deployment.Accelerator.RpcWebService newInstance() {
+              return (com.guidewire.accelerator.deployment.Accelerator.RpcWebService) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, null ); }
+            
+            public static com.guidewire.accelerator.deployment.Accelerator.RpcWebService newInstance(org.apache.xmlbeans.XmlOptions options) {
+              return (com.guidewire.accelerator.deployment.Accelerator.RpcWebService) org.apache.xmlbeans.XmlBeans.getContextTypeLoader().newInstance( type, options ); }
             
             private Factory() { } // No instance of this class allowed
         }

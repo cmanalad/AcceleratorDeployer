@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Time: 9:59 PM
  * To change this template use File | Settings | File Templates.
  */
-public class Webservice {
+public class WebService {
 
   private String name;
   private String wsdlLocation;
@@ -34,6 +34,17 @@ public class Webservice {
   public void addToSettings(WebServiceSetting setting) {
     settings.add(setting);
   }
+  
+  private boolean hasDefaultSetting() {
+    boolean hasDefault = false;
+    for(WebServiceSetting ws : settings) {
+      if((ws.getServer() == null || ws.getServer().trim().length() == 0) &&
+         (ws.getEnv() == null || ws.getEnv().trim().length() == 0)) {
+        hasDefault = true;
+      }
+    }
+    return hasDefault;
+  }
 
   public String asXML() {
     StringBuilder sb = new StringBuilder();
@@ -43,6 +54,9 @@ public class Webservice {
     sb.append("\"\n  wsdl-location=\"");
     sb.append(wsdlLocation);
     sb.append("\">\n");
+    if(settings != null && settings.size() > 0 && !hasDefaultSetting()) {
+      sb.append("  <settings/>\n");
+    }
     for(WebServiceSetting ws : settings) {
       sb.append(ws.asXML());
     }
