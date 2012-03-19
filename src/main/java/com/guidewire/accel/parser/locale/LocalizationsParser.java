@@ -46,7 +46,8 @@ public class LocalizationsParser {
           }
         }
       }
-    } catch (Throwable t) {
+    }
+    catch (Throwable t) {
     }
     return retval;
   }

@@ -2,7 +2,7 @@ package com.guidewire.accel.deployment.util;
 
 import com.guidewire.accel.util.FileUtil;
 
-import java.io.File;
+import java.io.*;
 
 /**
  * User: afogleson
@@ -14,6 +14,24 @@ import java.io.File;
  * <p/>
  */
 public class FileDeployer {
+
+  /*
+  *
+  * Writes the content into file. performs the normal backup  based on accelerator name.
+  *
+  */
+  public static void writeStringToFile(String content, File outFile) throws IOException, FileNotFoundException {
+    File temp = File.createTempFile("temporaryFile", ".tmp");
+    BufferedWriter out = new BufferedWriter(new FileWriter(temp));
+    out.write(content);
+    out.flush();
+    out.close();
+    int index = temp.getAbsolutePath().indexOf("temporaryFile");
+    String filename = temp.getAbsolutePath().substring(index +1);
+    File fromDir = new File(temp.getAbsolutePath().substring(0, index));
+    deployFile(fromDir, filename, outFile);
+    temp.delete();
+  }
 
   /**
    * deploy a file
@@ -53,7 +71,8 @@ public class FileDeployer {
       }
       //Now that we have any possible backup made, lets go ahead and move this one over.
       FileUtil.copyFileToFile(fromFile, toFile);
-    } catch (Throwable t) {
+    }
+    catch (Throwable t) {
       deployed = false;
     }
     return deployed;

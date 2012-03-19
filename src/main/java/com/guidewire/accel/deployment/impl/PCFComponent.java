@@ -36,11 +36,20 @@ public class PCFComponent implements DeployableComponent {
       toString = toString.substring(0, index);
       File toDir = new File(toString);
       deployed = FileDeployer.deployFile(new File(fromDir), pcfPage.getName(), toDir);
-    } catch (Throwable t) {
+    }
+    catch (Throwable t) {
       t.printStackTrace();
       deployed = false;
     }
     return deployed;
+  }
+
+  @Override
+  public boolean isValid() {
+    if(pcfPage == null || accelConfigRoot == null) {
+      return false;
+    }
+    return true;
   }
 
   @Override

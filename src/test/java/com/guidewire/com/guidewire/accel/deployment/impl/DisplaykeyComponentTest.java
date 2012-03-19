@@ -10,14 +10,12 @@ import java.io.FileOutputStream;
 import java.util.Properties;
 
 /**
- *
  * User: tp23161
  * Date: 13/03/12
  * Time: 09:07
- *
  */
 public class DisplaykeyComponentTest extends TestCase {
-  
+
   public void testDeploySuccess() throws Exception {
     AcceleratorHelper helper = AcceleratorHelper.getInstance();
     helper.setProductRoot(new File("src/test/resources/product/"));

@@ -3,7 +3,6 @@ package com.guidewire.accel.deployment.impl;
 import com.guidewire.accel.deployment.DeployableComponent;
 import com.guidewire.accel.parser.locale.LocalizationsParser;
 import com.guidewire.accel.util.AcceleratorHelper;
-import sun.nio.ch.FileKey;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,11 +11,9 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * Created with IntelliJ IDEA.
  * User: afogleson
  * Date: 3/12/12
  * Time: 10:29 PM
- * To change this template use File | Settings | File Templates.
  */
 public class DisplayKeyComponent implements DeployableComponent {
 
@@ -39,7 +36,7 @@ public class DisplayKeyComponent implements DeployableComponent {
     File localeDir = new File(productRoot.getAbsolutePath() + File.separator + localeBaseDir);
     File[] localeFiles = localeDir.listFiles();
     String localeFound = "en_US";
-    if(localeFiles != null && localeFiles.length > 0) {
+    if (localeFiles != null && localeFiles.length > 0) {
       for (File f : localeFiles) {
         if (!f.isDirectory() && f.getName().equals("localization.xml")) {
           //Now we just have to do some minimal parsing to find the actual locale to use.
@@ -47,7 +44,7 @@ public class DisplayKeyComponent implements DeployableComponent {
           if (possibleLocale != null && possibleLocale.trim().length() > 0) {
             //if a display.properties file exists then we can use this file.
             File possibleLocaleFile = new File(localeDir + File.separator + possibleLocale + File.separator + "display.properties");
-            if(possibleLocaleFile.exists()) {
+            if (possibleLocaleFile.exists()) {
               localeFound = possibleLocale;
             }
           }
@@ -95,19 +92,28 @@ public class DisplayKeyComponent implements DeployableComponent {
       out = new FileOutputStream(productKeyFile);
       prodKeys.store(out, null);
       out.flush();
-    } catch (Throwable t) {
+    }
+    catch (Throwable t) {
       System.out.println("Cannot handle display keys due to error: " + t.getLocalizedMessage());
       return false;
-    } finally {
+    }
+    finally {
       try {
         in.close();
-      } catch (Throwable t) {
+      }
+      catch (Throwable t) {
       }
       try {
         out.close();
-      } catch (Throwable t) {
+      }
+      catch (Throwable t) {
       }
     }
+    return true;
+  }
+
+  @Override
+  public boolean isValid() {
     return true;
   }
 

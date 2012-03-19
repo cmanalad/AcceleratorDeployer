@@ -5,6 +5,6 @@ package com.guidewire.accel.deployment.impl.enums;
  * Date: 3/10/12
  * Time: 2:01 PM
  */
-public enum MessageImplementationType {
+public enum PluginImplementationType {
   gosu, java;
 }

@@ -1,13 +1,15 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
-import com.guidewire.accel.deployment.impl.enums.MessageImplementationType;
+import com.guidewire.accel.deployment.impl.enums.PluginImplementationType;
+import com.guidewire.accel.deployment.util.FileDeployer;
 import com.guidewire.accel.parser.Messaging.MessagingConfigParser;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
 import com.guidewire.accel.util.AcceleratorHelper;
-import com.guidewire.accel.util.NameValuePair;
+import com.guidewire.accel.util.PluginParam;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -20,27 +22,27 @@ public class MessagingComponent implements DeployableComponent {
   private String registryDir = "modules/configuration/config/plguin/registry";
 
   private String requestName;
-  private MessageImplementationType requestType;
+  private PluginImplementationType requestType;
   private String requestClass;
   private String requestPluginDir;
-  private ArrayList<NameValuePair> requestParams;
+  private ArrayList<PluginParam> requestParams;
   private String transportName;
-  private MessageImplementationType transportType;
+  private PluginImplementationType transportType;
   private String transportClass;
   private String transportPluginDir;
-  private ArrayList<NameValuePair> transportParams;
+  private ArrayList<PluginParam> transportParams;
   private String replyName;
-  private MessageImplementationType replyType;
+  private PluginImplementationType replyType;
   private String replyClass;
   private String replyPluginDir;
-  private ArrayList<NameValuePair> replyParams;
-  private int pollInterval = 0;
-  private int initialRetryInterval = 0;
-  private int maxRetries = 0;
-  private int retryBackoffMultiplier = 0;
-  private int numberThreads = 0;
-  private int chunkSize = 0;
-  private int shutdownTimeout = 0;
+  private ArrayList<PluginParam> replyParams;
+  private long pollInterval = 0;
+  private long initialRetryInterval = 0;
+  private long maxRetries = 0;
+  private long retryBackoffMultiplier = 0;
+  private long numberThreads = 0;
+  private long chunkSize = 0;
+  private long shutdownTimeout = 0;
 
   public String getRegistryDir() {
     return registryDir;
@@ -74,11 +76,11 @@ public class MessagingComponent implements DeployableComponent {
     this.requestPluginDir = requestPluginDir;
   }
 
-  public ArrayList<NameValuePair> getRequestParams() {
+  public ArrayList<PluginParam> getRequestParams() {
     return requestParams;
   }
 
-  public void setRequestParams(ArrayList<NameValuePair> requestParams) {
+  public void setRequestParams(ArrayList<PluginParam> requestParams) {
     this.requestParams = requestParams;
   }
 
@@ -106,11 +108,11 @@ public class MessagingComponent implements DeployableComponent {
     this.transportPluginDir = transportPluginDir;
   }
 
-  public ArrayList<NameValuePair> getTransportParams() {
+  public ArrayList<PluginParam> getTransportParams() {
     return transportParams;
   }
 
-  public void setTransportParams(ArrayList<NameValuePair> transportParams) {
+  public void setTransportParams(ArrayList<PluginParam> transportParams) {
     this.transportParams = transportParams;
   }
 
@@ -138,11 +140,11 @@ public class MessagingComponent implements DeployableComponent {
     this.replyPluginDir = replyPluginDir;
   }
 
-  public ArrayList<NameValuePair> getReplyParams() {
+  public ArrayList<PluginParam> getReplyParams() {
     return replyParams;
   }
 
-  public void setReplyParams(ArrayList<NameValuePair> replyParams) {
+  public void setReplyParams(ArrayList<PluginParam> replyParams) {
     this.replyParams = replyParams;
   }
 
@@ -161,82 +163,82 @@ public class MessagingComponent implements DeployableComponent {
 
   //Basic setters and getters for the types
   public void setRequestType(String type) {
-    requestType = MessageImplementationType.valueOf(type.toLowerCase().trim());
+    requestType = PluginImplementationType.valueOf(type.toLowerCase().trim());
   }
 
-  public MessageImplementationType getRequestType() {
+  public PluginImplementationType getRequestType() {
     return requestType;
   }
 
   public void setTransportType(String type) {
-    transportType = MessageImplementationType.valueOf(type.toLowerCase().trim());
+    transportType = PluginImplementationType.valueOf(type.toLowerCase().trim());
   }
 
-  public MessageImplementationType getTransportType() {
+  public PluginImplementationType getTransportType() {
     return transportType;
   }
 
   public void setReplyType(String type) {
-    replyType = MessageImplementationType.valueOf(type.toLowerCase().trim());
+    replyType = PluginImplementationType.valueOf(type.toLowerCase().trim());
   }
 
-  public MessageImplementationType getReplyType() {
+  public PluginImplementationType getReplyType() {
     return replyType;
   }
 
-  public int getPollInterval() {
+  public long getPollInterval() {
     return pollInterval;
   }
 
-  public void setPollInterval(int pollInterval) {
+  public void setPollInterval(long pollInterval) {
     this.pollInterval = pollInterval;
   }
 
-  public int getInitialRetryInterval() {
+  public long getInitialRetryInterval() {
     return initialRetryInterval;
   }
 
-  public void setInitialRetryInterval(int initialRetryInterval) {
+  public void setInitialRetryInterval(long initialRetryInterval) {
     this.initialRetryInterval = initialRetryInterval;
   }
 
-  public int getMaxRetries() {
+  public long getMaxRetries() {
     return maxRetries;
   }
 
-  public void setMaxRetries(int maxRetries) {
+  public void setMaxRetries(long maxRetries) {
     this.maxRetries = maxRetries;
   }
 
-  public int getRetryBackoffMultiplier() {
+  public long getRetryBackoffMultiplier() {
     return retryBackoffMultiplier;
   }
 
-  public void setRetryBackoffMultiplier(int retryBackoffMultiplier) {
+  public void setRetryBackoffMultiplier(long retryBackoffMultiplier) {
     this.retryBackoffMultiplier = retryBackoffMultiplier;
   }
 
-  public int getNumberThreads() {
+  public long getNumberThreads() {
     return numberThreads;
   }
 
-  public void setNumberThreads(int numberThreads) {
+  public void setNumberThreads(long numberThreads) {
     this.numberThreads = numberThreads;
   }
 
-  public int getChunkSize() {
+  public long getChunkSize() {
     return chunkSize;
   }
 
-  public void setChunkSize(int chunkSize) {
+  public void setChunkSize(long chunkSize) {
     this.chunkSize = chunkSize;
   }
 
-  public int getShutdownTimeout() {
+  public long getShutdownTimeout() {
     return shutdownTimeout;
   }
 
-  public void setShutdownTimeout(int shutdownTimeout) {
+  public void setShutdownTimeout(long shutdownTimeout) {
     this.shutdownTimeout = shutdownTimeout;
   }
 
@@ -266,23 +268,23 @@ public class MessagingComponent implements DeployableComponent {
     }
   }
 
-  public void addRequestParameter(NameValuePair nvp) {
+  public void addRequestParameter(PluginParam nvp) {
     if (requestParams == null) {
-      requestParams = new ArrayList<NameValuePair>();
+      requestParams = new ArrayList<PluginParam>();
     }
     requestParams.add(nvp);
   }
 
-  public void addTransportParameter(NameValuePair nvp) {
+  public void addTransportParameter(PluginParam nvp) {
     if (transportParams == null) {
-      transportParams = new ArrayList<NameValuePair>();
+      transportParams = new ArrayList<PluginParam>();
     }
     transportParams.add(nvp);
   }
 
-  public void addReplyParameter(NameValuePair nvp) {
+  public void addReplyParameter(PluginParam nvp) {
     if (replyParams == null) {
-      replyParams = new ArrayList<NameValuePair>();
+      replyParams = new ArrayList<PluginParam>();
     }
     replyParams.add(nvp);
   }
@@ -319,7 +321,7 @@ public class MessagingComponent implements DeployableComponent {
    */
 
   private String generatePluginXml(String name, String className,
-                                   ArrayList<NameValuePair> params, MessageImplementationType type,
+                                   ArrayList<PluginParam> params, PluginImplementationType type,
                                    String pluginDir, String pluginType) {
     StringBuilder xml = new StringBuilder();
     xml.append("<?xml version=\"1.0\"?>\n");
@@ -328,7 +330,7 @@ public class MessagingComponent implements DeployableComponent {
     xml.append("\"\n  name=\"");
     xml.append(name);
     xml.append("\">\n");
-    if (type == MessageImplementationType.gosu) {
+    if (type == PluginImplementationType.gosu) {
       xml.append("  <plugin-gosu\n    gosuclass=\"");
       xml.append(className);
       xml.append("\">\n");
@@ -346,15 +348,23 @@ public class MessagingComponent implements DeployableComponent {
     }
     //Handle parameters
     if (params != null && !params.isEmpty()) {
-      for (NameValuePair nvp : params) {
+      for (PluginParam nvp : params) {
         xml.append("    <param\n      name=\"");
         xml.append(nvp.getName());
         xml.append("\"\n      value=\"");
         xml.append(nvp.getValue());
+        if(nvp.getEnv() != null) {
+          xml.append("\"\n      env=\"");
+          xml.append(nvp.getEnv());
+        }
+        if(nvp.getServer() != null) {
+          xml.append("\"\n      server=\"");
+          xml.append(nvp.getServer());
+        }
         xml.append("\"/>\n");
       }
     }
-    if (type == MessageImplementationType.gosu) {
+    if (type == PluginImplementationType.gosu) {
       xml.append("</plugin-gosu>\n</plugin>");
     }
     else {
@@ -365,38 +375,81 @@ public class MessagingComponent implements DeployableComponent {
 
   @Override
   public boolean deploy() {
-
-    //First lets make sure there is an open queue. that is that the selected destination is not already used.
-    MessagingConfigParser parser = new MessagingConfigParser(AcceleratorHelper.getInstance().getProductRoot());
-    MessagingConfig msgConfig = parser.getMessageConfig();
-    Destination dest = msgConfig.getDestinationById(getDestination());
-    if (dest != null) {
-      //What are we going to do on this failure? there are likely efr that rely on this destinationID
-    }
-    //if we assume we fail when the destinationID is in use.....
-    //go ahead and get ready to deploy everything.
+    boolean isDeployed = true;
     String requestPluginXml = null;
     String transportPluginXml = null;
     String replyPluginXml = null;
 
+    MessagingConfigParser parser = null;
+    MessagingConfig msgConfig = null;
+    try {
+      //First lets make sure there is an open queue. that is that the selected destination is not already used.
+      parser = new MessagingConfigParser(AcceleratorHelper.getInstance().getProductRoot());
+      msgConfig = parser.getMessageConfig();
+      Destination dest = msgConfig.getDestinationById(getDestination());
+      if (dest != null) {
+        //What are we going to do on this failure? there are likely efr that rely on this destinationID
+        isDeployed = false;
+      }
+    }
+    catch(Throwable t) {
+      t.printStackTrace();
+      //most likely our illegal argument exception, but in any case we cannot deploy
+      isDeployed = false;
+    }
 
-    if (requestClass != null) {
+    //if we assume we fail when the destinationID is in use.....
+    //go ahead and get ready to deploy everything.
+    if (isDeployed && requestClass != null) {
       requestPluginXml = generatePluginXml(requestName, requestClass, requestParams, requestType, requestPluginDir, "Request");
     }
-    if (transportClass != null) {
+    if (isDeployed && transportClass != null) {
       transportPluginXml = generatePluginXml(transportName, transportClass, transportParams, transportType, transportPluginDir, "Transport");
     }
-    if (replyClass != null) {
+    if (isDeployed && replyClass != null) {
       replyPluginXml = generatePluginXml(replyName, replyClass, replyParams, replyType, replyPluginDir, "Reply");
     }
-
     //So, now we have all the plugin.xml we need to create a new destination and add it to our messaging config.
+    //if we are still valid to deploy
+    if(isDeployed) {
+      //so lets build one up....
+      Destination newDest = new Destination();
 
+      //Then add it to our messaging config
+      msgConfig.addToDestinations(newDest);
 
-    //plugins go in productRoot + /modules/configuration/config/olugins/registry + pluginName + .xml
+      //Then save the plugins and messaging config out
+      try {
+        parser.writeConfig();
+        //plugin xml goes in productRoot + /modules/configuration/config/plugins/registry + pluginName + .xml
+        String pluginDir = AcceleratorHelper.getInstance().getProductRoot() + File.separator + "modules" +
+                File.separator + "configuration" + File.separator + "config" + File.separator +
+                "plugins" + File.separator + "registry" + File.separator;
+        if(requestPluginXml != null) {
+          FileDeployer.writeStringToFile(requestPluginXml , new File(pluginDir + requestName + ".xml"));
+        }
+        if(transportPluginXml != null) {
+          FileDeployer.writeStringToFile(transportPluginXml , new File(pluginDir + transportName + ".xml"));
+        }
+        if(replyPluginXml != null) {
+          FileDeployer.writeStringToFile(replyPluginXml , new File(pluginDir + replyName + ".xml"));
+        }
+      }
+      catch(Throwable t) {
+        t.printStackTrace();
+        isDeployed = false;
+      }
+    }
+    return isDeployed;
+  }
 
-
-    return false;
+  @Override
+  public boolean isValid() {
+    boolean isValid = true;
+    if(transportClass == null || transportName == null || transportType == null || destination == 0) {
+      isValid = false;
+    }
+    return isValid;
   }
 
   @Override

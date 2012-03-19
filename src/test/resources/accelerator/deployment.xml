@@ -1,10 +1,68 @@
-<accelerator>
-    <mavenBuild>
-        <directory>.</directory>
-        <goals>clean</goals>
-    </mavenBuild>
+<accelerator xmlns="http://guidewire.com/accelerator/deployment">
+    <pcfRoot>
+        <directory>src/test/resources/accelerator/configuration/</directory>
+    </pcfRoot>
+    <gosuRoot>
+        <directory>src/test/resources/accelerator/gsrc/</directory>
+    </gosuRoot>
+    <gunitRoot>
+        <directory>src/test/resources/accelerator/gtest/</directory>
+    </gunitRoot>
     <antBuild>
         <buildFile>../build.xml</buildFile>
         <target>test</target>
     </antBuild>
+    <library>
+        <directory>src/test/resources/accelerator/lib</directory>
+        <pluginDirectory>MyLib</pluginDirectory>
+    </library>
+    <library>
+        <directory>src/test/resources/accelerator/lib2</directory>
+    </library>
+    <mavenBuild>
+        <directory>.</directory>
+        <goals>clean</goals>
+    </mavenBuild>
+    <dataExtension>
+        <directory>extensions</directory>
+    </dataExtension>
+    <messageQueue>
+        <messageTransport>
+            <transportName>MyTransport</transportName>
+            <transportType>gosu</transportType>
+            <transportClass>gwservices.MyTransport</transportClass>
+            <transportParameters>
+                <parameter>
+                    <name>test</name>
+                    <value>test</value>
+                </parameter>
+                <parameter>
+                    <name>test1</name>
+                    <value>test1</value>
+                    <env>Dev</env>
+                </parameter>
+                <parameter>
+                    <name>test1</name>
+                    <value>test2</value>
+                    <env>UAT</env>
+                </parameter>
+            </transportParameters>
+        </messageTransport>
+        <pollInterval>2000</pollInterval>
+        <initialRetryInterval>10000</initialRetryInterval>
+        <maxRetries>3</maxRetries>
+        <retryBackoffMultiplier>1</retryBackoffMultiplier>
+        <numberThreads>5</numberThreads>
+        <destination>15</destination>
+    </messageQueue>
+    <plugin>
+        <name>AuthenticationSourceCreatorPlugin</name>
+        <java>
+            <classname>com.guidewire.pl.web.auth.DefaultAuthenticationSourceCreatorPlugin</classname>
+            <plugindir>authenticationsourcecreator</plugindir>
+        </java>
+    </plugin>
+    <displaykey>
+        <file>keys/displaykey.properties</file>
+    </displaykey>
 </accelerator>

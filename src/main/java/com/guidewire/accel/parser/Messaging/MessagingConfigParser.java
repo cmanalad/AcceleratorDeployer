@@ -1,5 +1,6 @@
 package com.guidewire.accel.parser.Messaging;
 
+import com.guidewire.accel.deployment.util.FileDeployer;
 import com.guidewire.accel.parser.Messaging.pojo.Destination;
 import com.guidewire.accel.parser.Messaging.pojo.Event;
 import com.guidewire.accel.parser.Messaging.pojo.MessagingConfig;
@@ -10,6 +11,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * User: tp23161
@@ -20,6 +22,7 @@ public class MessagingConfigParser {
 
   private Document messageConfig = null;
   private MessagingConfig msgConfig;
+  private File msgConfigFile = null;
 
   public MessagingConfigParser(File productRoot) {
     StringBuilder sb = new StringBuilder();
@@ -34,8 +37,8 @@ public class MessagingConfigParser {
     sb.append("messaging");
     sb.append(File.separator);
     sb.append("messaging-config.xml");
-    File config = new File(sb.toString());
-    if (!config.exists()) {
+    msgConfigFile = new File(sb.toString());
+    if (!msgConfigFile.exists()) {
       throw new IllegalArgumentException("Messaging config could not be found at " + sb.toString());
     }
 
@@ -47,7 +50,7 @@ public class MessagingConfigParser {
 
       DocumentBuilder builder = factory.newDocumentBuilder();
 
-      messageConfig = builder.parse(config);
+      messageConfig = builder.parse(msgConfigFile);
 
       NodeList nodes = messageConfig.getElementsByTagName("destination");
       msgConfig = new MessagingConfig();
@@ -57,45 +60,45 @@ public class MessagingConfigParser {
         dest.setId(Integer.parseInt(n.getAttributes().getNamedItem("id").getNodeValue()));
         dest.setName(n.getAttributes().getNamedItem("name").getNodeValue());
         if (n.getAttributes().getNamedItem("disabled") != null &&
-          n.getAttributes().getNamedItem("disabled").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("disabled").getNodeValue() != null) {
           if (n.getAttributes().getNamedItem("disabled").getNodeValue().toLowerCase().equals("true")) {
             dest.setEnabled(false);
           }
         }
         if (n.getAttributes().getNamedItem("numsenderthreads") != null &&
-          n.getAttributes().getNamedItem("numsenderthreads").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("numsenderthreads").getNodeValue() != null) {
           dest.setNumSenderThreads(Integer.parseInt(n.getAttributes().getNamedItem("numsenderthreads").getNodeValue()));
         }
         if (n.getAttributes().getNamedItem("pollinterval") != null &&
-          n.getAttributes().getNamedItem("pollinterval").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("pollinterval").getNodeValue() != null) {
           dest.setPollInterval(Long.parseLong(n.getAttributes().getNamedItem("pollinterval").getNodeValue()));
         }
         if (n.getAttributes().getNamedItem("retrybackoffmultiplier") != null &&
-          n.getAttributes().getNamedItem("retrybackoffmultiplier").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("retrybackoffmultiplier").getNodeValue() != null) {
           dest.setRetryBackoffMultiplier(Integer.parseInt(n.getAttributes().getNamedItem("retrybackoffmultiplier").getNodeValue()));
         }
         if (n.getAttributes().getNamedItem("maxretries") != null &&
-          n.getAttributes().getNamedItem("maxretries").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("maxretries").getNodeValue() != null) {
           dest.setMaxRetries(Integer.parseInt(n.getAttributes().getNamedItem("maxretries").getNodeValue()));
         }
         if (n.getAttributes().getNamedItem("requestplugin") != null &&
-          n.getAttributes().getNamedItem("requestplugin").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("requestplugin").getNodeValue() != null) {
           dest.setRequestPlugin(n.getAttributes().getNamedItem("requestplugin").getNodeValue());
         }
         if (n.getAttributes().getNamedItem("replyplugin") != null &&
-          n.getAttributes().getNamedItem("replyplugin").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("replyplugin").getNodeValue() != null) {
           dest.setReplyPlugin(n.getAttributes().getNamedItem("replyplugin").getNodeValue());
         }
         if (n.getAttributes().getNamedItem("transportplugin") != null &&
-          n.getAttributes().getNamedItem("transportplugin").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("transportplugin").getNodeValue() != null) {
           dest.setTransportPlugin(n.getAttributes().getNamedItem("transportplugin").getNodeValue());
         }
         if (n.getAttributes().getNamedItem("chunksize") != null &&
-          n.getAttributes().getNamedItem("chunksize").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("chunksize").getNodeValue() != null) {
           dest.setChunkSize(Long.parseLong(n.getAttributes().getNamedItem("chunksize").getNodeValue()));
         }
         if (n.getAttributes().getNamedItem("shutdowntimeout") != null &&
-          n.getAttributes().getNamedItem("shutdowntimeout").getNodeValue() != null) {
+                n.getAttributes().getNamedItem("shutdowntimeout").getNodeValue() != null) {
           dest.setShutdownTimeout(Long.parseLong(n.getAttributes().getNamedItem("shutdowntimeout").getNodeValue()));
         }
         //Now check for events....
@@ -112,14 +115,15 @@ public class MessagingConfigParser {
             }
           }
         }
-
-
         msgConfig.addToDestinations(dest);
       }
-
-    } catch (Throwable t) {
     }
+    catch (Throwable t) {
+    }
+  }
 
+  public void writeConfig() throws IOException {
+    FileDeployer.writeStringToFile(msgConfig.asXML(), msgConfigFile);
   }
 
   public MessagingConfig getMessageConfig() {

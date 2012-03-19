@@ -249,9 +249,9 @@ public class AppGui extends JFrame {
     inputPanel.add(accelBrowseButton);
 
     SpringUtilities.makeCompactGrid(inputPanel,
-      2, 3, //rows, cols
-      5, 5, //initialX, initialY
-      5, 5);//xPad, yPad
+                                    2, 3, //rows, cols
+                                    5, 5, //initialX, initialY
+                                    5, 5);//xPad, yPad
 
 
     pack();
@@ -259,7 +259,7 @@ public class AppGui extends JFrame {
     this.addComponentListener(new java.awt.event.ComponentAdapter() {
       public void componentResized(ComponentEvent event) {
         setSize(Math.max(1024, getWidth()),
-          Math.max(768, getHeight()));
+                Math.max(768, getHeight()));
       }
     });
     this.setSize(1024, 768);
@@ -318,16 +318,20 @@ public class AppGui extends JFrame {
           }
         }
         while (entry != null);
-      } catch (Throwable t) {
+      }
+      catch (Throwable t) {
         t.printStackTrace();
-      } finally {
+      }
+      finally {
         try {
           fis.close();
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
         }
         try {
           zin.close();
-        } catch (Throwable t) {
+        }
+        catch (Throwable t) {
         }
       }
     }

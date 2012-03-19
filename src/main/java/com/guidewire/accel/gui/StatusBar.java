@@ -109,8 +109,8 @@ public class StatusBar extends JPanel {
 
   public static Border createComponentBorder() {
     return BorderFactory.createCompoundBorder(
-      BorderFactory.createBevelBorder(BevelBorder.LOWERED),
-      BorderFactory.createEmptyBorder(0, 4, 0, 4));
+            BorderFactory.createBevelBorder(BevelBorder.LOWERED),
+            BorderFactory.createEmptyBorder(0, 4, 0, 4));
   }
 
   private void createGUI() {
