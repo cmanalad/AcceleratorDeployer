@@ -1,6 +1,10 @@
 package com.guidewire.accel.deployment.impl;
 
 import com.guidewire.accel.deployment.DeployableComponent;
+import com.guidewire.accel.parser.extensions.entity.EntityParser;
+import com.guidewire.accel.parser.extensions.entity.model.EntityModel;
+import com.guidewire.accel.parser.model.ColumnField;
+import com.guidewire.accel.parser.model.Field;
 import com.guidewire.accel.util.AcceleratorHelper;
 import com.guidewire.accel.util.FileUtil;
 
@@ -54,6 +58,25 @@ public class DataExtensionComponent implements DeployableComponent {
         // it exists... so we have the hard road.
         if(name.contains(".etx")) {
           //We need to merge an extension.
+          //so first off parse both xml files into an object model
+          EntityModel prodModel   = EntityParser.parse(prodFile);
+          EntityModel accelModel  = EntityParser.parse(ext);
+          //Now find the additions and changed "fields"
+          prodModel.compareWithModel(accelModel);
+          if(prodModel.getChangedFields() != null && prodModel.getChangedFields().length > 0) {
+            //we are modifying or potentially modifying fields... lets see if they are all just attribute changes, that may be ok.
+            for(Field f : prodModel.getChangedFields()) {
+              if(f instanceof ColumnField) {
+                //we dont want to try to merge columns. we could do some checking I suppose to make sure types are the same, etc etc.
+                //For now we just are not supporting it.
+                return false;
+              }
+              else {
+                //it has to be an attribute or implements kind of field, and for those some changes are allowed others are not.
+
+              }
+            }
+          }
 
         }
         else if(name.contains(".ttx")) {
