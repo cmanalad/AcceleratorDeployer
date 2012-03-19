@@ -97,7 +97,7 @@ public class AcceleratorParser {
         if(comp.getMessageRequest() != null) {
           component.setRequestName(comp.getMessageRequest().getRequestName());
           component.setRequestClass(comp.getMessageRequest().getRequestClass());
-          component.setRequestType(comp.getMessageRequest().getRequestType());
+          component.setRequestType(comp.getMessageRequest().getRequestType().toString());
           if(comp.getMessageRequest().getRequestParameters() != null) {
             for(com.guidewire.accelerator.deployment.PluginParam p : comp.getMessageRequest().getRequestParameters().getParameterArray()) {
               PluginParam param = new PluginParam();
@@ -112,7 +112,7 @@ public class AcceleratorParser {
         if(comp.getMessageTransport() != null) {
             component.setTransportName(comp.getMessageTransport().getTransportName());
             component.setTransportClass(comp.getMessageTransport().getTransportClass());
-            component.setTransportType(comp.getMessageTransport().getTransportType());
+            component.setTransportType(comp.getMessageTransport().getTransportType().toString());
             if(comp.getMessageTransport().getTransportParameters() != null) {
               for(com.guidewire.accelerator.deployment.PluginParam p : comp.getMessageTransport().getTransportParameters().getParameterArray()) {
                 PluginParam param = new PluginParam();
@@ -128,7 +128,7 @@ public class AcceleratorParser {
           if(comp.getMessageReply() != null) {
             component.setReplyName(comp.getMessageReply().getReplyName());
             component.setReplyClass(comp.getMessageReply().getReplyClass());
-            component.setReplyType(comp.getMessageReply().getReplyType());
+            component.setReplyType(comp.getMessageReply().getReplyType().toString());
             if(comp.getMessageReply().getReplyParameters() != null) {
               for(com.guidewire.accelerator.deployment.PluginParam p : comp.getMessageReply().getReplyParameters().getParameterArray()) {
                 PluginParam param = new PluginParam();

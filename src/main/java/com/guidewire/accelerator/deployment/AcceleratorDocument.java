@@ -17,7 +17,7 @@ package com.guidewire.accelerator.deployment;
 public interface AcceleratorDocument extends org.apache.xmlbeans.XmlObject
 {
     public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AcceleratorDocument.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("acceleratorc7e8doctype");
+        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AcceleratorDocument.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("acceleratorc7e8doctype");
     
     /**
      * Gets the "accelerator" element

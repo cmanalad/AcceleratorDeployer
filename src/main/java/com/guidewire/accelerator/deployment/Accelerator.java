@@ -16,7 +16,7 @@ package com.guidewire.accelerator.deployment;
 public interface Accelerator extends org.apache.xmlbeans.XmlObject
 {
     public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Accelerator.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("accelerator57f8type");
+        org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Accelerator.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("accelerator57f8type");
     
     /**
      * Gets array of all "pcfRoot" elements
@@ -436,7 +436,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface PcfRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(PcfRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("pcfroot5579elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(PcfRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("pcfroot5579elemtype");
         
         /**
          * Gets the "directory" element
@@ -483,7 +483,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface GosuRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GosuRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("gosuroot57e0elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GosuRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("gosuroot57e0elemtype");
         
         /**
          * Gets the "directory" element
@@ -530,7 +530,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface GunitRoot extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GunitRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("gunitrootbf11elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(GunitRoot.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("gunitrootbf11elemtype");
         
         /**
          * Gets the "directory" element
@@ -577,7 +577,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface AntBuild extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AntBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("antbuildab9belemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(AntBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("antbuildab9belemtype");
         
         /**
          * Gets the "directory" element
@@ -664,7 +664,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Library extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Library.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("library0a5felemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Library.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("library0a5felemtype");
         
         /**
          * Gets the "directory" element
@@ -731,7 +731,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface MavenBuild extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MavenBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("mavenbuild9977elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MavenBuild.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("mavenbuild9977elemtype");
         
         /**
          * Gets the "directory" element
@@ -798,7 +798,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface DataExtension extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(DataExtension.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("dataextension36d9elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(DataExtension.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("dataextension36d9elemtype");
         
         /**
          * Gets the "directory" element
@@ -845,7 +845,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface MessageQueue extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageQueue.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagequeue065eelemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageQueue.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("messagequeue065eelemtype");
         
         /**
          * Gets the "messageRequest" element
@@ -1110,7 +1110,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageRequest extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageRequest.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagerequest8bbaelemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageRequest.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("messagerequest8bbaelemtype");
             
             /**
              * Gets the "requestName" element
@@ -1205,7 +1205,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface RequestType extends org.apache.xmlbeans.XmlString
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("requesttype124felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("requesttype124felemtype");
                 
                 org.apache.xmlbeans.StringEnumAbstractBase enumValue();
                 void set(org.apache.xmlbeans.StringEnumAbstractBase e);
@@ -1291,7 +1291,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface RequestParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("requestparameters8bbfelemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RequestParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("requestparameters8bbfelemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1375,7 +1375,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageTransport extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageTransport.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagetransport7ca0elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageTransport.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("messagetransport7ca0elemtype");
             
             /**
              * Gets the "transportName" element
@@ -1495,7 +1495,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface TransportType extends org.apache.xmlbeans.XmlString
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("transporttype848felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("transporttype848felemtype");
                 
                 org.apache.xmlbeans.StringEnumAbstractBase enumValue();
                 void set(org.apache.xmlbeans.StringEnumAbstractBase e);
@@ -1581,7 +1581,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface TransportParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("transportparameters867felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(TransportParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("transportparameters867felemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -1648,7 +1648,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface Events extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Events.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("events7ad5elemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Events.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("events7ad5elemtype");
                 
                 /**
                  * Gets array of all "eventName" elements
@@ -1762,7 +1762,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface MessageReply extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageReply.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("messagereply517felemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(MessageReply.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("messagereply517felemtype");
             
             /**
              * Gets the "replyName" element
@@ -1857,7 +1857,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface ReplyType extends org.apache.xmlbeans.XmlString
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("replytype752felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyType.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("replytype752felemtype");
                 
                 org.apache.xmlbeans.StringEnumAbstractBase enumValue();
                 void set(org.apache.xmlbeans.StringEnumAbstractBase e);
@@ -1943,7 +1943,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface ReplyParameters extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("replyparametersfa5felemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(ReplyParameters.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("replyparametersfa5felemtype");
                 
                 /**
                  * Gets array of all "parameter" elements
@@ -2044,7 +2044,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Plugin extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Plugin.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("plugin4d07elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Plugin.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("plugin4d07elemtype");
         
         /**
          * Gets the "name" element
@@ -2154,7 +2154,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface Java extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Java.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("java3589elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Java.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("java3589elemtype");
             
             /**
              * Gets the "disabled" element
@@ -2361,7 +2361,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface Gosu extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Gosu.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("gosu6d61elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Gosu.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("gosu6d61elemtype");
             
             /**
              * Gets the "disabled" element
@@ -2555,7 +2555,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface Displaykey extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Displaykey.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("displaykey5fb1elemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Displaykey.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("displaykey5fb1elemtype");
         
         /**
          * Gets the "file" element
@@ -2612,7 +2612,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
     public interface RpcWebService extends org.apache.xmlbeans.XmlObject
     {
         public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RpcWebService.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("rpcwebservice3c6aelemtype");
+            org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(RpcWebService.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("rpcwebservice3c6aelemtype");
         
         /**
          * Gets the "name" element
@@ -2702,7 +2702,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
         public interface Setting extends org.apache.xmlbeans.XmlObject
         {
             public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Setting.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("settingcc26elemtype");
+                org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Setting.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("settingcc26elemtype");
             
             /**
              * Gets the "authentication" element
@@ -2917,7 +2917,7 @@ public interface Accelerator extends org.apache.xmlbeans.XmlObject
             public interface Authentication extends org.apache.xmlbeans.XmlObject
             {
                 public static final org.apache.xmlbeans.SchemaType type = (org.apache.xmlbeans.SchemaType)
-                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Authentication.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s7B1E77C7BC7C9CFC3BC792BBFF49F51F").resolveHandle("authenticationdb3aelemtype");
+                    org.apache.xmlbeans.XmlBeans.typeSystemForClassLoader(Authentication.class.getClassLoader(), "schemaorg_apache_xmlbeans.system.s9587339C31721F4D1AB33B21A0364588").resolveHandle("authenticationdb3aelemtype");
                 
                 /**
                  * Gets the "authenticationType" element
