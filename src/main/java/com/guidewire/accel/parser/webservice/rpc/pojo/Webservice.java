@@ -3,11 +3,11 @@ package com.guidewire.accel.parser.webservice.rpc.pojo;
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
+ *
  * User: afogleson
  * Date: 3/18/12
  * Time: 9:59 PM
- * To change this template use File | Settings | File Templates.
+ *
  */
 public class WebService {
 
@@ -34,7 +34,14 @@ public class WebService {
   public void addToSettings(WebServiceSetting setting) {
     settings.add(setting);
   }
-  
+
+  /**
+   *
+   * Just used internally to decide if we need an empty <settings>
+   *
+   * @return true if we have added some settings to the default
+   *
+   */
   private boolean hasDefaultSetting() {
     boolean hasDefault = false;
     for(WebServiceSetting ws : settings) {

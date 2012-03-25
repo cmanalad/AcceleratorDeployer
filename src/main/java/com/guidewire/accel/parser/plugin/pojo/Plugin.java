@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * Created with IntelliJ IDEA.
+ *
  * User: afogleson
  * Date: 3/18/12
  * Time: 8:28 PM
- * To change this template use File | Settings | File Templates.
+ *
  */
 public class Plugin implements Serializable {
 

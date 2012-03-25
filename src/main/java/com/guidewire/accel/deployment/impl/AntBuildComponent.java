@@ -51,7 +51,10 @@ public class AntBuildComponent implements DeployableComponent {
 
   @Override
   public boolean isValid() {
-    return true;
+    if(buildFile.exists()) {
+      return true;
+    }
+    return false;
   }
 
   @Override

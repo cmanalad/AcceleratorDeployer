@@ -13,6 +13,7 @@ public class EntityModel extends Model {
 
   @Override
   public void compareWithModel(Model otherModel) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    //TODO Implement me
+
   }
 }

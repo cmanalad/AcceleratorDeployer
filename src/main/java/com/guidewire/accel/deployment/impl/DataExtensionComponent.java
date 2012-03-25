@@ -74,7 +74,6 @@ public class DataExtensionComponent implements DeployableComponent {
               }
             }
           }
-
         }
         else if (name.contains(".ttx")) {
           //we need to merge a typelist extension
